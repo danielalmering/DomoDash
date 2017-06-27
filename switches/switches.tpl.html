@@ -1,0 +1,7 @@
+<div ng-repeat="switch in vm.switches">
+    <div class="switch" ng-click="vm.switchDevice(switch)">
+        {{ switch.Name }}
+        {{ switch.Status }}
+        {{ switch.LastUpdate }}
+    </div>
+</div>

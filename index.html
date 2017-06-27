@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="main">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Dashticz Angular</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="/app" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/assets/css/app.css" />
+
+        <!-- JS -->
+        <script src="https://code.angularjs.org/1.5.1/angular.min.js"></script>
+        <script src="https://cdn.rawgit.com/abdmob/x2js/master/xml2json.js"></script>
+        <script src="/app.config.js"></script>
+        <script src="/app.run.js"></script>
+        <script src="/app.filters.js"></script>
+
+        <!-- Switches -->
+        <script src="/switches/switches.controller.js"></script>
+        <script src="/switches/switches.directive.js"></script>
+        <link rel="stylesheet" href="/switches/switches.css" />
+
+        <!-- Date -->
+        <script src="/date/date.controller.js"></script>
+        <script src="/date/date.directive.js"></script>
+        <link rel="stylesheet" href="/date/date.css" />
+
+        <!-- News -->
+        <script src="/news/news.controller.js"></script>
+        <script src="/news/news.directive.js"></script>
+        <link rel="stylesheet" href="/news/news.css" />
+
+        <!-- Weather -->
+        <script src="/weather/weather.controller.js"></script>
+        <script src="/weather/weather.directive.js"></script>
+        <link rel="stylesheet" href="/weather/weather.css" />
+
+        <!-- Weather / Forecast -->
+        <script src="/weather/forecast/forecast.controller.js"></script>
+        <script src="/weather/forecast/forecast.directive.js"></script>
+        <link rel="stylesheet" href="/weather/forecast/forecast.css" />
+
+        <!-- Grid -->
+        <script src="/grid/grid.directive.js"></script>
+
+        <!-- Shared -->
+        <script src="/shared/skycons.js"></script>
+
+    </head>
+    <body ng-style="{'background-image': 'url(/assets/img/bg/' + background + '.gif)'}">
+
+        <div class="container">
+
+            <grid id="colums"></grid>
+
+        </div>
+
+    </body>
+</html>

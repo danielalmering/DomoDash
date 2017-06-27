@@ -1,0 +1,15 @@
+<div class="news" ng-repeat="(key, val) in vm.newssources" ng-init="vm.getNews(key, val)">
+
+    <div class="newsitem" ng-repeat="item in vm.news[key] | limitTo: vm.limit" ng-if="vm.news" ng-class="{'switch': vm.changed}">
+        <div class="newsitem__icon col-xs-2">
+            <i class="fa fa-newspaper-o"></i>
+        </div>
+        <div class="newsitem__content">
+            <span class="title">{{ item.title }}</span>
+            <span class="description">{{ item.description | removeHTMLTags }}</span>
+        </div>
+    </div>
+
+    <div class="news__title"> {{ vm.newstitle[key] }}</div>
+
+</div>

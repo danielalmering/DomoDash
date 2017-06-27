@@ -1,0 +1,21 @@
+<div class="forecastwrap col-xs-6 col-sm-6 col-md-3" ng-repeat="(key, val) in vm.forecast | limitTo: 5" ng-show="$index > 0">
+
+    <div class="forecast">
+
+        <div class="forecast__date">
+            <span>{{ val.date.weekday }}</span>
+            <span>{{ val.date.epoch * 1000 | date:'dd - MM - yyyy' }}</span>
+        </div>
+
+        <div class="forecast__icon">
+            <canvas class="skycon" id="icon{{ key }}" ng-init="vm.getIcon(val.icon, key)"></canvas>
+        </div>
+
+        <div class="forecast__degrees">
+            <span>{{ val.high.celsius | number: 0 }}<i>°C</i></span>
+            <span class="lower">{{ val.low.celsius | number: 0 }}<i>°C</i></span>
+        </div>
+
+    </div>
+
+</div>

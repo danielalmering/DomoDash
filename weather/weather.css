@@ -1,0 +1,22 @@
+/***************************
+*** Weather
+***************************/
+
+.weather {
+    display: table;
+
+}
+
+.weather .weather__icon  {
+    display: table-cell;
+    width: 60px;
+    text-align: center;
+}
+
+.weather .weather__description {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: 700;
+    width: calc(60px - 100%);
+}

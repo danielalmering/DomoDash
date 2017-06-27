@@ -1,0 +1,9 @@
+<div class="weather">
+    <div class="weather__icon">
+        <canvas id="icon" width="32" height="32"></canvas>
+    </div>
+    <div class="weather__description">
+        {{ vm.weather.temp_c | number: 0 }}°C
+        {{ vm.location }}
+    </div>
+</div>
