@@ -1,0 +1,94 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "conditions": 1
+  }
+	}
+  ,	"current_observation": {
+		"image": {
+		"url":"http://icons.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Almere-Haven, Netherlands",
+		"city":"Almere-Haven",
+		"state":"FL",
+		"state_name":"Netherlands",
+		"country":"NL",
+		"country_iso3166":"NL",
+		"zip":"00000",
+		"magic":"28",
+		"wmo":"06265",
+		"latitude":"52.34000015",
+		"longitude":"5.21999979",
+		"elevation":"0.3"
+		},
+		"observation_location": {
+		"full":"Groenhof, Almere, ",
+		"city":"Groenhof, Almere",
+		"state":"",
+		"country":"NL",
+		"country_iso3166":"NL",
+		"latitude":"52.341663",
+		"longitude":"5.221877",
+		"elevation":"0 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"IALMERE148",
+		"observation_time":"Last Updated on June 28, 9:33 PM CEST",
+		"observation_time_rfc822":"Wed, 28 Jun 2017 21:33:29 +0200",
+		"observation_epoch":"1498678409",
+		"local_time_rfc822":"Wed, 28 Jun 2017 21:45:03 +0200",
+		"local_epoch":"1498679103",
+		"local_tz_short":"CEST",
+		"local_tz_long":"Europe/Amsterdam",
+		"local_tz_offset":"+0200",
+		"weather":"Mostly Cloudy",
+		"temperature_string":"65.3 F (18.5 C)",
+		"temp_f":65.3,
+		"temp_c":18.5,
+		"relative_humidity":"89%",
+		"wind_string":"From the SW at 1.2 MPH Gusting to 3.7 MPH",
+		"wind_dir":"SW",
+		"wind_degrees":222,
+		"wind_mph":1.2,
+		"wind_gust_mph":"3.7",
+		"wind_kph":1.9,
+		"wind_gust_kph":"6.0",
+		"pressure_mb":"993.5",
+		"pressure_in":"29.34",
+		"pressure_trend":"",
+		"dewpoint_string":"62 F (17 C)",
+		"dewpoint_f":62,
+		"dewpoint_c":17,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"65.3 F (18.5 C)",
+		"feelslike_f":"65.3",
+		"feelslike_c":"18.5",
+		"visibility_mi":"5",
+		"visibility_km":"8",
+		"solarradiation":"--",
+		"UV":"0","precip_1hr_string":"-999.00 in ( 0 mm)",
+		"precip_1hr_in":"-999.00",
+		"precip_1hr_metric":" 0",
+		"precip_today_string":"0.25 in (6 mm)",
+		"precip_today_in":"0.25",
+		"precip_today_metric":"6",
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+		"forecast_url":"http://www.wunderground.com/global/stations/06265.html",
+		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=IALMERE148",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=52.341663,5.221877",
+		"nowcast":""
+	}
+}

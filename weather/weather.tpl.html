@@ -1,9 +1,29 @@
 <div class="weather">
-    <div class="weather__icon">
-        <canvas id="icon" width="32" height="32"></canvas>
+    <div class="curweather">
+        <div class="curweather__temp">
+            <div class="curweather__temp-location">{{ vm.location }}</div>
+            <div class="curweather__temp-degrees">{{ vm.weather.temp_c | number: 0 }}°<canvas id="icon" width="32" height="32"></canvas></div>
+        </div>
+        <div class="curweather__date">
+            <span class="time">{{ vm.time }}</span>
+            <span class="day">{{ vm.day }}</span>
+            <span class="full">{{ vm.date }}</span>
+        </div>
     </div>
-    <div class="weather__description">
-        {{ vm.weather.temp_c | number: 0 }}°C
-        {{ vm.location }}
+    <div class="forecast">
+        <div class="forecast__cast col-xs-6 col-sm-6 col-md-3 col-lg-2" ng-repeat="(key, val) in vm.forecast | limitTo: 5" ng-show="$index > 0">
+            <div class="forecast__cast-icon">
+                <canvas id="icon{{ key }}" ng-init="vm.getIcon(val.icon, key)"></canvas>
+            </div>
+
+            <div class="forecast__cast-degrees">
+                {{ val.high.celsius | number: 0 }}<i>°</i>
+            </div>
+
+            <div class="forecast__cast-date">
+                {{ val.date.weekday }}
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
     </div>
 </div>

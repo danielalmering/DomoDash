@@ -1,0 +1,960 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "forecast10day": 1
+  }
+	}
+		,
+	"forecast":{
+		"txt_forecast": {
+		"date":"9:15 PM CEST",
+		"forecastday": [
+		{
+		"period":0,
+		"icon":"partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+		"title":"Wednesday",
+		"fcttext":"Partly cloudy. Lows overnight in the mid 50s.",
+		"fcttext_metric":"Partly cloudy. Low 14C.",
+		"pop":"10"
+		}
+		,
+		{
+		"period":1,
+		"icon":"nt_partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+		"title":"Wednesday Night",
+		"fcttext":"Some clouds. Low 56F. Winds SW at 5 to 10 mph.",
+		"fcttext_metric":"Partly cloudy skies. Low 14C. Winds light and variable.",
+		"pop":"10"
+		}
+		,
+		{
+		"period":2,
+		"icon":"cloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/cloudy.gif",
+		"title":"Thursday",
+		"fcttext":"Overcast. A stray shower or thunderstorm is possible. High near 70F. Winds SW at 5 to 10 mph.",
+		"fcttext_metric":"Cloudy. A stray shower or thunderstorm is possible. High 21C. Winds SW at 10 to 15 km/h.",
+		"pop":"20"
+		}
+		,
+		{
+		"period":3,
+		"icon":"nt_cloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_cloudy.gif",
+		"title":"Thursday Night",
+		"fcttext":"Cloudy skies. Low 57F. Winds light and variable.",
+		"fcttext_metric":"Cloudy skies. Low 14C. Winds light and variable.",
+		"pop":"10"
+		}
+		,
+		{
+		"period":4,
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"title":"Friday",
+		"fcttext":"Cloudy with occasional light rain. Thunder possible. High 68F. Winds WSW at 10 to 15 mph. Chance of rain 70%.",
+		"fcttext_metric":"Cloudy with occasional light rain. Thunder possible. High near 20C. Winds WSW at 15 to 25 km/h. Chance of rain 70%.",
+		"pop":"70"
+		}
+		,
+		{
+		"period":5,
+		"icon":"nt_rain",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_rain.gif",
+		"title":"Friday Night",
+		"fcttext":"Showers early, becoming a steady rain late. Low 57F. Winds W at 10 to 15 mph. Chance of rain 90%. Rainfall near a quarter of an inch.",
+		"fcttext_metric":"Rain showers in the evening will evolve into a more steady rain overnight. Low 14C. Winds W at 15 to 25 km/h. Chance of rain 90%. Rainfall around 6mm.",
+		"pop":"90"
+		}
+		,
+		{
+		"period":6,
+		"icon":"rain",
+		"icon_url":"http://icons.wxug.com/i/c/k/rain.gif",
+		"title":"Saturday",
+		"fcttext":"Rain likely. High 62F. Winds NW at 15 to 25 mph. Chance of rain 100%. Rainfall near a half an inch.",
+		"fcttext_metric":"Rain likely. High 17C. Winds NW at 25 to 40 km/h. Chance of rain 100%. Rainfall near 12mm.",
+		"pop":"100"
+		}
+		,
+		{
+		"period":7,
+		"icon":"nt_chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_chancerain.gif",
+		"title":"Saturday Night",
+		"fcttext":"Showers in the evening, then partly cloudy overnight. Low near 55F. Winds WNW at 15 to 25 mph. Chance of rain 50%.",
+		"fcttext_metric":"Showers in the evening, then partly cloudy overnight. Low 13C. Winds WNW at 25 to 40 km/h. Chance of rain 50%.",
+		"pop":"50"
+		}
+		,
+		{
+		"period":8,
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"title":"Sunday",
+		"fcttext":"Showers in the morning, then cloudy in the afternoon. High 66F. Winds W at 15 to 25 mph. Chance of rain 40%.",
+		"fcttext_metric":"Showers in the morning, then cloudy in the afternoon. High 19C. Winds W at 25 to 40 km/h. Chance of rain 40%.",
+		"pop":"40"
+		}
+		,
+		{
+		"period":9,
+		"icon":"nt_partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+		"title":"Sunday Night",
+		"fcttext":"Mostly cloudy skies early will become partly cloudy late. A stray shower or thunderstorm is possible. Low near 55F. Winds W at 10 to 20 mph.",
+		"fcttext_metric":"Partly to mostly cloudy. A stray shower or thunderstorm is possible. Low 13C. Winds W at 15 to 30 km/h.",
+		"pop":"20"
+		}
+		,
+		{
+		"period":10,
+		"icon":"partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+		"title":"Monday",
+		"fcttext":"Sunshine and clouds mixed. Slight chance of a rain shower. High around 65F. Winds W at 15 to 25 mph.",
+		"fcttext_metric":"Intervals of clouds and sunshine. Slight chance of a rain shower. High 18C. Winds W at 15 to 30 km/h.",
+		"pop":"20"
+		}
+		,
+		{
+		"period":11,
+		"icon":"nt_partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+		"title":"Monday Night",
+		"fcttext":"A few clouds. Low 56F. Winds W at 10 to 20 mph.",
+		"fcttext_metric":"Partly cloudy. Low 14C. Winds W at 15 to 30 km/h.",
+		"pop":"10"
+		}
+		,
+		{
+		"period":12,
+		"icon":"partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+		"title":"Tuesday",
+		"fcttext":"Intervals of clouds and sunshine in the morning with more clouds for later in the day. High 68F. Winds W at 10 to 15 mph.",
+		"fcttext_metric":"Partly to mostly cloudy. High around 20C. Winds W at 15 to 25 km/h.",
+		"pop":"10"
+		}
+		,
+		{
+		"period":13,
+		"icon":"nt_partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+		"title":"Tuesday Night",
+		"fcttext":"A few clouds. Low 56F. Winds SW at 5 to 10 mph.",
+		"fcttext_metric":"A few clouds. Low 13C. Winds SW at 10 to 15 km/h.",
+		"pop":"10"
+		}
+		,
+		{
+		"period":14,
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"title":"Wednesday",
+		"fcttext":"Partly cloudy early followed by increasing clouds with showers developing later in the day. High 71F. Winds WSW at 10 to 15 mph. Chance of rain 40%.",
+		"fcttext_metric":"Partly cloudy early followed by increasing clouds with showers developing later in the day. High 21C. Winds WSW at 10 to 15 km/h. Chance of rain 40%.",
+		"pop":"40"
+		}
+		,
+		{
+		"period":15,
+		"icon":"nt_chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_chancerain.gif",
+		"title":"Wednesday Night",
+		"fcttext":"Partly cloudy skies early will give way to occasional showers later during the night. Low 57F. N winds shifting to SE at 10 to 15 mph. Chance of rain 40%.",
+		"fcttext_metric":"Partly cloudy in the evening. Increasing clouds with periods of showers after midnight. Low 14C. Winds E at 10 to 15 km/h. Chance of rain 40%.",
+		"pop":"40"
+		}
+		,
+		{
+		"period":16,
+		"icon":"partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+		"title":"Thursday",
+		"fcttext":"Partly cloudy. High 71F. Winds SSW at 10 to 20 mph.",
+		"fcttext_metric":"Intervals of clouds and sunshine. High 22C. Winds SSW at 15 to 30 km/h.",
+		"pop":"20"
+		}
+		,
+		{
+		"period":17,
+		"icon":"nt_partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+		"title":"Thursday Night",
+		"fcttext":"A few clouds from time to time. Low 58F. Winds SSW at 10 to 20 mph.",
+		"fcttext_metric":"Partly cloudy skies. Low around 15C. Winds SSW at 15 to 30 km/h.",
+		"pop":"20"
+		}
+		,
+		{
+		"period":18,
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"title":"Friday",
+		"fcttext":"Considerable cloudiness with occasional rain showers. High 72F. Winds WSW at 10 to 20 mph. Chance of rain 50%.",
+		"fcttext_metric":"Considerable cloudiness with occasional rain showers. High 22C. Winds WSW at 15 to 30 km/h. Chance of rain 50%.",
+		"pop":"50"
+		}
+		,
+		{
+		"period":19,
+		"icon":"nt_partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/nt_partlycloudy.gif",
+		"title":"Friday Night",
+		"fcttext":"Considerable clouds early. Some decrease in clouds late. Low 59F. Winds W at 10 to 20 mph.",
+		"fcttext_metric":"Considerable clouds early. Some decrease in clouds late. Low around 15C. Winds W at 15 to 30 km/h.",
+		"pop":"20"
+		}
+		]
+		},
+		"simpleforecast": {
+		"forecastday": [
+		{"date":{
+	"epoch":"1498669200",
+	"pretty":"7:00 PM CEST on June 28, 2017",
+	"day":28,
+	"month":6,
+	"year":2017,
+	"yday":178,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"June",
+	"monthname_short":"Jun",
+	"weekday_short":"Wed",
+	"weekday":"Wednesday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":1,
+		"high": {
+		"fahrenheit":"71",
+		"celsius":"21"
+		},
+		"low": {
+		"fahrenheit":"56",
+		"celsius":"13"
+		},
+		"conditions":"Partly Cloudy",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+		"skyicon":"",
+		"pop":10,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_day": {
+		"in": null,
+		"mm": null
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": null,
+		"cm": null
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 13,
+		"kph": 21,
+		"dir": "",
+		"degrees": 0
+		},
+		"avewind": {
+		"mph": 2,
+		"kph": 2,
+		"dir": "SW",
+		"degrees": 231
+		},
+		"avehumidity": 96,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1498755600",
+	"pretty":"7:00 PM CEST on June 29, 2017",
+	"day":29,
+	"month":6,
+	"year":2017,
+	"yday":179,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"June",
+	"monthname_short":"Jun",
+	"weekday_short":"Thu",
+	"weekday":"Thursday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":2,
+		"high": {
+		"fahrenheit":"70",
+		"celsius":"21"
+		},
+		"low": {
+		"fahrenheit":"57",
+		"celsius":"14"
+		},
+		"conditions":"Overcast",
+		"icon":"cloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/cloudy.gif",
+		"skyicon":"",
+		"pop":20,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 10,
+		"kph": 16,
+		"dir": "SW",
+		"degrees": 236
+		},
+		"avewind": {
+		"mph": 9,
+		"kph": 14,
+		"dir": "SW",
+		"degrees": 236
+		},
+		"avehumidity": 75,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1498842000",
+	"pretty":"7:00 PM CEST on June 30, 2017",
+	"day":30,
+	"month":6,
+	"year":2017,
+	"yday":180,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"June",
+	"monthname_short":"Jun",
+	"weekday_short":"Fri",
+	"weekday":"Friday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":3,
+		"high": {
+		"fahrenheit":"68",
+		"celsius":"20"
+		},
+		"low": {
+		"fahrenheit":"57",
+		"celsius":"14"
+		},
+		"conditions":"Chance of Rain",
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"skyicon":"",
+		"pop":70,
+		"qpf_allday": {
+		"in": 0.30,
+		"mm": 8
+		},
+		"qpf_day": {
+		"in": 0.08,
+		"mm": 2
+		},
+		"qpf_night": {
+		"in": 0.22,
+		"mm": 6
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 15,
+		"kph": 24,
+		"dir": "WSW",
+		"degrees": 248
+		},
+		"avewind": {
+		"mph": 12,
+		"kph": 19,
+		"dir": "WSW",
+		"degrees": 248
+		},
+		"avehumidity": 74,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1498928400",
+	"pretty":"7:00 PM CEST on July 01, 2017",
+	"day":1,
+	"month":7,
+	"year":2017,
+	"yday":181,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"July",
+	"monthname_short":"Jul",
+	"weekday_short":"Sat",
+	"weekday":"Saturday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":4,
+		"high": {
+		"fahrenheit":"62",
+		"celsius":"17"
+		},
+		"low": {
+		"fahrenheit":"55",
+		"celsius":"13"
+		},
+		"conditions":"Rain",
+		"icon":"rain",
+		"icon_url":"http://icons.wxug.com/i/c/k/rain.gif",
+		"skyicon":"",
+		"pop":100,
+		"qpf_allday": {
+		"in": 0.46,
+		"mm": 12
+		},
+		"qpf_day": {
+		"in": 0.43,
+		"mm": 11
+		},
+		"qpf_night": {
+		"in": 0.03,
+		"mm": 1
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 25,
+		"kph": 40,
+		"dir": "NW",
+		"degrees": 308
+		},
+		"avewind": {
+		"mph": 18,
+		"kph": 29,
+		"dir": "NW",
+		"degrees": 308
+		},
+		"avehumidity": 87,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1499014800",
+	"pretty":"7:00 PM CEST on July 02, 2017",
+	"day":2,
+	"month":7,
+	"year":2017,
+	"yday":182,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"July",
+	"monthname_short":"Jul",
+	"weekday_short":"Sun",
+	"weekday":"Sunday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":5,
+		"high": {
+		"fahrenheit":"66",
+		"celsius":"19"
+		},
+		"low": {
+		"fahrenheit":"55",
+		"celsius":"13"
+		},
+		"conditions":"Chance of Rain",
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"skyicon":"",
+		"pop":40,
+		"qpf_allday": {
+		"in": 0.01,
+		"mm": 0
+		},
+		"qpf_day": {
+		"in": 0.01,
+		"mm": 0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 25,
+		"kph": 40,
+		"dir": "W",
+		"degrees": 279
+		},
+		"avewind": {
+		"mph": 17,
+		"kph": 27,
+		"dir": "W",
+		"degrees": 279
+		},
+		"avehumidity": 75,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1499101200",
+	"pretty":"7:00 PM CEST on July 03, 2017",
+	"day":3,
+	"month":7,
+	"year":2017,
+	"yday":183,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"July",
+	"monthname_short":"Jul",
+	"weekday_short":"Mon",
+	"weekday":"Monday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":6,
+		"high": {
+		"fahrenheit":"65",
+		"celsius":"18"
+		},
+		"low": {
+		"fahrenheit":"56",
+		"celsius":"13"
+		},
+		"conditions":"Partly Cloudy",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+		"skyicon":"",
+		"pop":20,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 25,
+		"kph": 40,
+		"dir": "W",
+		"degrees": 276
+		},
+		"avewind": {
+		"mph": 17,
+		"kph": 27,
+		"dir": "W",
+		"degrees": 276
+		},
+		"avehumidity": 67,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1499187600",
+	"pretty":"7:00 PM CEST on July 04, 2017",
+	"day":4,
+	"month":7,
+	"year":2017,
+	"yday":184,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"July",
+	"monthname_short":"Jul",
+	"weekday_short":"Tue",
+	"weekday":"Tuesday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":7,
+		"high": {
+		"fahrenheit":"68",
+		"celsius":"20"
+		},
+		"low": {
+		"fahrenheit":"56",
+		"celsius":"13"
+		},
+		"conditions":"Partly Cloudy",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+		"skyicon":"",
+		"pop":10,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 15,
+		"kph": 24,
+		"dir": "W",
+		"degrees": 267
+		},
+		"avewind": {
+		"mph": 11,
+		"kph": 18,
+		"dir": "W",
+		"degrees": 267
+		},
+		"avehumidity": 69,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1499274000",
+	"pretty":"7:00 PM CEST on July 05, 2017",
+	"day":5,
+	"month":7,
+	"year":2017,
+	"yday":185,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"July",
+	"monthname_short":"Jul",
+	"weekday_short":"Wed",
+	"weekday":"Wednesday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":8,
+		"high": {
+		"fahrenheit":"71",
+		"celsius":"22"
+		},
+		"low": {
+		"fahrenheit":"57",
+		"celsius":"14"
+		},
+		"conditions":"Chance of Rain",
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"skyicon":"",
+		"pop":40,
+		"qpf_allday": {
+		"in": 0.16,
+		"mm": 4
+		},
+		"qpf_day": {
+		"in": 0.11,
+		"mm": 3
+		},
+		"qpf_night": {
+		"in": 0.04,
+		"mm": 1
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 15,
+		"kph": 24,
+		"dir": "WSW",
+		"degrees": 240
+		},
+		"avewind": {
+		"mph": 10,
+		"kph": 16,
+		"dir": "WSW",
+		"degrees": 240
+		},
+		"avehumidity": 63,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1499360400",
+	"pretty":"7:00 PM CEST on July 06, 2017",
+	"day":6,
+	"month":7,
+	"year":2017,
+	"yday":186,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"July",
+	"monthname_short":"Jul",
+	"weekday_short":"Thu",
+	"weekday":"Thursday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":9,
+		"high": {
+		"fahrenheit":"71",
+		"celsius":"22"
+		},
+		"low": {
+		"fahrenheit":"58",
+		"celsius":"14"
+		},
+		"conditions":"Partly Cloudy",
+		"icon":"partlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/partlycloudy.gif",
+		"skyicon":"",
+		"pop":20,
+		"qpf_allday": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_day": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 20,
+		"kph": 32,
+		"dir": "SSW",
+		"degrees": 198
+		},
+		"avewind": {
+		"mph": 13,
+		"kph": 21,
+		"dir": "SSW",
+		"degrees": 198
+		},
+		"avehumidity": 70,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		,
+		{"date":{
+	"epoch":"1499446800",
+	"pretty":"7:00 PM CEST on July 07, 2017",
+	"day":7,
+	"month":7,
+	"year":2017,
+	"yday":187,
+	"hour":19,
+	"min":"00",
+	"sec":0,
+	"isdst":"1",
+	"monthname":"July",
+	"monthname_short":"Jul",
+	"weekday_short":"Fri",
+	"weekday":"Friday",
+	"ampm":"PM",
+	"tz_short":"CEST",
+	"tz_long":"Europe/Amsterdam"
+},
+		"period":10,
+		"high": {
+		"fahrenheit":"72",
+		"celsius":"22"
+		},
+		"low": {
+		"fahrenheit":"59",
+		"celsius":"15"
+		},
+		"conditions":"Chance of Rain",
+		"icon":"chancerain",
+		"icon_url":"http://icons.wxug.com/i/c/k/chancerain.gif",
+		"skyicon":"",
+		"pop":50,
+		"qpf_allday": {
+		"in": 0.09,
+		"mm": 2
+		},
+		"qpf_day": {
+		"in": 0.08,
+		"mm": 2
+		},
+		"qpf_night": {
+		"in": 0.00,
+		"mm": 0
+		},
+		"snow_allday": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_day": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"snow_night": {
+		"in": 0.0,
+		"cm": 0.0
+		},
+		"maxwind": {
+		"mph": 20,
+		"kph": 32,
+		"dir": "WSW",
+		"degrees": 238
+		},
+		"avewind": {
+		"mph": 14,
+		"kph": 23,
+		"dir": "WSW",
+		"degrees": 238
+		},
+		"avehumidity": 66,
+		"maxhumidity": 0,
+		"minhumidity": 0
+		}
+		]
+		}
+	}
+}

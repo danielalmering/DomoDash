@@ -11,6 +11,7 @@ angular.module('main', [])
   .constant('NEWS_RSS_MAXITEMS',          CONFIG_NEWS_RSS_MAXITEMS)
   .constant('COLUMS',                     CONFIG_COLUMS)
   .constant('BLOCKS',                     CONFIG_BLOCKS)
+  .constant('TABS',                       CONFIG_TABS)
   .run(function($interval, $rootScope, REFRESH, BGIMAGES, HOSTLOGIN){
 
       $rootScope.background = BGIMAGES;

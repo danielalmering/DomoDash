@@ -26,16 +26,13 @@ angular.module('main').directive('grid', function($compile, COLUMS, BLOCKS) {
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><switches></switches></block>');
                         break;
                     case 'News':
-                        angular.element(document.getElementById(res.colum)).append('<block class="block news ' + res.class +'"><news></news></block>');
+                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><news></news></block>');
                         break;
-                    case 'Date':
-                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><date></date></block>');
+                    case 'Tabs':
+                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><tabs id="tabs"></tabs></block>');
                         break;
                     case 'Weather':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><weather></weather></block>');
-                        break;
-                    case 'Forecast':
-                        angular.element(document.getElementById(res.colum)).append('<block class="block forecast ' + res.class +'"><forecast></forecast></block>');
                         break;
                     default:
                 }

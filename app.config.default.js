@@ -20,11 +20,13 @@ var CONFIG_COLUMS                     = [
 ];
 
 var CONFIG_BLOCKS                     = [
-    {type: 'Heading', class: 'col-xs-12 col-sm-12', colum: 'colum1', title: 'Schakelaars'},
-    {type: 'Switches', class: 'col-xs-12 col-sm-6', colum: 'colum1'},
+    {type: 'Tabs', class: 'col-xs-12 col-sm-12', colum: 'colum1'},
     {type: 'Heading', class: 'col-xs-12 col-sm-12', colum: 'colum2', title: 'Nieuws'},
     {type: 'News', class: 'col-xs-12 col-sm-12', colum: 'colum2'},
-    {type: 'Date', class: 'col-xs-12 col-sm-12', colum: 'colum3'},
-    {type: 'Weather', class: 'col-xs-12 col-sm-12', colum: 'colum3'},
-    {type: 'Forecast', class: 'col-xs-12 col-sm-12', colum: 'colum3'}
+    {type: 'Weather', class: 'col-xs-12 col-sm-12', colum: 'colum3'}
+];
+
+var CONFIG_TABS                       = [
+    {tab: '1', type: 'Switches', class: 'col-xs-12 col-sm-6', title: 'Schakelaars'},
+    {tab: '2', type: 'Switches', class: 'col-xs-12 col-sm-6', title: 'Scenes'}
 ];
