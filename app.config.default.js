@@ -29,4 +29,4 @@ var CONFIG_BLOCKS                     = [
 var CONFIG_TABS                       = [
     {tab: '1', type: 'Switches', class: 'col-xs-12 col-sm-6', title: 'Schakelaars'},
     {tab: '2', type: 'Switches', class: 'col-xs-12 col-sm-6', title: 'Scenes'}
-];
+]; // Max 2 tabs!!
