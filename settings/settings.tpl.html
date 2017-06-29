@@ -9,5 +9,81 @@
     <input name="hostname" placeholder="Weather location" ng-model="vm.settings.WEATHER_LOCATION" type="text" required=""><br />
     <input name="hostname" placeholder="Weather refreshtimeout" ng-model="vm.settings.WEATHER_REFRESH" type="number" required=""><br />
     <input name="hostname" placeholder="News locations amount" ng-model="vm.settings.NEWS_RSS_MAXITEMS" type="number" required=""><br />
+
+    <div class="colums">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Colum number</th>
+                    <th>Colum class</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="colum in vm.settings.colums">
+                    <td><input type="checkbox" ng-model="colum.selected"/></td>
+                    <td><input type="text" class="form-control" ng-model="colum.colum" required/></td>
+                    <td><input type="text" class="form-control" ng-model="colum.class" required/></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form-group">
+            <a ng-hide="!vm.settings.colums.length" ng-click="vm.editColums('', 'remove')">remove</a>
+            <a ng-click="vm.editColums(vm.settings.colums, 'add')">add</a>
+        </div>
+    </div>
+
+    <div class="blocks">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Block type</th>
+                    <th>Block class</th>
+                    <th>Block place colum</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="block in vm.settings.blocks">
+                    <td><input type="checkbox" ng-model="block.selected"/></td>
+                    <td><input type="text" class="form-control" ng-model="block.type" required/></td>
+                    <td><input type="text" class="form-control" ng-model="block.class" required/></td>
+                    <td><input type="text" class="form-control" ng-model="block.colum" required/></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form-group">
+            <a ng-hide="!vm.settings.blocks.length" ng-click="vm.editBlocks('', 'remove')">remove</a>
+            <a ng-click="vm.editBlocks(vm.settings.blocks, 'add')">add</a>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Tab id</th>
+                    <th>Tab type</th>
+                    <th>Tab class</th>
+                    <th>Tab title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tab in vm.settings.tabs">
+                    <td><input type="checkbox" ng-model="tab.selected"/></td>
+                    <td><input type="text" class="form-control" ng-model="block.tab" required/></td>
+                    <td><input type="text" class="form-control" ng-model="block.type" required/></td>
+                    <td><input type="text" class="form-control" ng-model="block.class" required/></td>
+                    <td><input type="text" class="form-control" ng-model="block.title" required/></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form-group">
+            <a ng-hide="!vm.settings.tabs.length" ng-click="vm.editTabs('', 'remove')">remove</a>
+            <a ng-click="vm.editTabs(vm.settings.tabs, 'add')">add</a>
+        </div>
+    </div>
+
     <button ng-click="vm.saveSettings()" type="button" class="btn btn-primary">Save Changes</button>
 </form>
