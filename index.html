@@ -23,6 +23,11 @@
         <script src="/app.run.js"></script>
         <script src="/app.filters.js"></script>
 
+        <!-- Settings -->
+        <script src="/settings/settings.controller.js"></script>
+        <script src="/settings/settings.directive.js"></script>
+        <!-- <link rel="stylesheet" href="/switches/switches.css" /> -->
+
         <!-- Switches -->
         <script src="/switches/switches.controller.js"></script>
         <script src="/switches/switches.directive.js"></script>
@@ -53,6 +58,8 @@
     <body ng-style="{'background-image': 'url(/assets/img/bg/' + background + '.gif)'}">
 
         <div class="container">
+
+            <settings></settings>
 
             <grid id="colums"></grid>
 

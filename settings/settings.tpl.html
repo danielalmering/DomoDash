@@ -1,0 +1,13 @@
+<form>
+    <input name="hostname" placeholder="Hostname" ng-model="vm.settings.HOSTNAME" type="text" required=""><br />
+    <input name="hostname" placeholder="Username" ng-model="vm.USERNAME" type="text" required=""><br />
+    <input name="hostname" placeholder="Password" ng-model="vm.PASSWORD" type="password" required=""><br />
+    <input name="hostname" placeholder="All refreshtimeout" ng-model="vm.settings.REFRESH" type="number" required=""><br />
+    <input name="hostname" placeholder="Backgroundimages" ng-model="vm.settings.BGIMAGES" type="number" required=""><br />
+    <input name="hostname" placeholder="Weather wunderground api" ng-model="vm.settings.WEATHER_WUNDERGROUND_API" type="text" required=""><br />
+    <input name="hostname" placeholder="Weather country" ng-model="vm.settings.WEATHER_COUNTRY" type="text" required=""><br />
+    <input name="hostname" placeholder="Weather location" ng-model="vm.settings.WEATHER_LOCATION" type="text" required=""><br />
+    <input name="hostname" placeholder="Weather refreshtimeout" ng-model="vm.settings.WEATHER_REFRESH" type="number" required=""><br />
+    <input name="hostname" placeholder="News locations amount" ng-model="vm.settings.NEWS_RSS_MAXITEMS" type="number" required=""><br />
+    <button ng-click="vm.saveSettings()" type="button" class="btn btn-primary">Save Changes</button>
+</form>
