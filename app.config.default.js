@@ -3,7 +3,7 @@
 //////////////////////
 
 var CONFIG_HOSTNAME                   = 'http://191.168.1.0:8084';
-var CONFIG_HOSTLOGIN                  = ''; // encode username password to base64
+var CONFIG_HOSTLOGIN                  = 'username=**USERNAME**&password=**PASSWORD**&'; // encode **USERNAME** & **PASSWORD** to base64
 var CONFIG_REFRESH                    = '5000';
 var CONFIG_BGIMAGES                   = '3';
 var CONFIG_WEATHER_WUNDERGROUND_API   = '';
