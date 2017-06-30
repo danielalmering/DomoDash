@@ -1,11 +1,11 @@
-angular.module('main').directive('grid', function($compile, COLUMS, BLOCKS) {
+angular.module('main').directive('grid', function($compile, CONFIG) {
     return {
         scope: {},
         link: function(scope, element) {
             var vm = this;
 
-            vm.colums = COLUMS;
-            vm.blocks = BLOCKS;
+            vm.colums = CONFIG.colums;
+            vm.blocks = CONFIG.blocks;
 
             angular.forEach(vm.colums, function (res) {
                 angular.element(document.getElementById('colums')).append('<div id="colum' + res.colum + '" class="colum ' + res.class +'"></div>');

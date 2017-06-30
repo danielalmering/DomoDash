@@ -11,6 +11,7 @@
     border-radius: 7px;
     overflow: hidden;
     border: 1px solid #000;
+    margin-bottom: 10px;
 
 
     -webkit-transition: opacity 0.3s ease-in;

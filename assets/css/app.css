@@ -55,7 +55,10 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    /* background: linear-gradient(to top, rgba(35,37,43,0.9), rgba(255,0,0,1)); */
+}
+
+#colum1 {
+    margin-top: 55px;
 }
 
 

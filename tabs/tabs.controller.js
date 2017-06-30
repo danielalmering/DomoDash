@@ -1,7 +1,7 @@
-function TabsController($scope, $element, $rootScope, $http, $compile, TABS) {
+function TabsController($scope, $element, $rootScope, $http, $compile, CONFIG) {
 
     var vm                = this;
-    vm.tabs               = TABS;
+    vm.tabs               = CONFIG.tabs;
     vm.activetab          = 0;
 
     vm.setTab             = setTab;

@@ -1,89 +1,165 @@
-<form>
-    <input name="hostname" placeholder="Hostname" ng-model="vm.settings.HOSTNAME" type="text" required=""><br />
-    <input name="hostname" placeholder="Username" ng-model="vm.USERNAME" type="text" required=""><br />
-    <input name="hostname" placeholder="Password" ng-model="vm.PASSWORD" type="password" required=""><br />
-    <input name="hostname" placeholder="All refreshtimeout" ng-model="vm.settings.REFRESH" type="number" required=""><br />
-    <input name="hostname" placeholder="Backgroundimages" ng-model="vm.settings.BGIMAGES" type="number" required=""><br />
-    <input name="hostname" placeholder="Weather wunderground api" ng-model="vm.settings.WEATHER_WUNDERGROUND_API" type="text" required=""><br />
-    <input name="hostname" placeholder="Weather country" ng-model="vm.settings.WEATHER_COUNTRY" type="text" required=""><br />
-    <input name="hostname" placeholder="Weather location" ng-model="vm.settings.WEATHER_LOCATION" type="text" required=""><br />
-    <input name="hostname" placeholder="Weather refreshtimeout" ng-model="vm.settings.WEATHER_REFRESH" type="number" required=""><br />
-    <input name="hostname" placeholder="News locations amount" ng-model="vm.settings.NEWS_RSS_MAXITEMS" type="number" required=""><br />
+<div class="settings">
+    <div class="settings__button fa fa-cog" ng-click="vm.toggle()" ng-class="{ 'active': vm.isActive}"></div>
+    <div class="settings__message" ng-if="!vm.load">Configuration file not found!</div>
+    <div class="settings__form" ng-if="vm.isActive">
+        <form autocomplete="off">
+            <div class="col-xs-12 col-sm-6">
+                <div class="wrap">
+                    <h3>Global settings</h3>
+                    <div class="settings__form-input">
+                        <label>Hostname (domoticz)</label>
+                        <input name="hostname" placeholder="127.0.0.1:8084" ng-model="vm.settings.HOSTNAME" type="text" required="">
+                    </div>
+                    <div class="settings__form-input">
+                        <label>Username (domoticz)</label>
+                        <input name="username" placeholder="Username" autocomplete="off" ng-model="vm.username" type="text" required="">
+                    </div>
+                    <div class="settings__form-input">
+                        <label>Password (domoticz)</label>
+                        <input name="password" placeholder="*******" autocomplete="off" ng-model="vm.password" type="text" required="">
+                    </div>
+                    <div class="settings__form-input">
+                        <label>Refresh Timeout</label>
+                        <input name="refresh" placeholder="9000" ng-model="vm.settings.REFRESH" type="number" required="">
+                    </div>
+                    <div class="settings__form-input">
+                        <label>Quantity BGIMAGES</label>
+                        <input name="bgimages" placeholder="3" ng-model="vm.settings.BGIMAGES" type="number" required="">
+                    </div>
+                </div>
+                <div class="wrap">
+                    <h3>Weather settings <span>(wunderground)</span></h3>
+                    <div class="settings__form-input">
+                        <label>API KEY</label>
+                        <input name="hostname" placeholder="a342afafkj234" ng-model="vm.settings.WEATHER_WUNDERGROUND_API" type="text" required="">
+                    </div>
+                    <div class="settings__form-input">
+                        <label>Country</label>
+                        <input name="hostname" placeholder="NL" ng-model="vm.settings.WEATHER_COUNTRY" type="text" required="">
+                    </div>
+                    <div class="settings__form-input">
+                        <label>Location</label>
+                        <input name="hostname" placeholder="Weather location" ng-model="vm.settings.WEATHER_LOCATION" type="text" required="">
+                    </div>
+                    <div class="settings__form-input">
+                        <label>Refresh Timeout</label>
+                        <input name="hostname" placeholder="300000" ng-model="vm.settings.WEATHER_REFRESH" type="number" required="">
+                    </div>
+                </div>
+                <div class="wrap">
+                    <h3>News settings <span>(rss reader)</span></h3><br />
+                    <div class="settings__form-input">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>News location <i class="fa fa-question-circle" aria-hidden="true" title="rss feed url"></th>
+                                    <th>News quantity <i class="fa fa-question-circle" aria-hidden="true" title="1"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="newsitem in vm.settings.news">
+                                    <td><input type="checkbox" ng-model="newsitem.selected"/></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="newsitem.location" required/></div></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="newsitem.quantity" required/></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                            <a class="button" ng-hide="!vm.settings.news.length" ng-click="vm.editNews('', 'remove')">remove</a>
+                            <a class="button" ng-click="vm.editNews(vm.settings.news, 'add')">add</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="wrap">
+                    <h3>Grid layout</h3><br />
+                    <div class="colums">
+                        <h4>Colums</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Colum number <i class="fa fa-question-circle" aria-hidden="true" title="1, 2, 3"></th>
+                                    <th>Colum class <i class="fa fa-question-circle" aria-hidden="true" title="class based on bootstrap"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="colum in vm.settings.colums">
+                                    <td><input type="checkbox" ng-model="colum.selected"/></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="colum.colum" required/></div></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="colum.class" required/></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                            <a class="button" ng-hide="!vm.settings.colums.length" ng-click="vm.editColums('', 'remove')">remove</a>
+                            <a class="button" ng-click="vm.editColums(vm.settings.colums, 'add')">add</a>
+                        </div>
+                    </div>
 
-    <div class="colums">
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Colum number</th>
-                    <th>Colum class</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="colum in vm.settings.colums">
-                    <td><input type="checkbox" ng-model="colum.selected"/></td>
-                    <td><input type="text" class="form-control" ng-model="colum.colum" required/></td>
-                    <td><input type="text" class="form-control" ng-model="colum.class" required/></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="form-group">
-            <a ng-hide="!vm.settings.colums.length" ng-click="vm.editColums('', 'remove')">remove</a>
-            <a ng-click="vm.editColums(vm.settings.colums, 'add')">add</a>
-        </div>
-    </div>
+                    <div class="blocks">
+                        <h4>Blocks</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Block type <i class="fa fa-question-circle" aria-hidden="true" title="Heading, News, Switches, Weather"></i></th>
+                                    <th>Block class <i class="fa fa-question-circle" aria-hidden="true" title="class based on bootstrap"></i></th>
+                                    <th>Block colum <i class="fa fa-question-circle" aria-hidden="true" title="colum1, colum2, colum3"></th>
+                                    <th>Block title <i class="fa fa-question-circle" aria-hidden="true" title="If type heading then title"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="block in vm.settings.blocks">
+                                    <td><input type="checkbox" ng-model="block.selected"/></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.type" required/></div></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.class" required/></div></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.colum" required/></div></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                            <a class="button" ng-hide="!vm.settings.blocks.length" ng-click="vm.editBlocks('', 'remove')">remove</a>
+                            <a class="button" ng-click="vm.editBlocks(vm.settings.blocks, 'add')">add</a>
+                        </div>
+                    </div>
 
-    <div class="blocks">
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Block type</th>
-                    <th>Block class</th>
-                    <th>Block place colum</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="block in vm.settings.blocks">
-                    <td><input type="checkbox" ng-model="block.selected"/></td>
-                    <td><input type="text" class="form-control" ng-model="block.type" required/></td>
-                    <td><input type="text" class="form-control" ng-model="block.class" required/></td>
-                    <td><input type="text" class="form-control" ng-model="block.colum" required/></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="form-group">
-            <a ng-hide="!vm.settings.blocks.length" ng-click="vm.editBlocks('', 'remove')">remove</a>
-            <a ng-click="vm.editBlocks(vm.settings.blocks, 'add')">add</a>
-        </div>
-    </div>
-
-    <div class="tabs">
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Tab id</th>
-                    <th>Tab type</th>
-                    <th>Tab class</th>
-                    <th>Tab title</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="tab in vm.settings.tabs">
-                    <td><input type="checkbox" ng-model="tab.selected"/></td>
-                    <td><input type="text" class="form-control" ng-model="block.tab" required/></td>
-                    <td><input type="text" class="form-control" ng-model="block.type" required/></td>
-                    <td><input type="text" class="form-control" ng-model="block.class" required/></td>
-                    <td><input type="text" class="form-control" ng-model="block.title" required/></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="form-group">
-            <a ng-hide="!vm.settings.tabs.length" ng-click="vm.editTabs('', 'remove')">remove</a>
-            <a ng-click="vm.editTabs(vm.settings.tabs, 'add')">add</a>
-        </div>
-    </div>
-
-    <button ng-click="vm.saveSettings()" type="button" class="btn btn-primary">Save Changes</button>
-</form>
+                    <div class="tabs">
+                        <h4>Tabs</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Tab id <i class="fa fa-question-circle" aria-hidden="true" title="1, 2"></th>
+                                    <th>Block type <i class="fa fa-question-circle" aria-hidden="true" title="News, Switches, Weather"></i></th>
+                                    <th>Tab class <i class="fa fa-question-circle" aria-hidden="true" title="class based on bootstrap"></i></th>
+                                    <th>Tab title</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="tab in vm.settings.tabs">
+                                    <td><input type="checkbox" ng-model="tab.selected"/></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="tab.tab" required/></div></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="tab.type" required/></div></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="tab.class" required/></div></td>
+                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="tab.title" required/></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                            <a class="button" ng-hide="!vm.settings.tabs.length" ng-click="vm.editTabs('', 'remove')">remove</a>
+                            <a class="button" ng-click="vm.editTabs(vm.settings.tabs, 'add')">add</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-xs-12">
+                <div class="wrap">
+                    <button class="button" ng-click="vm.saveSettings()" type="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </form>

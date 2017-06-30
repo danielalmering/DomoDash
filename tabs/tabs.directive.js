@@ -1,4 +1,4 @@
-angular.module('main').directive('tabs', function($compile, TABS) {
+angular.module('main').directive('tabs', function() {
     return {
         scope: {},
         controller: 'TabsController',

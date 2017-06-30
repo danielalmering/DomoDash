@@ -1,6 +1,6 @@
 <div class="newsrapper" ng-repeat="(key, val) in vm.newssources" ng-init="vm.getNews(key, val)">
+    <div class="news" ng-repeat="item in vm.news[key] | limitTo: val.quantity" ng-if="vm.news" ng-class="{'switch': vm.changed}">
 
-    <div class="news" ng-repeat="item in vm.news[key] | limitTo: vm.limit" ng-if="vm.news" ng-class="{'switch': vm.changed}">
         <div class="news__content">
             <div class="news__content-icon col-xs-2">
                 <i class="fa fa-newspaper-o"></i>

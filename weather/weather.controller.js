@@ -1,4 +1,4 @@
-function WeatherController($scope, $rootScope, $http, $interval, $timeout, $filter, HOSTNAME, WEATHER_WUNDERGROUND_API, WEATHER_COUNTRY, WEATHER_LOCATION, WEATHER_REFRESH) {
+function WeatherController($scope, $rootScope, $http, $interval, $timeout, $filter, CONFIG) {
 
     var vm                = this;
 
@@ -84,7 +84,7 @@ function WeatherController($scope, $rootScope, $http, $interval, $timeout, $filt
     var polling = $interval(function() {
         getWeather();
         getForecast();
-    }, WEATHER_REFRESH);
+    }, CONFIG.WEATHER_REFRESH);
 
     var timepolling = $interval(function() {
         getDate();

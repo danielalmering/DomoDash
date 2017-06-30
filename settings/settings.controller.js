@@ -2,13 +2,17 @@ function SettingsController($scope, $rootScope, $http) {
 
     var vm                = this;
     vm.settings           = {};
+    vm.load               = $rootScope.load;
 
     vm.username           = '';
     vm.password           = '';
+    vm.isActive           = false;
     vm.saveSettings       = saveSettings;
+    vm.editNews           = editNews;
     vm.editColums         = editColums;
     vm.editBlocks         = editBlocks;
     vm.editTabs           = editTabs;
+    vm.toggle             = toggle;
 
     activate();
 
@@ -20,12 +24,27 @@ function SettingsController($scope, $rootScope, $http) {
 
     //// Public interface
 
+    function toggle(){
+        vm.isActive = !vm.isActive;
+        console.log(vm.isActive);
+    }
+
     function getSettings(){
         $http.get('../config.json').then(function(res) {
             vm.settings = res.data;
-            vm.settings.colums    = [];
-            vm.settings.blocks    = [];
-            vm.settings.tabs      = [];
+
+            if(!vm.settings.news){
+                vm.settings.news      = [];
+            }
+            if(!vm.settings.colums){
+                vm.settings.colums    = [];
+            }
+            if(!vm.settings.blocks){
+                vm.settings.blocks    = [];
+            }
+            if(!vm.settings.tabs){
+                vm.settings.tabs      = [];
+            }
         });
     }
 
@@ -33,12 +52,22 @@ function SettingsController($scope, $rootScope, $http) {
 
         vm.settings.HOSTLOGIN = 'username=' + vm.username + '&password=' + vm.password + '&';
 
-        // 'CONFIG_NEWS_RSS_URLS              = ['https://crossorigin.me/http://www.nu.nl/rss/algemeen', 'https://crossorigin.me/http://feeds.feedburner.com/tweakers/nieuws'];
-
         $http.post('settings/settings.save.php', vm.settings).then(function(res) {
             getSettings();
         });
     }
+
+    function editNews(news, type){
+        if(type === 'add'){
+            vm.settings.news.push({ location: ""});
+        } else {
+            var newList = [];
+            angular.forEach(vm.settings.news, function(selected){
+                if(!selected.selected){ newList.push(selected); }
+            });
+            vm.settings.news = newList;
+        }
+    };
 
     function editColums(colum, type){
         if(type === 'add'){
@@ -54,7 +83,7 @@ function SettingsController($scope, $rootScope, $http) {
 
     function editBlocks(block, type){
         if(type === 'add'){
-            vm.settings.blocks.push({ type: "", class: "", colum: ""});
+            vm.settings.blocks.push({ type: "", class: "", colum: "", title: ""});
         } else {
             var newList = [];
             angular.forEach(vm.settings.blocks, function(selected){
