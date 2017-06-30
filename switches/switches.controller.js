@@ -1,4 +1,4 @@
-function SwitchesController($scope, $rootScope, $http, CONFIG) {
+function SwitchesController($scope, $rootScope, $http, CONFIG, HOSTLOGIN) {
 
     var vm                = this;
     vm.switches           = [];
@@ -16,7 +16,7 @@ function SwitchesController($scope, $rootScope, $http, CONFIG) {
     //// Public interface
 
     function getSwitches(){
-        $http.get(CONFIG.HOSTNAME + '/json.htm?' + CONFIG.HOSTLOGIN + 'type=devices&filter=light&used=true&order=Name').then(function(res) {
+        $http.get(CONFIG.HOSTNAME + '/json.htm?' + HOSTLOGIN + 'type=devices&filter=light&used=true&order=Name').then(function(res) {
             vm.switches = res.data.result;
         });
     }
@@ -29,7 +29,7 @@ function SwitchesController($scope, $rootScope, $http, CONFIG) {
             var status = 'Off';
         }
 
-        $http.get(CONFIG.HOSTNAME + '/json.htm?' + CONFIG.HOSTLOGIN + 'type=command&param=switchlight&idx=' + device.idx + '&switchcmd=' + status).then(function() {
+        $http.get(CONFIG.HOSTNAME + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + device.idx + '&switchcmd=' + status).then(function() {
             getSwitches();
         });
     }

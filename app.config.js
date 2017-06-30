@@ -8,6 +8,7 @@ function fetchData() {
 
     return $http.get("config.json").then(function(response) {
         app.constant("CONFIG", response.data);
+        app.constant("HOSTLOGIN", 'username=' + response.data.USERNAME + '&password=' + response.data.PASSWORD + '&');
     }, function(errorResponse) {
         app.constant("CONFIG", undefined);
     });

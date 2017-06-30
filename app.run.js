@@ -1,6 +1,6 @@
-var app = angular.module("main", []);
+var app = angular.module("main", ['ab-base64']);
 
-app.run(function($interval, $rootScope, CONFIG){
+app.run(function($interval, $rootScope, CONFIG, HOSTLOGIN){
 
     if(CONFIG === undefined){
         $rootScope.load = false;
@@ -11,7 +11,7 @@ app.run(function($interval, $rootScope, CONFIG){
         $rootScope.load = true;
         var resfresh = CONFIG.REFRESH;
         var bgimages = CONFIG.BGIMAGES;
-        $rootScope.background = CONFIG.BGIMAGES; 
+        $rootScope.background = CONFIG.BGIMAGES;
     }
 
     var polling = $interval(function() {
