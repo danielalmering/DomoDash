@@ -1,7 +1,14 @@
 <div ng-repeat="switch in vm.switches">
     <div class="switch" ng-click="vm.switchDevice(switch)">
-        {{ switch.Name }}
-        {{ switch.Status }}
-        {{ switch.LastUpdate }}
+        <div class="switch__icon">
+            <i class="fa fa-lightbulb-o"></i>
+        </div>
+        <div class="switch__context">
+            <span class="title">{{ switch.Name }}</span>
+            <span class="date">{{ switch.LastUpdate }}</span>
+        </div>
+        <div class="switch__toggle">
+            <i class="fa" ng-class="{ 'fa-toggle-off': switch.Status === 'Off', 'fa-toggle-on': switch.Status === 'On'}"></i>
+        </div>
     </div>
 </div>

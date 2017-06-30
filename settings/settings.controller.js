@@ -34,8 +34,6 @@ function SettingsController($scope, $rootScope, $http, base64) {
             vm.settings.USERNAME = base64.decode(res.data.USERNAME);
             vm.settings.PASSWORD = base64.decode(res.data.PASSWORD);
 
-            console.log(vm.settings.news);
-
             if(!vm.settings.news){
                 vm.settings.news      = [];
             }
