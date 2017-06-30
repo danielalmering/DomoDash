@@ -17,7 +17,6 @@ function NewsController($scope, $rootScope, $http, CONFIG, $timeout) {
             var news = x2js.xml_str2json(res.data);
             vm.newstitle[key] = news.rss.channel.title;
             vm.news[key]  = shuffleArray(news.rss.channel.item);
-            console.log(val.quantity);
             $timeout(function() {
                 vm.changed = false;
             }, 1000);
