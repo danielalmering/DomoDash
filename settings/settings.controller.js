@@ -26,7 +26,6 @@ function SettingsController($scope, $rootScope, $http) {
 
     function toggle(){
         vm.isActive = !vm.isActive;
-        console.log(vm.isActive);
     }
 
     function getSettings(){

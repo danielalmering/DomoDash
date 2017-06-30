@@ -5,17 +5,17 @@
         <form autocomplete="off">
             <div class="col-xs-12 col-sm-6">
                 <div class="wrap">
-                    <h3>Global settings</h3>
+                    <h3>Global settings <span>(domoticz)</span></h3>
                     <div class="settings__form-input">
-                        <label>Hostname (domoticz)</label>
+                        <label>Hostname</label>
                         <input name="hostname" placeholder="127.0.0.1:8084" ng-model="vm.settings.HOSTNAME" type="text" required="">
                     </div>
                     <div class="settings__form-input">
-                        <label>Username (domoticz)</label>
+                        <label>Username (base64 encode)</label>
                         <input name="username" placeholder="Username" autocomplete="off" ng-model="vm.username" type="text" required="">
                     </div>
                     <div class="settings__form-input">
-                        <label>Password (domoticz)</label>
+                        <label>Password (base64 encode)</label>
                         <input name="password" placeholder="*******" autocomplete="off" ng-model="vm.password" type="text" required="">
                     </div>
                     <div class="settings__form-input">
