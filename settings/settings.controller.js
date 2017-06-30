@@ -30,9 +30,11 @@ function SettingsController($scope, $rootScope, $http, base64) {
 
     function getSettings(){
         $http.get('../config.json').then(function(res) {
-            vm.settings = res.data;
-            vm.settings = base64.decode(res.data.USERNAME);
-            vm.settings = base64.decode(res.data.PASSWORD);
+            vm.settings          = res.data;
+            vm.settings.USERNAME = base64.decode(res.data.USERNAME);
+            vm.settings.PASSWORD = base64.decode(res.data.PASSWORD);
+
+            console.log(vm.settings.news);
 
             if(!vm.settings.news){
                 vm.settings.news      = [];
