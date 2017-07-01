@@ -28,6 +28,11 @@
     vertical-align: middle;
 }
 
+.switch .switch__icon.active {
+    background: #ebeef2;
+    color: #000;
+}
+
 .switch .switch__context {
     display: table-cell;
     width: calc(100% - 40px);
