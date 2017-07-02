@@ -1,0 +1,21 @@
+<div class="traffic">
+    <div class="traffic__item" ng-repeat="info in vm.traffic" ng-if="info.hasOwnProperty(vm.activestate)">
+        <div class="traffic__item-title" ng-class="{'active' : toggle.state}">
+            <div class="roadname" ng-class="{ 'nWegen': info.roadType === 'nWegen', 'aWegen': info.roadType === 'aWegen' }">{{ info.road }}</div>
+
+            <div class="location">
+                {{ info.trafficjam[0].segStart }}
+                <span ng-if="info.trafficjam.length === 1"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+                <span ng-if="info.trafficjam.length > 1"><i class="fa fa-arrow-left" aria-hidden="true"></i><i class="fa fa-arrow-right" aria-hidden="true"></i></i></span>
+                {{ info.trafficjam[0].segEnd }}
+            </div>
+
+            <div class="toggle"ng-click="toggle.state = !toggle.state" ><i class="fa" ng-class="{'fa-angle-down': !toggle.state, 'fa-angle-up': toggle.state}" aria-hidden="true"></i></div>
+        </div>
+
+        <div class="traffic__item-desc" ng-if="toggle.state">
+            {{ info.trafficjam[0].reason }}
+        </div>
+
+    </div>
+</div>

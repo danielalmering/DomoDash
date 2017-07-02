@@ -55,7 +55,10 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: 10px;
 }
+
+.heading:first-child { margin-top: 0; }
 
 #colum1 {
     margin-top: 55px;

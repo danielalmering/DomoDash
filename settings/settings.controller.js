@@ -31,8 +31,8 @@ function SettingsController($scope, $rootScope, $http, base64) {
     function getSettings(){
         $http.get('../config.json').then(function(res) {
             vm.settings          = res.data;
-            vm.settings.USERNAME = base64.decode(res.data.USERNAME);
-            vm.settings.PASSWORD = base64.decode(res.data.PASSWORD);
+            vm.settings.username = base64.decode(res.data.username);
+            vm.settings.password = base64.decode(res.data.password);
 
             if(!vm.settings.news){
                 vm.settings.news      = [];
@@ -51,8 +51,8 @@ function SettingsController($scope, $rootScope, $http, base64) {
 
     function saveSettings(){
 
-        vm.settings.USERNAME = base64.encode(vm.settings.USERNAME);
-        vm.settings.PASSWORD = base64.encode(vm.settings.PASSWORD);
+        vm.settings.username = base64.encode(vm.settings.username);
+        vm.settings.password = base64.encode(vm.settings.password);
 
         $http.post('settings/settings.save.php', vm.settings).then(function(res) {
             getSettings();

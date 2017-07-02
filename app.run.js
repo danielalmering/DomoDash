@@ -9,9 +9,9 @@ app.run(function($interval, $rootScope, CONFIG, HOSTLOGIN){
         $rootScope.background = 1;
     } else {
         $rootScope.load = true;
-        var resfresh = CONFIG.REFRESH;
-        var bgimages = CONFIG.BGIMAGES;
-        $rootScope.background = CONFIG.BGIMAGES;
+        var resfresh = CONFIG.refresh;
+        var bgimages = CONFIG.bgimages;
+        $rootScope.background = CONFIG.bgimages;
     }
 
     var polling = $interval(function() {

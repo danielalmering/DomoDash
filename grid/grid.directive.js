@@ -34,6 +34,9 @@ angular.module('main').directive('grid', function($compile, CONFIG) {
                     case 'Weather':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><weather></weather></block>');
                         break;
+                    case 'Traffic':
+                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><traffic></traffic></block>');
+                        break;
                     default:
                 }
             }

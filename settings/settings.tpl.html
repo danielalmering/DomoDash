@@ -7,43 +7,50 @@
                 <div class="wrap">
                     <h3>Global settings <span>(domoticz)</span></h3>
                     <div class="settings__form-input">
-                        <label>Hostname</label>
-                        <input name="hostname" placeholder="127.0.0.1:8084" ng-model="vm.settings.HOSTNAME" type="text" required="">
+                        <label>hostname</label>
+                        <input name="hostname" placeholder="127.0.0.1:8084" ng-model="vm.settings.hostname" type="text" required="">
                     </div>
                     <div class="settings__form-input">
-                        <label>Username</label>
-                        <input name="username" placeholder="Username" autocomplete="off" ng-model="vm.settings.USERNAME" type="text" required="">
+                        <label>username</label>
+                        <input name="username" placeholder="username" autocomplete="off" ng-model="vm.settings.username" type="text" required="">
                     </div>
                     <div class="settings__form-input">
-                        <label>Password</label>
-                        <input name="password" placeholder="*******" autocomplete="off" ng-model="vm.settings.PASSWORD" type="text" required="">
+                        <label>password</label>
+                        <input name="password" placeholder="*******" autocomplete="off" ng-model="vm.settings.password" type="text" required="">
                     </div>
                     <div class="settings__form-input">
                         <label>Refresh Timeout</label>
-                        <input name="refresh" placeholder="9000" ng-model="vm.settings.REFRESH" type="number" required="">
+                        <input name="refresh" placeholder="9000" ng-model="vm.settings.refresh" type="number" required="">
                     </div>
                     <div class="settings__form-input">
-                        <label>Quantity BGIMAGES</label>
-                        <input name="bgimages" placeholder="3" ng-model="vm.settings.BGIMAGES" type="number" required="">
+                        <label>Quantity bgimages</label>
+                        <input name="bgimages" placeholder="3" ng-model="vm.settings.bgimages" type="number" required="">
                     </div>
                 </div>
                 <div class="wrap">
                     <h3>Weather settings <span>(wunderground)</span></h3>
                     <div class="settings__form-input">
                         <label>API KEY</label>
-                        <input name="hostname" placeholder="a342afafkj234" ng-model="vm.settings.WEATHER_WUNDERGROUND_API" type="text" required="">
+                        <input name="hostname" placeholder="a342afafkj234" ng-model="vm.settings.weather_wunderground_api" type="text" required="">
                     </div>
                     <div class="settings__form-input">
                         <label>Country</label>
-                        <input name="hostname" placeholder="NL" ng-model="vm.settings.WEATHER_COUNTRY" type="text" required="">
+                        <input name="hostname" placeholder="NL" ng-model="vm.settings.weather_country" type="text" required="">
                     </div>
                     <div class="settings__form-input">
                         <label>Location</label>
-                        <input name="hostname" placeholder="Weather location" ng-model="vm.settings.WEATHER_LOCATION" type="text" required="">
+                        <input name="hostname" placeholder="Weather location" ng-model="vm.settings.weather_location" type="text" required="">
                     </div>
                     <div class="settings__form-input">
                         <label>Refresh Timeout</label>
-                        <input name="hostname" placeholder="300000" ng-model="vm.settings.WEATHER_REFRESH" type="number" required="">
+                        <input name="hostname" placeholder="300000" ng-model="vm.settings.weather_refresh" type="number" required="">
+                    </div>
+                </div>
+                <div class="wrap">
+                    <h3>Traffic settings <span>(Anwb)</span></h3>
+                    <div class="settings__form-input">
+                        <label>Feed Url</label>
+                        <input name="hostname" placeholder="https://www.anwb.nl/feeds/gethf" ng-model="vm.settings.traffic_url" type="text" required="">
                     </div>
                 </div>
                 <div class="wrap">
