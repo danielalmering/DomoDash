@@ -1,0 +1,21 @@
+{
+  "name": "dashticz_v3",
+  "version": "1.0.0",
+  "description": "domoticz angular dashboard",
+  "main": "app.config.js",
+  "scripts": {
+    "build-css": "node-sass app.scss app.css --output assets/css --output-style compressed",
+    "dev-css": "node-sass app.scss app.css --output assets/css --output-style expanded -w",
+    "dev-js": "uglifyjs /*/*.js -m -o assets/js/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielalmering/dashticz_v3.git"
+  },
+  "author": "dycati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielalmering/dashticz_v3/issues"
+  },
+  "homepage": "https://github.com/danielalmering/dashticz_v3#readme"
+}

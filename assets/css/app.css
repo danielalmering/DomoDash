@@ -1,77 +1,577 @@
 /***************************
 *** Global
 ***************************/
-
-html{
-    display: table;
-    width:100%;
-    height: 100%;
+html {
+  display: table;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    display:table-cell;
-
-    font-family: "Asap",Helvetica,Arial,sans-serif;
-    color: #fff;
-
-    background-color: #000;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size: cover;
-
-    -webkit-transition: background 5s;
-    -moz-transition: background 5s;
-    -o-transition: background 5s;
-    transition: background 5s;
+  display: table-cell;
+  font-family: "Asap",Helvetica,Arial,sans-serif;
+  color: #fff;
+  background-color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transition: background 5s;
+  -moz-transition: background 5s;
+  -o-transition: background 5s;
+  transition: background 5s;
 }
 
 .container {
-    padding-top: 10px;
-    padding-bottom:10px;
-    padding-left: 0px;
-    padding-right: 0px;
-    max-width: 100% !important;
-}
-
-.colum {
-
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  max-width: 100% !important;
 }
 
 .block {
-    display: block;
-    padding: 0 !important;
+  display: block;
+  padding: 0 !important;
 }
 
 .heading {
-    height: 45px;
-    line-height: 43px;
-    padding: 0px 15px !important;
-    background: rgba(35,37,43,0.9);
-    box-shadow: inset 0px 1px 0px 0px rgba(70,74,86,1);
-    border: 1px solid #000;
-    border-radius: 7px;
-    color: #ebeef2;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 10px;
+  height: 47px;
+  line-height: 43px;
+  padding: 0px 15px !important;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  border: 1px solid #000;
+  border-radius: 7px;
+  color: #ebeef2;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
 }
 
-.heading:first-child { margin-top: 0; }
+.heading:first-child {
+  margin-top: 0;
+}
 
 #colum1 {
-    margin-top: 55px;
+  margin-top: 55px;
 }
 
-
 /** Bootstrap **/
-
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11,
 .col-xs-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10,
 .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9,
 .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8,
 .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
-    padding-left: 5px;
-    padding-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/***************************
+*** Settings
+***************************/
+.settings {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  z-index: 999;
+  width: 100%;
+}
+
+.settings__button {
+  display: inline-block;
+  height: 45px;
+  line-height: 43px;
+  margin: 5px 5px 0px 5px;
+  padding: 0px 15px !important;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  border: 1px solid #000;
+  border-radius: 7px;
+  color: #ebeef2;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.settings__button.active {
+  color: #6a7383;
+}
+
+.settings__message {
+  display: inline-block;
+  margin: 5px 5px 0px 0px;
+  border: 2px solid #000;
+  padding: 9px 15px;
+  color: #D8000C;
+  background-color: #FFBABA;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.settings__form {
+  display: table;
+  width: calc(100% - 10px);
+  padding: 15px !important;
+  margin: 10px 5px 10px 5px;
+  padding: 0px 0px !important;
+  background: #f8fafc;
+  border-radius: 7px;
+  color: #000;
+  font-family: 'Open Sans';
+}
+
+.settings__form hr {
+  border-top: none;
+  border: 1px solid #d5dce6;
+}
+
+.settings__form .wrap {
+  display: table;
+  width: 100%;
+  padding: 15px;
+  border: 4px solid #fff;
+  border-radius: 3px;
+  margin: 5px 0px;
+}
+
+.settings__form h3 {
+  font-size: 20px;
+  color: #333c48;
+  font-weight: 700;
+  font-family: 'Open Sans';
+  margin: 0;
+}
+
+.settings__form h3 span {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.settings__form h4 {
+  font-size: 16px;
+  color: #333c48;
+  font-weight: 700;
+  font-family: 'Open Sans';
+  margin-top: 0;
+}
+
+.settings__form-input label {
+  font-weight: 600;
+  width: 100%;
+  font-size: 14px;
+  color: #7e8fa5;
+  padding: 10px 0px;
+}
+
+.settings__form-input input {
+  width: 100%;
+  border: 1px solid #d5dce6;
+  box-shadow: inset 0px 1px 0px 0px #f2f5f8;
+  padding: 8px 5px;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 3px;
+}
+
+.settings__form table {
+  width: 100%;
+}
+
+.settings__form table th {
+  border: 1px solid #d5dce6;
+  padding: 10px;
+  text-align: left;
+  background: linear-gradient(to bottom, #fff 0%, #f5f6f9 100%);
+}
+
+.settings__form table th i {
+  color: #00a8ff;
+}
+
+.settings__form table th:first-child {
+  width: 5px;
+}
+
+.settings__form .button {
+  display: inline-block;
+  border: none;
+  background: #7e8fa5;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  text-transform: capitalize;
+  cursor: pointer;
+  float: right;
+  margin-right: 5px;
+}
+
+/***************************
+*** News
+***************************/
+.newsrapper {
+  display: block;
+  margin-top: 10px;
+}
+
+.newsrapper:last-child {
+  margin-bottom: 10px;
+}
+
+.news {
+  display: table;
+  opacity: 1;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+  -webkit-transition: opacity 0.3s ease-in;
+  -moz-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  -ms-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+
+.news:first-child {
+  margin-top: 0;
+}
+
+.news__content {
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  padding: 15px;
+}
+
+.news__content-icon {
+  display: table-cell;
+  font-size: 25px;
+  width: 55px;
+}
+
+.news__content-content {
+  display: table-cell;
+  vertical-align: top;
+  width: calc(55px - 100%);
+}
+
+.news__content-content .title {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ebeef2;
+  width: 100%;
+}
+
+.news__content-content .description {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(248, 246, 243, 0.9);
+  line-height: 22px;
+  width: 100%;
+}
+
+.news__footer {
+  color: #23252b;
+  padding: 12px 15px;
+  background: rgba(68, 73, 83, 0.8);
+  text-align: right;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: -1px;
+}
+
+/***************************
+*** Switches
+***************************/
+.switch {
+  display: table;
+  width: 100%;
+  margin: 10px 0;
+  min-height: 50px;
+  padding: 15px !important;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  border: 1px solid #000;
+  border-radius: 7px;
+  color: #ebeef2;
+  cursor: pointer;
+}
+
+.switch__icon {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  font-size: 28px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.switch__icon.active {
+  background: #ebeef2;
+  color: #000;
+}
+
+.switch__context {
+  display: table-cell;
+  width: calc(100% - 40px);
+  padding: 0 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.switch__context span.title {
+  display: block;
+  font-size: 18px;
+  width: 100%;
+  font-weight: 700;
+}
+
+.switch__context span.date {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  color: #6a7383;
+  font-size: 12px;
+}
+
+/***************************
+*** Tabs
+***************************/
+.tabs {
+  display: table;
+  width: 100%;
+  position: relative;
+}
+
+.tabs__nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80px;
+  height: 45px;
+  line-height: 43px;
+  padding: 0px 5px !important;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  border: 1px solid #000;
+  border-radius: 7px;
+  color: #ebeef2;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.tabs__nav span {
+  float: left;
+  display: table;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 48px;
+}
+
+.tabs__nav i {
+  color: #fff;
+}
+
+.tabs__nav i.active {
+  color: #6a7383;
+}
+
+.tabs__content-header {
+  height: 45px;
+  line-height: 43px;
+  width: calc(100% - 92px);
+  padding: 0px 15px !important;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  border: 1px solid #000;
+  border-radius: 7px;
+  color: #ebeef2;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/***************************
+*** Traffic
+***************************/
+.traffic {
+  display: block;
+  width: 100%;
+  opacity: 1;
+  border-radius: 7px;
+  overflow: auto;
+  overflow-x: hidden;
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  max-height: 358px;
+}
+
+.traffic:first-child {
+  margin-top: 10px;
+}
+
+.traffic__item {
+  position: relative;
+}
+
+.traffic__item-title {
+  display: table;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px -1px 0px 0px #464a56;
+  width: 100%;
+  margin-top: 3px;
+  overflow: hidden;
+}
+
+.traffic__item-desc {
+  position: absolute;
+  left: 0px;
+  z-index: 99;
+  width: 100%;
+  display: block;
+  background: #ebeef2;
+  color: #23252b;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+
+.traffic__item .roadname {
+  display: table-cell;
+  width: 60px;
+  text-align: center;
+  background: #000;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-right: 3px solid #000;
+}
+
+.traffic__item .roadname.aWegen {
+  border-color: #ee4e10;
+}
+
+.traffic__item .roadname.nWegen {
+  border-color: #f0b017;
+}
+
+.traffic__item .location {
+  display: table-cell;
+  width: calc(100% - 100px);
+  padding: 10px 15px;
+}
+
+.traffic__item .toggle {
+  display: table-cell;
+  width: 40px;
+  text-align: center;
+  font-size: 22px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/***************************
+*** Weather
+***************************/
+.weather {
+  display: table;
+  opacity: 1;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid #000;
+  width: 100%;
+}
+
+.weather .curweather {
+  display: table;
+  width: 100%;
+  box-shadow: inset 0px 1px 0px 0px rgba(136, 146, 166, 0.9);
+  background: rgba(68, 73, 83, 0.8);
+  padding: 15px;
+}
+
+.weather .curweather__temp {
+  display: table-cell;
+  width: 60%;
+}
+
+.weather .curweather__temp-location {
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #23252b;
+}
+
+.weather .curweather__temp-degrees {
+  font-size: 66px;
+  letter-spacing: -3px;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 100%;
+  width: 100%;
+}
+
+.weather .curweather__date {
+  display: table-cell;
+  width: 40%;
+  text-align: right;
+  vertical-align: bottom;
+  font-size: 15px;
+  line-height: 150%;
+}
+
+.weather .curweather__date span {
+  display: block;
+  width: 100%;
+}
+
+.weather .curweather__date span.time {
+  color: #23252b;
+  font-weight: 700;
+}
+
+.weather .forecast {
+  display: table;
+  width: 100%;
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  background: rgba(35, 37, 43, 0.9);
+  padding: 15px;
+}
+
+.weather .forecast__cast {
+  text-align: center;
+}
+
+.weather .forecast__cast-icon canvas {
+  max-width: 64px;
+  margin-top: 10px;
+}
+
+.weather .forecast__cast-degrees {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.weather .forecast__cast-date {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6a7383;
 }
