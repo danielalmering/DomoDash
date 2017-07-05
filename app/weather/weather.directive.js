@@ -3,6 +3,6 @@ angular.module('main').directive('weather', function() {
         scope: {},
         controller: 'WeatherController',
         controllerAs: 'vm',
-        templateUrl: 'weather/weather.tpl.html'
+        templateUrl: 'app/weather/weather.tpl.html'
     }
 });

@@ -3,6 +3,6 @@ angular.module('main').directive('tabs', function() {
         scope: {},
         controller: 'TabsController',
         controllerAs: 'vm',
-        templateUrl: 'tabs/tabs.tpl.html'
+        templateUrl: 'app/tabs/tabs.tpl.html'
     }
 });

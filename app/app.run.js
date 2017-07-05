@@ -1,6 +1,4 @@
-var app = angular.module("main", ['ab-base64']);
-
-app.run(function($interval, $rootScope, CONFIG, HOSTLOGIN){
+angular.module("main").run(function($interval, $rootScope, CONFIG, HOSTLOGIN){
 
     if(CONFIG === undefined){
         $rootScope.load = false;

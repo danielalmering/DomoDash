@@ -3,6 +3,6 @@ angular.module('main').directive('settings', function() {
         scope: {},
         controller: 'SettingsController',
         controllerAs: 'vm',
-        templateUrl: 'settings/settings.tpl.html'
+        templateUrl: 'app/settings/settings.tpl.html'
     }
 });

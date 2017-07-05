@@ -1,4 +1,6 @@
-var app = angular.module("main", []);
+var app = angular.module("main", ['ab-base64']);
+
+console.log('hi');
 
 fetchData().then(bootstrapApplication);
 

@@ -3,6 +3,6 @@ angular.module('main').directive('switches', function() {
         scope: {},
         controller: 'SwitchesController',
         controllerAs: 'vm',
-        templateUrl: 'switches/switches.tpl.html'
+        templateUrl: 'app/switches/switches.tpl.html'
     }
 });

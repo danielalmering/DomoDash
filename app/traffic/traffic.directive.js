@@ -3,6 +3,6 @@ angular.module('main').directive('traffic', function() {
         scope: {},
         controller: 'TrafficController',
         controllerAs: 'vm',
-        templateUrl: 'traffic/traffic.tpl.html'
+        templateUrl: 'app/traffic/traffic.tpl.html'
     }
 });
