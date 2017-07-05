@@ -1,4 +1,4 @@
-function SettingsController($scope, $rootScope, $http, base64) {
+function SettingsController($scope, $rootScope, $http) {
 
     var vm                = this;
     vm.settings           = {};
@@ -29,10 +29,10 @@ function SettingsController($scope, $rootScope, $http, base64) {
     }
 
     function getSettings(){
-        $http.get('../config.json').then(function(res) {
+        $http.get('../../config.json').then(function(res) {
             vm.settings          = res.data;
-            vm.settings.username = base64.decode(res.data.username);
-            vm.settings.password = base64.decode(res.data.password);
+            vm.settings.username = atob(res.data.username);
+            vm.settings.password = atob(res.data.password);
 
             if(!vm.settings.news){
                 vm.settings.news      = [];
@@ -51,8 +51,8 @@ function SettingsController($scope, $rootScope, $http, base64) {
 
     function saveSettings(){
 
-        vm.settings.username = base64.encode(vm.settings.username);
-        vm.settings.password = base64.encode(vm.settings.password);
+        vm.settings.username = btoa(vm.settings.username);
+        vm.settings.password = btoa(vm.settings.password);
 
         $http.post('app/settings/settings.save.php', vm.settings).then(function(res) {
             getSettings();

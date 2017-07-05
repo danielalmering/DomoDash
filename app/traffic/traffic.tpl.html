@@ -1,4 +1,4 @@
-<div class="traffic">
+<div class="traffic" ng-if="vm.traffic">
     <div class="traffic__item" ng-repeat="info in vm.traffic" ng-if="info.hasOwnProperty(vm.activestate)">
         <div class="traffic__item-title" ng-class="{'active' : toggle.state}">
             <div class="roadname" ng-class="{ 'nWegen': info.roadType === 'nWegen', 'aWegen': info.roadType === 'aWegen' }">{{ info.road }}</div>

@@ -3,6 +3,7 @@ function SwitchesController($scope, $rootScope, $http, CONFIG, HOSTLOGIN) {
     var vm                = this;
     vm.switches           = [];
     vm.switchDevice       = switchDevice;
+    vm.dimDevice          = dimDevice;
     vm.getIcon            = getIcon;
 
     activate();
@@ -23,13 +24,19 @@ function SwitchesController($scope, $rootScope, $http, CONFIG, HOSTLOGIN) {
 
     function switchDevice(device){
 
-        if(device.Status === 'Off'){
+        if(device.Status != 'Off'){
             var status = 'On';
         } else {
             var status = 'Off';
         }
 
         $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + device.idx + '&switchcmd=' + status).then(function() {
+            getSwitches();
+        });
+    }
+
+    function dimDevice(id, level){
+        $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + id + '&switchcmd=Set%20Level&level=' + level).then(function() {
             getSwitches();
         });
     }
@@ -84,6 +91,12 @@ function SwitchesController($scope, $rootScope, $http, CONFIG, HOSTLOGIN) {
     }
 
     //// Update
+
+    $scope.$on("slideEnded", function(event, args) {
+        var ngmodel   = event.targetScope.rzSliderModel;
+        var id        = event.targetScope.$parent.switch.idx;
+        dimDevice(id, ngmodel);
+    });
 
     $rootScope.$on('$reload', function (event, data) {
         getSwitches();

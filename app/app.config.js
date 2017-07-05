@@ -1,6 +1,4 @@
-var app = angular.module("main", ['ab-base64']);
-
-console.log('hi');
+var app = angular.module("main", ['rzModule']);
 
 fetchData().then(bootstrapApplication);
 
