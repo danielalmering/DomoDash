@@ -29,7 +29,7 @@ function SettingsController($scope, $rootScope, $http, base64) {
     }
 
     function getSettings(){
-        $http.get('../config.json').then(function(res) {
+        $http.get('../../config.json').then(function(res) {
             vm.settings          = res.data;
             vm.settings.username = base64.decode(res.data.username);
             vm.settings.password = base64.decode(res.data.password);
