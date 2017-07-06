@@ -1,4 +1,4 @@
-var app = angular.module("main", ['rzModule']);
+var app = angular.module("main", ['rzModule', 'ngAudio']);
 
 fetchData().then(bootstrapApplication);
 
