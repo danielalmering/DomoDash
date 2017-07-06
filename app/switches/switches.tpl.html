@@ -1,13 +1,13 @@
 <div ng-repeat="switch in vm.switches">
     <div class="switch">
-        <div class="switch__icon" ng-click="vm.switchDevice(switch)" ng-class="{'active': switch.Status != 'Off'}">
+        <div class="switch__icon" ng-click="vm.switchDevice(switch)" ng-class="{'active': switch.Data != 'Off'}">
             <i class="fa" ng-class="vm.getIcon(switch)"></i>
         </div>
         <div class="switch__context">
             <span class="title">{{ switch.Name }}</span>
             <span class="date">{{ switch.LastUpdate }}</span>
 
-            <span class="level" ng-if="switch.SwitchType === 'Dimmer'">
+            <span class="level" ng-if="switch.SwitchType === 'Dimmer' && switch.Data != 'Off'">
                 <rzslider rz-slider-model="switch.Level" rz-slider-options="{hideLimitLabels: true, floor: 0, ceil: switch.MaxDimLevel}"></rzslider>
             </span>
         </div>

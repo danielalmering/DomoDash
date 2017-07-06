@@ -24,7 +24,7 @@ function SwitchesController($scope, $rootScope, $http, CONFIG, HOSTLOGIN) {
 
     function switchDevice(device){
 
-        if(device.Status != 'Off'){
+        if(device.Data === 'Off'){
             var status = 'On';
         } else {
             var status = 'Off';
