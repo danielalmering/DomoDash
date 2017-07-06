@@ -8,7 +8,7 @@
             <span class="date">{{ switch.LastUpdate }}</span>
 
             <span class="level" ng-if="switch.SwitchType === 'Dimmer'">
-                <rzslider rz-slider-model="switch.Level" rz-slider-options="{floor: 0, ceil: switch.MaxDimLevel}"></rzslider>
+                <rzslider rz-slider-model="switch.Level" rz-slider-options="{hideLimitLabels: true, floor: 0, ceil: switch.MaxDimLevel}"></rzslider>
             </span>
         </div>
     </div>
