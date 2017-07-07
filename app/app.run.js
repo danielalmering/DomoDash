@@ -16,4 +16,5 @@ angular.module("main").run(function($interval, $rootScope, CONFIG, HOSTLOGIN){
         $rootScope.background = Math.floor(Math.random() * bgimages) + 1  ;
         $rootScope.$broadcast('$reload');
     }, resfresh);
+
 });

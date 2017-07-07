@@ -19,3 +19,11 @@ function bootstrapApplication() {
         angular.bootstrap(document, ["main"]);
     });
 }
+
+
+app.config(function($locationProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+});

@@ -54,6 +54,17 @@
                     </div>
                 </div>
                 <div class="wrap">
+                    <h3>Spotify settings</h3>
+                    <div class="settings__form-input">
+                        <label>Client ID</label>
+                        <input name="clientid" placeholder="ClientID" ng-model="vm.settings.spotify_clientid" type="text" required="">
+                    </div>
+                    <div class="settings__form-input">
+                        <label>Token</label>
+                        <input name="access_token" placeholder="Auto generated" ng-model="vm.settings.spotify_access_token" type="text" readonly>
+                    </div>
+                </div>
+                <div class="wrap">
                     <h3>News settings <span>(rss reader)</span></h3><br />
                     <div class="settings__form-input">
                         <table>
