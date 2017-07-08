@@ -1,0 +1,14 @@
+<div class="spotify">
+    <ul rn-carousel  rn-carousel-auto-slide class="spotify__playlist">
+        <li ng-repeat="list in vm.playlist">
+            <div class="spotify__playlist-item" ng-click="vm.playPlaylist(list.uri)">
+                <div class="spotify__playlist-item-image"><img ng-src="{{ list.images[0].url }}" /></div>
+                <div class="spotify__playlist-item-name">{{ list.name }}</div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="spotify__player">
+        <iframe id="player" ng-src="{{ vm.defaultplaylist }}" frameborder="0" allowtransparency="true" height="74" width="100%"></iframe>
+    </div>
+</div>

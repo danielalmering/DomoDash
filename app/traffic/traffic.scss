@@ -37,9 +37,6 @@
             width: 100%;
             display: block;
             background: #ebeef2;
-            color: #23252b;
-            font-weight: 700;
-            padding: 5px 10px;
         }
 
         .roadname {
@@ -68,6 +65,28 @@
             font-size: 22px;
             vertical-align: middle;
             cursor: pointer;
+        }
+    }
+
+    .trafficdesc {
+        display: table;
+        color: #23252b;
+        padding: 10px 0px;
+
+        &__icon {
+            display: table-cell;
+            width: 50px;
+            text-align: center;
+        }
+
+        &__desc {
+            display: table-cell;
+            width: calc(100% - 50px);
+            font-weight: 700;
+
+            h3 { font-size: 15px; margin: 0; font-weight: 700; }
+            i { margin: 0 10px; }
+            P { font-weight: 400; margin: 0; }
         }
     }
 }

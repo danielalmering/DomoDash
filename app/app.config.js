@@ -1,4 +1,4 @@
-var app = angular.module("main", ['rzModule', 'ngAudio']);
+var app = angular.module("main", ['rzModule', 'angular-carousel']);
 
 fetchData().then(bootstrapApplication);
 
@@ -21,7 +21,8 @@ function bootstrapApplication() {
 }
 
 
-app.config(function($locationProvider) {
+app.config(function($sceProvider, $locationProvider) {
+    $sceProvider.enabled(false);
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false

@@ -40,9 +40,6 @@ angular.module('main').directive('grid', function($compile, CONFIG) {
                     case 'Spotify':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><spotify></spotify></block>');
                         break;
-                    case 'Radio':
-                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><radio</radio></block>');
-                        break;
                     default:
                 }
             }

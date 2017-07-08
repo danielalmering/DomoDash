@@ -7,7 +7,7 @@
     "build-js": "app/**/*.js"
   },
   "scripts": {
-    "build-css": "node-sass app/app.scss app.css --output assets/css --output-style compressed",
+    "build-css": "node-sass app/app.scss assets/css/app.css --output assets/css --output-style compressed",
     "dev-css": "node-sass app/app.scss app.css --output assets/css --output-style expanded -w",
     "build-js": "node build.js",
     "watch": "npm-watch",
