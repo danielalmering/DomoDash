@@ -20,13 +20,7 @@ function WeatherController($scope, $rootScope, $http, $interval, $timeout, $filt
     //// Public interface
 
     function getWeather(){
-        // $http.get('https://api.wunderground.com/api/' + weather_wunderground_api + '/conditions/q/' + weather_country + '/' + weather_location + '.json').then(function(res) {
-        //     vm.weather = res.data.current_observation;
-        //     vm.location = vm.weather.display_location.city;
-        //
-        //     getIcon(vm.weather.icon, '');
-        // });
-        $http.get('Almere-Haven.json').then(function(res) {
+        $http.get('https://api.wunderground.com/api/' + CONFIG.weather_wunderground_api + '/conditions/q/' + CONFIG.weather_country + '/' + CONFIG.weather_location + '.json').then(function(res) {
             vm.weather = res.data.current_observation;
             vm.location = vm.weather.display_location.city;
 
@@ -35,12 +29,9 @@ function WeatherController($scope, $rootScope, $http, $interval, $timeout, $filt
     }
 
     function getForecast(){
-        $http.get('Almere-Haven2.json').then(function(res) {
+        $http.get('https://api.wunderground.com/api/' + CONFIG.weather_wunderground_api + '/forecast10day/q/' + CONFIG.weather_country + '/' + CONFIG.weather_location + '.json').then(function(res) {
             vm.forecast = res.data.forecast.simpleforecast.forecastday;
         });
-        // $http.get('https://api.wunderground.com/api/' + weather_wunderground_api + '/forecast10day/q/' + weather_country + '/' + weather_location + '.json').then(function(res) {
-        //     vm.forecast = res.data.forecast.simpleforecast.forecastday;
-        // });
     }
 
     function getDate(){
