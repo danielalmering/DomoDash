@@ -1,6 +1,6 @@
 # Dashticz v3
 
-Alternative dashboard for Domoticz based on Dashticz v2 but fully build in Angular 1.5 to reject jquery shortcomings
+Alternative dashboard for Domoticz based on Dashticz v2 but fully build in Angular 1.5 because of the drawbacks of Jquery
 
 ![alt text](https://github.com/danielalmering/dashticz_v3/blob/master/assets/img/screenshot.png)
 
