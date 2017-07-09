@@ -15,7 +15,7 @@ Alternative dashboard for Domoticz based on Dashticz v2 but fully build in Angul
 
 # Installation
 
-Before you can use this dashboard, unzip all files to a subfolder in Domoticz or on a webserver of your choice.
+Before you can use this dashboard, unzip all files to a subfolder in Domoticz or on a webserver (PHP) of your choice.
 Configure your config.json by opening the application and filling in your settings. 
 
 ## Settings ( Example )
