@@ -1,5 +1,5 @@
 {
-  "name": "dashticz_v3",
+  "name": "DomoDash",
   "version": "1.0.0",
   "description": "domoticz angular dashboard",
   "main": "app.config.js",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danielalmering/dashticz_v3.git"
+    "url": "git+https://github.com/danielalmering/DomoDash.git"
   },
   "author": "dycati",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/danielalmering/dashticz_v3/issues"
+    "url": "https://github.com/danielalmering/DomoDash/issues"
   },
-  "homepage": "https://github.com/danielalmering/dashticz_v3#readme",
+  "homepage": "https://github.com/danielalmering/DomoDash#readme",
   "devDependencies": {
     "concat": "^1.0.3",
     "ng-annotate": "^1.2.2",
