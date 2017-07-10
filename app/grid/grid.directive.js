@@ -40,6 +40,9 @@ angular.module('main').directive('grid', function($compile, CONFIG) {
                     case 'Spotify':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><spotify></spotify></block>');
                         break;
+                    case 'Calendar':
+                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><calendar></calendar></block>');
+                        break;
                     default:
                 }
             }
