@@ -1,4 +1,4 @@
-# Dashticz v3
+# DomoDash ( dashticz clone )
 
 Alternative dashboard for Domoticz based on Dashticz v2 but fully build in Angular 1.5 because of the drawbacks of Jquery
 
