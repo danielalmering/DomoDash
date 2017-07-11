@@ -35,7 +35,7 @@ body {
   padding: 0 !important;
 }
 
-.block.dev {
+.block.dev.col-xs-6 {
   padding: 0px 5px !important;
 }
 
@@ -248,6 +248,10 @@ body {
   margin-top: 0;
 }
 
+.news:last-child {
+  margin-bottom: 0;
+}
+
 .news__content {
   background: rgba(35, 37, 43, 0.9);
   box-shadow: inset 0px 1px 0px 0px #464a56;
@@ -403,68 +407,6 @@ body {
   font-weight: 700;
   line-height: 180%;
   padding: 2px 5px 0px 5px;
-}
-
-/***************************
-*** Tabs
-***************************/
-.tabs {
-  display: table;
-  width: 100%;
-  position: relative;
-}
-
-.tabs__nav {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 80px;
-  height: 45px;
-  line-height: 43px;
-  padding: 0px 5px !important;
-  background: rgba(35, 37, 43, 0.9);
-  box-shadow: inset 0px 1px 0px 0px #464a56;
-  border: 1px solid #000;
-  border-radius: 7px;
-  color: #ebeef2;
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-.tabs__nav span {
-  float: left;
-  display: table;
-  width: 50%;
-  height: 100%;
-  text-align: center;
-  line-height: 48px;
-}
-
-.tabs__nav i {
-  color: #fff;
-}
-
-.tabs__nav i.active {
-  color: #6a7383;
-}
-
-.tabs__content-header {
-  height: 45px;
-  line-height: 43px;
-  width: calc(100% - 92px);
-  padding: 0px 15px !important;
-  background: rgba(35, 37, 43, 0.9);
-  box-shadow: inset 0px 1px 0px 0px #464a56;
-  border: 1px solid #000;
-  border-radius: 7px;
-  color: #ebeef2;
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 /***************************

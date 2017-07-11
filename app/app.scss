@@ -42,7 +42,11 @@ body {
     float: left;
     padding: 0 !important;
 
-    &.dev { padding: 0px 5px !important; }
+    &.dev {
+       &.col-xs-6 {
+          padding: 0px 5px !important;
+       }
+    }
 }
 
 .heading {
@@ -85,7 +89,6 @@ body {
 @import "settings/settings.scss";
 @import "news/news.scss";
 @import "devices/devices.scss";
-@import "tabs/tabs.scss";
 @import "traffic/traffic.scss";
 @import "weather/weather.scss";
 @import "spotify/spotify.scss";

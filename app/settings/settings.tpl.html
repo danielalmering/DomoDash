@@ -28,81 +28,6 @@
                     </div>
                 </div>
                 <div class="wrap">
-                    <h3>Weather settings <span>(wunderground)</span></h3>
-                    <div class="settings__form-input">
-                        <label>API KEY</label>
-                        <input name="hostname" placeholder="a342afafkj234" ng-model="vm.settings.weather_wunderground_api" type="text" required="">
-                    </div>
-                    <div class="settings__form-input">
-                        <label>Country</label>
-                        <input name="hostname" placeholder="NL" ng-model="vm.settings.weather_country" type="text" required="">
-                    </div>
-                    <div class="settings__form-input">
-                        <label>Location</label>
-                        <input name="hostname" placeholder="Weather location" ng-model="vm.settings.weather_location" type="text" required="">
-                    </div>
-                    <div class="settings__form-input">
-                        <label>Refresh Timeout</label>
-                        <input name="hostname" placeholder="300000" ng-model="vm.settings.weather_refresh" type="number" required="">
-                    </div>
-                </div>
-                <div class="wrap">
-                    <h3>Traffic settings <span>(Anwb)</span></h3>
-                    <div class="settings__form-input">
-                        <label>Feed Url</label>
-                        <input name="hostname" placeholder="https://www.anwb.nl/feeds/gethf" ng-model="vm.settings.traffic_url" type="text" required="">
-                    </div>
-                </div>
-                <div class="wrap">
-                    <h3>Spotify settings</h3>
-                    <div class="settings__form-input">
-                        <label>Client ID</label>
-                        <input name="clientid" placeholder="ClientID" ng-model="vm.settings.spotify_clientid" type="text" required="">
-                    </div>
-                    <div class="settings__form-input">
-                        <label>Username</label>
-                        <input name="username" placeholder="Username" ng-model="vm.settings.spotify_username" type="text" required="">
-                    </div>
-                    <div class="settings__form-input">
-                        <label>Token</label>
-                        <input name="access_token" placeholder="Auto generated" ng-model="vm.settings.spotify_access_token" type="text" readonly>
-                    </div>
-                </div>
-                <div class="wrap">
-                    <h3>News settings <span>(rss reader)</span></h3><br />
-                    <div class="settings__form-input">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>News location <i class="fa fa-question-circle" aria-hidden="true" title="rss feed url"></th>
-                                    <th>News quantity <i class="fa fa-question-circle" aria-hidden="true" title="1"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="newsitem in vm.settings.news">
-                                    <td><input type="checkbox" ng-model="newsitem.selected"/></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="newsitem.location" required/></div></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="newsitem.quantity" required/></div></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="form-group">
-                            <a class="button" ng-hide="!vm.settings.news.length" ng-click="vm.editNews('', 'remove')">remove</a>
-                            <a class="button" ng-click="vm.editNews(vm.settings.news, 'add')">add</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <div class="wrap">
-                    <h3>Calendar <span>(Google)</span></h3>
-                    <div class="settings__form-input">
-                        <label>Google Api-clientid</label>
-                        <input name="Api clientid" ng-model="vm.settings.calendar_api" type="text" required="">
-                    </div>
-                </div>
-                <div class="wrap">
                     <h3>Grid layout</h3><br />
                     <div class="colums">
                         <h4>Colums</h4>
@@ -155,35 +80,82 @@
                             <a class="button" ng-click="vm.editBlocks(vm.settings.blocks, 'add')">add</a>
                         </div>
                     </div>
-
-                    <div class="tabs">
-                        <h4>Tabs</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Tab id <i class="fa fa-question-circle" aria-hidden="true" title="1, 2"></th>
-                                    <th>Block type <i class="fa fa-question-circle" aria-hidden="true" title="News, Switches, Weather"></i></th>
-                                    <th>Tab class <i class="fa fa-question-circle" aria-hidden="true" title="class based on bootstrap"></i></th>
-                                    <th>Tab title</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="tab in vm.settings.tabs">
-                                    <td><input type="checkbox" ng-model="tab.selected"/></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="tab.tab" required/></div></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="tab.type" required/></div></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="tab.class" required/></div></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="tab.title" required/></div></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="form-group">
-                            <a class="button" ng-hide="!vm.settings.tabs.length" ng-click="vm.editTabs('', 'remove')">remove</a>
-                            <a class="button" ng-click="vm.editTabs(vm.settings.tabs, 'add')">add</a>
-                        </div>
-                    </div>
                 </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <div class="wrap">
+                  <h3>News settings <span>(rss reader)</span></h3><br />
+                  <div class="settings__form-input">
+                      <table>
+                          <thead>
+                              <tr>
+                                  <th></th>
+                                  <th>News location <i class="fa fa-question-circle" aria-hidden="true" title="rss feed url"></th>
+                                  <th>News quantity <i class="fa fa-question-circle" aria-hidden="true" title="1"></th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr ng-repeat="newsitem in vm.settings.news">
+                                  <td><input type="checkbox" ng-model="newsitem.selected"/></td>
+                                  <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="newsitem.location" required/></div></td>
+                                  <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="newsitem.quantity" required/></div></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <div class="form-group">
+                          <a class="button" ng-hide="!vm.settings.news.length" ng-click="vm.editNews('', 'remove')">remove</a>
+                          <a class="button" ng-click="vm.editNews(vm.settings.news, 'add')">add</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="wrap">
+                  <h3>Weather settings <span>(wunderground)</span></h3>
+                  <div class="settings__form-input">
+                      <label>API KEY</label>
+                      <input name="hostname" placeholder="a342afafkj234" ng-model="vm.settings.weather_wunderground_api" type="text" required="">
+                  </div>
+                  <div class="settings__form-input">
+                      <label>Country</label>
+                      <input name="hostname" placeholder="NL" ng-model="vm.settings.weather_country" type="text" required="">
+                  </div>
+                  <div class="settings__form-input">
+                      <label>Location</label>
+                      <input name="hostname" placeholder="Weather location" ng-model="vm.settings.weather_location" type="text" required="">
+                  </div>
+                  <div class="settings__form-input">
+                      <label>Refresh Timeout</label>
+                      <input name="hostname" placeholder="300000" ng-model="vm.settings.weather_refresh" type="number" required="">
+                  </div>
+              </div>
+              <div class="wrap">
+                  <h3>Traffic settings <span>(Anwb)</span></h3>
+                  <div class="settings__form-input">
+                      <label>Feed Url</label>
+                      <input name="hostname" placeholder="https://www.anwb.nl/feeds/gethf" ng-model="vm.settings.traffic_url" type="text" required="">
+                  </div>
+              </div>
+              <div class="wrap">
+                  <h3>Spotify settings</h3>
+                  <div class="settings__form-input">
+                      <label>Client ID</label>
+                      <input name="clientid" placeholder="ClientID" ng-model="vm.settings.spotify_clientid" type="text" required="">
+                  </div>
+                  <div class="settings__form-input">
+                      <label>Username</label>
+                      <input name="username" placeholder="Username" ng-model="vm.settings.spotify_username" type="text" required="">
+                  </div>
+                  <div class="settings__form-input">
+                      <label>Token</label>
+                      <input name="access_token" placeholder="Auto generated" ng-model="vm.settings.spotify_access_token" type="text" readonly>
+                  </div>
+              </div>
+              <div class="wrap">
+                    <h3>Calendar <span>(Google)</span></h3>
+                    <div class="settings__form-input">
+                        <label>Google Api-clientid</label>
+                        <input name="Api clientid" ng-model="vm.settings.calendar_api" type="text" required="">
+                    </div>
+              </div>
             </div>
             <div class="clearfix"></div>
             <div class="col-xs-12">
