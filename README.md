@@ -13,6 +13,7 @@ Alternative dashboard for Domoticz based on Dashticz v2 but fully build in Angul
 * News ( RSS reader )
 * Traffic ( Anwb )
 * Google Calendar
+* Device Mapper
 
 # Installation
 
