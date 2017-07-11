@@ -2,7 +2,7 @@
 
 Alternative dashboard for Domoticz based on Dashticz v2 but fully build in Angular 1.5 because of the drawbacks of Jquery
 
-![alt text](https://github.com/danielalmering/dashticz_v3/blob/master/assets/img/screenshot.png)
+![alt text](https://raw.githubusercontent.com/danielalmering/DomoDash/accept/assets/img/screenshot.png)
 
 ## Currently supporting: ( Inprogress )
 
@@ -22,4 +22,4 @@ Configure your config.json by opening the application and filling in your settin
 
 ## Settings ( Example )
 
-![alt text](https://github.com/danielalmering/dashticz_v3/blob/master/assets/img/screenshot-settings.png)
+![alt text](https://raw.githubusercontent.com/danielalmering/DomoDash/accept/assets/img/screenshot-settings.png)
