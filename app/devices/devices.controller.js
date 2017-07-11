@@ -1,25 +1,31 @@
-function SwitchesController($scope, $rootScope, $http, CONFIG, HOSTLOGIN) {
+function DevicesController($scope, $rootScope, $http, devicesService, $timeout, CONFIG, HOSTLOGIN) {
 
     var vm                = this;
-    vm.switches           = [];
+    vm.device             = {};
+    vm.devices            = $scope.data;
+    vm.deviceid           = $scope.id;
+    vm.blocktitle         = $scope.name;
+
     vm.switchDevice       = switchDevice;
     vm.dimDevice          = dimDevice;
     vm.getIcon            = getIcon;
 
-    activate();
-
-    ///////////////////////////////
-
-    function activate(){
-        getSwitches();
-    }
+    getDevice(vm.deviceid);
 
     //// Public interface
 
-    function getSwitches(){
-        $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=devices&filter=light&used=true&order=Name').then(function(res) {
-            vm.switches = res.data.result;
+    function getDevice(id){
+
+        var device = vm.devices.filter(function(e) {
+            return e.idx == id;
         });
+
+        vm.device = device[0];
+    }
+
+    function getUpdateDevice(){
+        devicesService.getDevices();
+        vm.device = devicesService.getDevice(vm.deviceid)[0];
     }
 
     function switchDevice(device){
@@ -31,13 +37,13 @@ function SwitchesController($scope, $rootScope, $http, CONFIG, HOSTLOGIN) {
         }
 
         $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + device.idx + '&switchcmd=' + status).then(function() {
-            getSwitches();
+            getUpdateDevice();
         });
     }
 
     function dimDevice(id, level){
         $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + id + '&switchcmd=Set%20Level&level=' + level).then(function() {
-            getSwitches();
+            getUpdateDevice();
         });
     }
 
@@ -94,14 +100,14 @@ function SwitchesController($scope, $rootScope, $http, CONFIG, HOSTLOGIN) {
 
     $scope.$on("slideEnded", function(event, args) {
         var ngmodel   = event.targetScope.rzSliderModel;
-        var id        = event.targetScope.$parent.switch.idx;
+        var id        = vm.deviceid;
         dimDevice(id, ngmodel);
     });
 
     $rootScope.$on('$reload', function (event, data) {
-        getSwitches();
+        getUpdateDevice();
     });
 
 }
 
-angular.module('main').controller('SwitchesController', SwitchesController);
+angular.module('main').controller('DevicesController', DevicesController);

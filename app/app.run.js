@@ -1,4 +1,4 @@
-angular.module("main").run(function($interval, $rootScope, CONFIG, HOSTLOGIN){
+angular.module("main").run(function($interval, $rootScope, devicesService, CONFIG, HOSTLOGIN){
 
     if(CONFIG === undefined){
         $rootScope.load = false;
@@ -10,6 +10,10 @@ angular.module("main").run(function($interval, $rootScope, CONFIG, HOSTLOGIN){
         var resfresh = CONFIG.refresh;
         var bgimages = CONFIG.bgimages;
         $rootScope.background = CONFIG.bgimages;
+
+        $rootScope.$on('$reload', function (event, data) {
+            devicesService.getDevices();
+        });
     }
 
     var polling = $interval(function() {

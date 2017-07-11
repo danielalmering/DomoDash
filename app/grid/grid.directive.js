@@ -1,29 +1,54 @@
-angular.module('main').directive('grid', function($compile, CONFIG) {
+angular.module('main').directive('grid', function($rootScope, $compile, $http, devicesService, CONFIG, HOSTLOGIN) {
     return {
         scope: {},
         link: function(scope, element) {
             var vm = this;
 
-            vm.colums = CONFIG.colums;
-            vm.blocks = CONFIG.blocks;
+            vm.colums  = CONFIG.colums;
+            vm.blocks  = CONFIG.blocks;
+            vm.devices = {};
 
-            angular.forEach(vm.colums, function (res) {
-                angular.element(document.getElementById('colums')).append('<div id="colum' + res.colum + '" class="colum ' + res.class +'"></div>');
-            });
+            setColums();
+            getDevices();
 
-            $compile(element.contents())(scope);
+            function setColums(){
+                angular.forEach(vm.colums, function (res) {
+                    angular.element(document.getElementById('colums')).append('<div id="colum' + res.colum + '" class="colum ' + res.class +'"></div>');
+                });
 
-            angular.forEach(vm.blocks, function (res) {
-                getCorrectBlock(res);
-            });
+                $compile(element.contents())(scope);
+            }
+
+            function getDevices(reload){
+                devicesService.getDevices().then(function(res) {
+                    vm.devices = res;
+
+                    setBlocks();
+                });
+            }
+
+            function setBlocks(){
+                angular.forEach(vm.blocks, function (res) {
+                    getCorrectBlock(res);
+                });
+
+                $compile(element.contents())(scope);
+            }
 
             function getCorrectBlock (res){
+
+                if(res.type.indexOf('Device') >= 0){
+                    scope.devices = vm.devices
+                    var deviceid = res.type.substr(res.type.indexOf("=") + 1);
+                    res.type = 'Device';
+                }
+
                 switch (res.type) {
                     case 'Heading':
                         angular.element(document.getElementById(res.colum)).append('<div class="heading ' + res.class +'">' + res.title +'</div>');
                         break;
-                    case 'Switches':
-                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><switches></switches></block>');
+                    case 'Device':
+                        angular.element(document.getElementById(res.colum)).append('<block class="block dev ' + res.class +'"><device class="device" name="' + res.title +'" data="devices" id="' + deviceid + '"></device></block>');
                         break;
                     case 'News':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><news></news></block>');
@@ -47,7 +72,6 @@ angular.module('main').directive('grid', function($compile, CONFIG) {
                 }
             }
 
-            $compile(element.contents())(scope);
 
         }
     }

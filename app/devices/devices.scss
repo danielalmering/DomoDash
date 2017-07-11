@@ -2,7 +2,7 @@
 *** Switches
 ***************************/
 
-.switch {
+.device {
     display: table;
     width: 100%;
     margin: 10px 0;
@@ -26,6 +26,7 @@
         border-radius: 7px;
         text-align: center;
         vertical-align: middle;
+        cursor: pointer;
         &.active {
             background: #ebeef2;
             color: #000;

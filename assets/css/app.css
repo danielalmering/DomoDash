@@ -31,10 +31,17 @@ body {
 
 .block {
   display: block;
+  float: left;
   padding: 0 !important;
 }
 
+.block.dev {
+  padding: 0px 5px !important;
+}
+
 .heading {
+  display: block;
+  float: left;
   height: 47px;
   line-height: 43px;
   padding: 0px 15px !important;
@@ -291,7 +298,7 @@ body {
 /***************************
 *** Switches
 ***************************/
-.switch {
+.device {
   display: table;
   width: 100%;
   margin: 10px 0;
@@ -304,11 +311,11 @@ body {
   color: #ebeef2;
 }
 
-.switch:last-child {
+.device:last-child {
   margin-bottom: 0px;
 }
 
-.switch__icon {
+.device__icon {
   display: table-cell;
   width: 40px;
   height: 40px;
@@ -318,14 +325,15 @@ body {
   border-radius: 7px;
   text-align: center;
   vertical-align: middle;
+  cursor: pointer;
 }
 
-.switch__icon.active {
+.device__icon.active {
   background: #ebeef2;
   color: #000;
 }
 
-.switch__context {
+.device__context {
   display: table-cell;
   width: calc(100% - 40px);
   padding: 0 15px;
@@ -333,14 +341,14 @@ body {
   vertical-align: middle;
 }
 
-.switch__context span.title {
+.device__context span.title {
   display: block;
   font-size: 18px;
   width: 100%;
   font-weight: 700;
 }
 
-.switch__context span.date {
+.device__context span.date {
   display: block;
   width: 100%;
   font-weight: 400;

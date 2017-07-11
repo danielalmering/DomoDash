@@ -2,7 +2,7 @@
     <div class="tabs__content">
         <div ng-repeat="(key, tab) in vm.tabs" class="tabs__content-repeat" ng-show="vm.isSet(key)">
             <div class="tabs__content-header">{{ tab.title }}</div>
-            <switches ng-if="tab.type === 'Switches'"></switches>
+            <devices ng-if="tab.type === 'Switches'"></devices>
             <news ng-if="tab.type === 'News'"></news>
             <weather ng-if="tab.type === 'Weather'"></weather>
         </div>
