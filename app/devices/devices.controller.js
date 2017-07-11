@@ -1,31 +1,28 @@
 function DevicesController($scope, $rootScope, $http, devicesService, $timeout, CONFIG, HOSTLOGIN) {
 
     var vm                = this;
-    vm.device             = {};
-    vm.devices            = $scope.data;
     vm.deviceid           = $scope.id;
     vm.blocktitle         = $scope.name;
+    vm.device             = {};
 
     vm.switchDevice       = switchDevice;
     vm.dimDevice          = dimDevice;
     vm.getIcon            = getIcon;
 
-    getDevice(vm.deviceid);
+    activate();
+
+    ///////////////////////////////
+
+    function activate(){
+        getDevice(false);
+    }
 
     //// Public interface
 
-    function getDevice(id){
-
-        var device = vm.devices.filter(function(e) {
-            return e.idx == id;
+    function getDevice(update){
+        devicesService.get($scope.id, update).then(function(res) {
+            vm.device = res[0];
         });
-
-        vm.device = device[0];
-    }
-
-    function getUpdateDevice(){
-        devicesService.getDevices();
-        vm.device = devicesService.getDevice(vm.deviceid)[0];
     }
 
     function switchDevice(device){
@@ -37,13 +34,13 @@ function DevicesController($scope, $rootScope, $http, devicesService, $timeout, 
         }
 
         $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + device.idx + '&switchcmd=' + status).then(function() {
-            getUpdateDevice();
+            getDevice(true);
         });
     }
 
     function dimDevice(id, level){
         $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + id + '&switchcmd=Set%20Level&level=' + level).then(function() {
-            getUpdateDevice();
+            getDevice(true);
         });
     }
 
@@ -104,9 +101,6 @@ function DevicesController($scope, $rootScope, $http, devicesService, $timeout, 
         dimDevice(id, ngmodel);
     });
 
-    $rootScope.$on('$reload', function (event, data) {
-        getUpdateDevice();
-    });
 
 }
 

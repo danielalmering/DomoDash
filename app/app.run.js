@@ -10,10 +10,6 @@ angular.module("main").run(function($interval, $rootScope, devicesService, CONFI
         var resfresh = CONFIG.refresh;
         var bgimages = CONFIG.bgimages;
         $rootScope.background = CONFIG.bgimages;
-
-        $rootScope.$on('$reload', function (event, data) {
-            devicesService.getDevices();
-        });
     }
 
     var polling = $interval(function() {

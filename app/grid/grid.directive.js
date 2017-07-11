@@ -1,6 +1,8 @@
 angular.module('main').directive('grid', function($rootScope, $compile, $http, devicesService, CONFIG, HOSTLOGIN) {
     return {
         scope: {},
+        controller: 'GridController',
+        controllerAs: 'vm',
         link: function(scope, element) {
             var vm = this;
 
@@ -9,7 +11,7 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
             vm.devices = {};
 
             setColums();
-            getDevices();
+            setBlocks();
 
             function setColums(){
                 angular.forEach(vm.colums, function (res) {
@@ -17,14 +19,6 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
                 });
 
                 $compile(element.contents())(scope);
-            }
-
-            function getDevices(reload){
-                devicesService.getDevices().then(function(res) {
-                    vm.devices = res;
-
-                    setBlocks();
-                });
             }
 
             function setBlocks(){
@@ -38,7 +32,6 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
             function getCorrectBlock (res){
 
                 if(res.type.indexOf('Device') >= 0){
-                    scope.devices = vm.devices
                     var deviceid = res.type.substr(res.type.indexOf("=") + 1);
                     res.type = 'Device';
                 }
@@ -48,7 +41,7 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
                         angular.element(document.getElementById(res.colum)).append('<div class="heading ' + res.class +'">' + res.title +'</div>');
                         break;
                     case 'Device':
-                        angular.element(document.getElementById(res.colum)).append('<block class="block dev ' + res.class +'"><device class="device" name="' + res.title +'" data="devices" id="' + deviceid + '"></device></block>');
+                        angular.element(document.getElementById(res.colum)).append('<block class="block dev ' + res.class +'"><device class="device" name="' + res.title +'" id="' + deviceid + '"></device></block>');
                         break;
                     case 'News':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><news></news></block>');

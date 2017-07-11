@@ -7,21 +7,28 @@
 
         var devices   = {};
         var instance  = {
-            getDevices: getDevices,
-            getDevice: getDevice,
+            get: get
         };
 
         return instance;
 
-        function getDevices(){
+        function get(id, update){
+            if(devices.length && update === false){
+                return selectDevice(devices, id);
+            } else {
+                return getDevices(devices, id);
+            }
+        }
+
+        function getDevices(devices, id){
             return $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=devices&filter=light&used=true&order=Name').then(function(res) {
                 devices = res.data.result;
-                return devices;
+                return selectDevice(devices, id);
             });
         }
 
-        function getDevice(id){
-            var selecteddevice = devices.filter(function(e) {
+        function selectDevice(dev, id){
+            var selecteddevice = dev.filter(function(e) {
                 return e.idx == id;
             });
 
