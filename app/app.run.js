@@ -1,4 +1,4 @@
-angular.module("main").run(function($interval, $rootScope, CONFIG, HOSTLOGIN){
+angular.module("main").run(function($interval, $rootScope, devicesService, CONFIG, HOSTLOGIN){
 
     if(CONFIG === undefined){
         $rootScope.load = false;

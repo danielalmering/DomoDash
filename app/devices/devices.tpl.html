@@ -1,0 +1,12 @@
+<div class="device__icon" ng-click="vm.switchDevice(vm.device)" ng-class="{'active': vm.device.Data != 'Off'}">
+    <i class="fa" ng-class="vm.getIcon(vm.device)"></i>
+</div>
+<div class="device__context">
+    <span class="title" ng-if="vm.blocktitle === 'undefined'">{{ vm.device.Name }}</span>
+    <span class="title" ng-if="vm.blocktitle != 'undefined'">{{ vm.blocktitle }}</span>
+    <span class="date">{{ vm.device.LastUpdate }}</span>
+
+    <span class="level" ng-if="vm.device.SwitchType === 'Dimmer' && vm.device.Data != 'Off'">
+        <rzslider rz-slider-model="vm.device.Level" rz-slider-options="{hideLimitLabels: true, floor: 0, ceil: vm.device.MaxDimLevel}"></rzslider>
+    </span>
+</div>

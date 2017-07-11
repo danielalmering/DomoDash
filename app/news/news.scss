@@ -21,6 +21,7 @@
     transition: opacity 0.3s ease-in;
 
     &:first-child { margin-top: 0; }
+    &:last-child { margin-bottom: 0; }
 
     &__content {
         background: rgba(35,37,43,0.9);

@@ -39,10 +39,19 @@ body {
 
 .block {
     display: block;
+    float: left;
     padding: 0 !important;
+
+    &.dev {
+       &.col-xs-6 {
+          padding: 0px 5px !important;
+       }
+    }
 }
 
 .heading {
+    display: block;
+    float: left;
     height: 47px;
     line-height: 43px;
     padding: 0px 15px !important;
@@ -79,8 +88,8 @@ body {
 
 @import "settings/settings.scss";
 @import "news/news.scss";
-@import "switches/switches.scss";
-@import "tabs/tabs.scss";
+@import "devices/devices.scss";
 @import "traffic/traffic.scss";
 @import "weather/weather.scss";
 @import "spotify/spotify.scss";
+@import "calendar/calendar.scss";

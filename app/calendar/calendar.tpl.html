@@ -1,0 +1,13 @@
+<div class="calendar">
+    <div ng-repeat="event in vm.calendarlist">
+        <div class="calendar__item"  ng-class="event.status">
+            <div class="calendar__item-icon">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+            </div>
+            <div class="calendar__item-desc">
+                <span class="date">{{ event.start.dateTime | date:'HH:mm' }} - <i>{{ event.end.dateTime | date:'HH:mm' }}</i> <b>{{ event.start.dateTime | date:'dd-MM-yyyy' }}</b></span>
+                <p>{{ event.summary }}</p>
+            </div>
+        </div>
+    </div>
+</div>
