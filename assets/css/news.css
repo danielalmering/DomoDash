@@ -6,17 +6,15 @@
   margin-top: 10px;
 }
 
-.newsrapper:last-child {
-  margin-bottom: 10px;
-}
-
 .news {
+  position: relative;
   display: table;
   opacity: 1;
   border-radius: 7px;
-  overflow: hidden;
-  border: 1px solid #000;
   margin-bottom: 10px;
+  border: 1px solid #000;
+  overflow: hidden;
+  height: 140px;
   -webkit-transition: opacity 0.3s ease-in;
   -moz-transition: opacity 0.3s ease-in;
   -o-transition: opacity 0.3s ease-in;
@@ -33,9 +31,12 @@
 }
 
 .news__content {
+  display: table;
   background: rgba(35, 37, 43, 0.9);
   box-shadow: inset 0px 1px 0px 0px #464a56;
-  padding: 15px;
+  padding: 10px 10px 30px 10px;
+  height: 100%;
+  width: 100%;
 }
 
 .news__content-icon {
@@ -53,7 +54,7 @@
 .news__content-content .title {
   display: block;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #ebeef2;
   width: 100%;
@@ -61,20 +62,26 @@
 
 .news__content-content .description {
   display: block;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: rgba(248, 246, 243, 0.9);
-  line-height: 22px;
+  line-height: 130%;
   width: 100%;
 }
 
-.news__footer {
-  color: #23252b;
-  padding: 12px 15px;
-  background: rgba(68, 73, 83, 0.8);
+.news__content-footer {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  color: #6a7383;
+  padding: 5px 10px;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin-top: 2px;
+  margin-right: -11px;
   text-align: right;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   font-style: italic;
-  margin-bottom: -1px;
+  border-bottom: none;
 }

@@ -56,7 +56,7 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><traffic></traffic></block>');
                         break;
                     case 'Spotify':
-                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><spotify></spotify></block>');
+                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><spotify name="' + res.title +'"></spotify></block>');
                         break;
                     case 'Calendar':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><calendar></calendar></block>');

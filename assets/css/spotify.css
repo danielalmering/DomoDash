@@ -1,0 +1,94 @@
+/***************************
+*** Spotify
+***************************/
+.spotify {
+  display: table;
+  width: 100%;
+  margin: 10px 0;
+  min-height: 95px;
+  border: 1px solid #000;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  border-radius: 7px;
+  color: #ebeef2;
+}
+
+.spotify__playlist {
+  display: table;
+  width: 98.5%;
+  height: 110px;
+  margin: 0;
+}
+
+.spotify__playlist li {
+  width: 104px !important;
+}
+
+.spotify__playlist-item {
+  position: relative;
+  float: left;
+  width: 100px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.spotify__playlist-item-image img {
+  width: 100%;
+}
+
+.spotify__playlist-item-name {
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  font-size: 12px;
+  height: 50px;
+  padding: 10px 5px !important;
+  font-weight: 500;
+  line-height: 110%;
+  text-transform: uppercase;
+  word-break: break-word;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.spotify__player {
+  display: table;
+  box-shadow: inset 0px 1px 0px 0px rgba(136, 146, 166, 0.2);
+  width: 100%;
+  padding: 6px !important;
+}
+
+ul[rn-carousel] {
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+  position: relative;
+  -webkit-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+ul[rn-carousel] > li {
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: visible;
+  vertical-align: top;
+  position: absolute;
+  left: 0;
+  right: 0;
+  white-space: normal;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}

@@ -1,0 +1,111 @@
+/***************************
+*** Traffic
+***************************/
+.traffic {
+  display: block;
+  width: 100%;
+  opacity: 1;
+  border-radius: 7px;
+  overflow: auto;
+  overflow-x: hidden;
+  border: 1px solid #000;
+  padding: 5px;
+  margin-bottom: 10px;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  max-height: 245px;
+}
+
+.traffic:first-child {
+  margin-top: 10px;
+}
+
+.traffic__item {
+  position: relative;
+}
+
+.traffic__item-title {
+  display: table;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px -1px 0px 0px #464a56;
+  width: 100%;
+  margin-top: 0px;
+  overflow: hidden;
+}
+
+.traffic__item-desc {
+  position: absolute;
+  left: 0px;
+  z-index: 99;
+  width: 100%;
+  display: block;
+  background: #ebeef2;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.traffic__item .roadname {
+  display: table-cell;
+  width: 60px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  padding: 5px 10px;
+  border-right: 3px solid #000;
+}
+
+.traffic__item .roadname.aWegen {
+  border-color: #ee4e10;
+}
+
+.traffic__item .roadname.nWegen {
+  border-color: #f0b017;
+}
+
+.traffic__item .location {
+  display: table-cell;
+  width: calc(100% - 100px);
+  padding: 10px 15px;
+}
+
+.traffic__item .toggle {
+  display: table-cell;
+  width: 40px;
+  text-align: center;
+  font-size: 22px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.traffic .trafficdesc {
+  display: table;
+  color: #23252b;
+  padding: 10px 0px;
+}
+
+.traffic .trafficdesc__icon {
+  display: table-cell;
+  width: 50px;
+  text-align: center;
+}
+
+.traffic .trafficdesc__desc {
+  display: table-cell;
+  width: calc(100% - 50px);
+  font-weight: 700;
+}
+
+.traffic .trafficdesc__desc h3 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.traffic .trafficdesc__desc i {
+  margin: 0 10px;
+}
+
+.traffic .trafficdesc__desc P {
+  font-weight: 400;
+  margin: 0;
+}

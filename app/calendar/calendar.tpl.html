@@ -1,7 +1,7 @@
 <div class="calendar">
-    <div ng-repeat="event in vm.calendarlist">
-        <div class="calendar__item"  ng-class="event.status">
-            <div class="calendar__item-icon">
+    <div class="calendarwrap" ng-repeat="event in vm.calendarlist">
+        <div class="calendar__item">
+            <div class="calendar__item-icon" ng-class="event.status">
                 <i class="fa fa-calendar" aria-hidden="true"></i>
             </div>
             <div class="calendar__item-desc">

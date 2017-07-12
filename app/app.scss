@@ -43,7 +43,7 @@ body {
     padding: 0 !important;
 
     &.dev {
-       &.col-xs-6 {
+       &.col-sm-6 {
           padding: 0px 5px !important;
        }
     }
@@ -52,15 +52,15 @@ body {
 .heading {
     display: block;
     float: left;
-    height: 47px;
-    line-height: 43px;
-    padding: 0px 15px !important;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 10px !important;
     background: rgba(35,37,43,0.9);
     box-shadow: inset 0px 1px 0px 0px rgba(70,74,86,1);
     border: 1px solid #000;
     border-radius: 7px;
     color: #ebeef2;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;

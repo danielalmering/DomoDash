@@ -35,22 +35,22 @@ body {
   padding: 0 !important;
 }
 
-.block.dev.col-xs-6 {
+.block.dev.col-sm-6 {
   padding: 0px 5px !important;
 }
 
 .heading {
   display: block;
   float: left;
-  height: 47px;
-  line-height: 43px;
-  padding: 0px 15px !important;
+  height: 32px;
+  line-height: 32px;
+  padding: 0px 10px !important;
   background: rgba(35, 37, 43, 0.9);
   box-shadow: inset 0px 1px 0px 0px #464a56;
   border: 1px solid #000;
   border-radius: 7px;
   color: #ebeef2;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -226,17 +226,15 @@ body {
   margin-top: 10px;
 }
 
-.newsrapper:last-child {
-  margin-bottom: 10px;
-}
-
 .news {
+  position: relative;
   display: table;
   opacity: 1;
   border-radius: 7px;
-  overflow: hidden;
-  border: 1px solid #000;
   margin-bottom: 10px;
+  border: 1px solid #000;
+  overflow: hidden;
+  height: 140px;
   -webkit-transition: opacity 0.3s ease-in;
   -moz-transition: opacity 0.3s ease-in;
   -o-transition: opacity 0.3s ease-in;
@@ -253,9 +251,12 @@ body {
 }
 
 .news__content {
+  display: table;
   background: rgba(35, 37, 43, 0.9);
   box-shadow: inset 0px 1px 0px 0px #464a56;
-  padding: 15px;
+  padding: 10px 10px 30px 10px;
+  height: 100%;
+  width: 100%;
 }
 
 .news__content-icon {
@@ -273,7 +274,7 @@ body {
 .news__content-content .title {
   display: block;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #ebeef2;
   width: 100%;
@@ -281,22 +282,28 @@ body {
 
 .news__content-content .description {
   display: block;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: rgba(248, 246, 243, 0.9);
-  line-height: 22px;
+  line-height: 130%;
   width: 100%;
 }
 
-.news__footer {
-  color: #23252b;
-  padding: 12px 15px;
-  background: rgba(68, 73, 83, 0.8);
+.news__content-footer {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  color: #6a7383;
+  padding: 5px 10px;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin-top: 2px;
+  margin-right: -11px;
   text-align: right;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   font-style: italic;
-  margin-bottom: -1px;
+  border-bottom: none;
 }
 
 /***************************
@@ -306,8 +313,8 @@ body {
   display: table;
   width: 100%;
   margin: 10px 0;
-  min-height: 95px;
-  padding: 15px !important;
+  min-height: 77px;
+  padding: 5px !important;
   background: rgba(35, 37, 43, 0.9);
   box-shadow: inset 0px 1px 0px 0px #464a56;
   border: 1px solid #000;
@@ -340,14 +347,14 @@ body {
 .device__context {
   display: table-cell;
   width: calc(100% - 40px);
-  padding: 0 15px;
+  padding: 5px 15px 0px 15px;
   text-align: left;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .device__context span.title {
   display: block;
-  font-size: 18px;
+  font-size: 16px;
   width: 100%;
   font-weight: 700;
 }
@@ -363,6 +370,7 @@ body {
 .rzslider {
   position: relative;
   display: inline-block;
+  z-index: 9999;
   width: 100%;
   height: 4px;
   margin: 15px 0 0px 0;
@@ -420,11 +428,11 @@ body {
   overflow: auto;
   overflow-x: hidden;
   border: 1px solid #000;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 10px;
   background: rgba(35, 37, 43, 0.9);
   box-shadow: inset 0px 1px 0px 0px #464a56;
-  max-height: 358px;
+  max-height: 245px;
 }
 
 .traffic:first-child {
@@ -437,10 +445,10 @@ body {
 
 .traffic__item-title {
   display: table;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px -1px 0px 0px #464a56;
   width: 100%;
-  margin-top: 3px;
+  margin-top: 0px;
   overflow: hidden;
 }
 
@@ -451,13 +459,15 @@ body {
   width: 100%;
   display: block;
   background: #ebeef2;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .traffic__item .roadname {
   display: table-cell;
   width: 60px;
   text-align: center;
-  background: #000;
+  background: rgba(0, 0, 0, 0.2);
   font-weight: 700;
   padding: 5px 10px;
   border-right: 3px solid #000;
@@ -536,7 +546,7 @@ body {
   width: 100%;
   box-shadow: inset 0px 1px 0px 0px rgba(136, 146, 166, 0.9);
   background: rgba(68, 73, 83, 0.8);
-  padding: 15px;
+  padding: 12px 15px 5px 15px;
 }
 
 .weather .curweather__temp {
@@ -584,7 +594,7 @@ body {
   width: 100%;
   box-shadow: inset 0px 1px 0px 0px #464a56;
   background: rgba(35, 37, 43, 0.9);
-  padding: 15px;
+  padding: 10px 0px 10px 10px;
 }
 
 .weather .forecast__cast {
@@ -626,7 +636,7 @@ body {
 .spotify__playlist {
   display: table;
   width: 98.5%;
-  height: 160px;
+  height: 110px;
   margin: 0;
 }
 
@@ -635,6 +645,7 @@ body {
 }
 
 .spotify__playlist-item {
+  position: relative;
   float: left;
   width: 100px;
   margin: 5px;
@@ -649,12 +660,14 @@ body {
 }
 
 .spotify__playlist-item-name {
+  position: absolute;
+  bottom: 0px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.6);
   width: 100%;
   font-size: 12px;
   height: 50px;
-  padding: 13px 10px !important;
+  padding: 10px 5px !important;
   font-weight: 500;
   line-height: 110%;
   text-transform: uppercase;
@@ -704,54 +717,61 @@ ul[rn-carousel] > li {
 *** Calendar
 ***************************/
 .calendar {
-  display: table;
+  display: block;
   width: 100%;
   margin: 10px 0;
   min-height: 95px;
-  padding: 0px 10px !important;
+  padding: 5px 5px !important;
   background: rgba(35, 37, 43, 0.9);
   box-shadow: inset 0px 1px 0px 0px #464a56;
   border: 1px solid #000;
   border-radius: 7px;
   color: #ebeef2;
+  max-height: 245px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.calendar .calendarwrap {
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .calendar__item {
   display: table;
   width: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.2);
   padding: 2.5px 5px 2.5px 0px;
-  border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.calendar__item.confirmed {
-  border-right: 3px solid #9ed449;
-}
-
-.calendar__item.denied {
-  border-right: 3px solid #d44949;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .calendar__item-icon {
   display: table-cell;
-  width: 50px;
-  font-size: 18px;
+  width: 40px;
+  font-size: 16px;
   text-align: center;
   vertical-align: middle;
 }
 
+.calendar__item-icon.confirmed {
+  border-right: 3px solid #9dee10;
+}
+
+.calendar__item-icon.denied {
+  border-right: 3px solid #ee4e10;
+}
+
 .calendar__item-desc {
   display: table-cell;
-  width: calc(100% - 50px);
+  width: calc(100% - 40px);
   vertical-align: middle;
+  padding: 3px 10px;
 }
 
 .calendar__item-desc .date {
   display: block;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
 }
 
