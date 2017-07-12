@@ -11,6 +11,7 @@ function fetchData() {
         app.constant("HOSTLOGIN", 'username=' + response.data.username + '&password=' + response.data.password + '&');
     }, function(errorResponse) {
         app.constant("CONFIG", undefined);
+        app.constant("HOSTLOGIN", undefined);
     });
 }
 

@@ -3,46 +3,49 @@
 ***************************/
 
 .calendar {
-    display: table;
+    display: block;
     width: 100%;
     margin: 10px 0;
     min-height: 95px;
-    padding: 0px 10px !important;
+    padding: 5px 5px !important;
     background: rgba(35,37,43,0.9);
     box-shadow: inset 0px 1px 0px 0px rgba(70,74,86,1);
     border: 1px solid #000;
     border-radius: 7px;
     color: #ebeef2;
+    max-height: 245px;
+    overflow: auto;
+    overflow-x: hidden;
+
+    .calendarwrap { border-radius: 5px; overflow: hidden; }
 
     &__item {
         display: table;
         width: 100%;
-        background: rgba(0, 0, 0, 0.1);
-        margin: 10px 0;
+        background: rgba(0, 0, 0, 0.2);
         padding: 2.5px 5px 2.5px 0px;
-        border-radius: 3px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-
-        &.confirmed { border-right: 3px solid #9ed449; }
-        &.denied { border-right: 3px solid #d44949; }
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
         &-icon {
             display: table-cell;
-            width: 50px;
-            font-size: 18px;
+            width: 40px;
+            font-size: 16px;
             text-align: center;
             vertical-align: middle;
+            &.confirmed { border-right: 3px solid #9dee10; }
+            &.denied { border-right: 3px solid #ee4e10; }
         }
 
         &-desc {
             display: table-cell;
-            width: calc(100% - 50px);
+            width: calc(100% - 40px);
             vertical-align: middle;
+            padding: 3px 10px;
 
             .date {
                 display: block;
                 width: 100%;
-                font-size: 20px;
+                font-size: 18px;
                 font-weight: 700;
                 i { font-size: 15px; font-style: normal;}
                 b { float: right; color: #6a7383; font-size: 11px; margin: 2px; }

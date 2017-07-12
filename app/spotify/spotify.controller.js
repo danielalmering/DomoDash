@@ -34,7 +34,6 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
         return hashParams;
     }
 
-
     function makeToken(){
         var url = encodeURIComponent('http://' + window.location.host + '//#');
 
