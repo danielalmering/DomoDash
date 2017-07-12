@@ -22,4 +22,4 @@ Configure your config.json by opening the application and filling in your settin
 
 ## Settings ( Example )
 
-![alt text](https://github.com/danielalmering/dashticz_v3/blob/master/assets/img/screenshot-settings.png)
+![alt text](https://raw.githubusercontent.com/danielalmering/DomoDash/accept/assets/img/screenshot-settings.png)
