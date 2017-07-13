@@ -18,6 +18,7 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
         } else {
             getPlaylist(CONFIG.spotify_access_token);
             getCurrent(CONFIG.spotify_access_token);
+            $location.search('access_token', null)
         }
 
     }
@@ -45,6 +46,7 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
             $http.post('app/settings/settings.save.php', vm.settings).then(function(res) {
                 getPlaylist(res.spotify_access_token);
                 getCurrent(res.spotify_access_token);
+                $location.search('access_token', null)
             });
 
         }
