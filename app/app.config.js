@@ -6,7 +6,7 @@ function fetchData() {
     var initInjector = angular.injector(["ng"]);
     var $http = initInjector.get("$http");
 
-    return $http.get("../config.json").then(function(response) {
+    return $http.get("./config.json").then(function(response) {
         app.constant("CONFIG", response.data);
         app.constant("HOSTLOGIN", 'username=' + response.data.username + '&password=' + response.data.password + '&');
     }, function(errorResponse) {

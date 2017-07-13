@@ -29,7 +29,7 @@ function SettingsController($scope, $rootScope, $http) {
     }
 
     function getSettings(){
-        $http.get('../../config.json').then(function(res) {
+        $http.get('././config.json').then(function(res) {
             vm.settings          = res.data;
 
             vm.settings.username = atob(res.data.username);
