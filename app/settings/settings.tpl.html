@@ -1,6 +1,7 @@
 <div class="settings">
     <div class="settings__button fa fa-cog" ng-click="vm.toggle()" ng-class="{ 'active': vm.isActive}"></div>
     <div class="settings__message" ng-if="!vm.load">Configuration file not found or filled in correctly!</div>
+    <div class="settings__button logo" ng-if="vm.load">DomoDash</div>
     <div class="settings__form" ng-if="vm.isActive">
         <form autocomplete="off">
             <div class="col-xs-12 col-sm-6">
