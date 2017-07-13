@@ -6,7 +6,7 @@ function WeatherController($scope, $rootScope, $http, $interval, $timeout, $filt
     vm.day                = '';
     vm.date               = '';
 
-    //vm.active             = activate();
+    vm.active             = activate();
     vm.getIcon            = getIcon;
 
     ///////////////////////////////
