@@ -8,7 +8,6 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
 
             vm.colums  = CONFIG.colums;
             vm.blocks  = CONFIG.blocks;
-            vm.devices = {};
 
             setColums();
             setBlocks();
@@ -64,6 +63,17 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
                     default:
                 }
             }
+
+            //// Update
+
+            $rootScope.$on('$render', function (event, data) {
+                vm.colums  = data.colums;
+                vm.blocks  = data.blocks;
+                var myEl = angular.element( document.querySelector( '#colums' ) );
+                myEl.empty();
+                setColums();
+                setBlocks();
+            });
 
 
         }

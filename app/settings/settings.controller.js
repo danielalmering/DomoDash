@@ -28,7 +28,7 @@ function SettingsController($scope, $rootScope, $http) {
         vm.isActive = !vm.isActive;
     }
 
-    function getSettings(){
+    function getSettings(render){
         $http.get('././config.json').then(function(res) {
             vm.settings          = res.data;
 
@@ -47,6 +47,10 @@ function SettingsController($scope, $rootScope, $http) {
             if(!vm.settings.tabs){
                 vm.settings.tabs      = [];
             }
+
+            if(render === true){
+                $rootScope.$broadcast('$render', vm.settings);
+            }
         });
     }
 
@@ -56,7 +60,7 @@ function SettingsController($scope, $rootScope, $http) {
         vm.settings.password = btoa(vm.settings.password);
 
         $http.post('app/settings/settings.save.php', vm.settings).then(function(res) {
-            getSettings();
+            getSettings(true);
         });
     }
 
