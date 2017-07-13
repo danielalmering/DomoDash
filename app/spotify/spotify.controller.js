@@ -1,4 +1,4 @@
-function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOGIN, $window) {
+function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOGIN) {
 
     var vm                = this;
     vm.playlist           = {};
