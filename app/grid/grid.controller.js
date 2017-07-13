@@ -1,4 +1,4 @@
-function GridController($rootScope, devicesService) {
+function GridController($rootScope, devicesService, HOSTLOGIN) {
 
     var vm                = this;
 

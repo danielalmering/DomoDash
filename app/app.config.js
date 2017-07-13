@@ -6,9 +6,13 @@ function fetchData() {
     var initInjector = angular.injector(["ng"]);
     var $http = initInjector.get("$http");
 
-    return $http.get("./config.json").then(function(response) {
-        app.constant("CONFIG", response.data);
-        app.constant("HOSTLOGIN", 'username=' + response.data.username + '&password=' + response.data.password + '&');
+    return $http.get("./config.json").then(function(res) {
+        app.constant("CONFIG", res.data);
+        if(res.data.username && res.data.password){
+            app.constant("HOSTLOGIN", 'username=' + res.data.username + '&password=' + res.data.password + '&');
+        } else {
+            app.constant("HOSTLOGIN", undefined);
+        }
     }, function(errorResponse) {
         app.constant("CONFIG", undefined);
         app.constant("HOSTLOGIN", undefined);
