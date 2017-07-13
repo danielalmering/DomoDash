@@ -235,6 +235,7 @@ body {
   border: 1px solid #000;
   overflow: hidden;
   height: 140px;
+  width: 100%;
   -webkit-transition: opacity 0.3s ease-in;
   -moz-transition: opacity 0.3s ease-in;
   -o-transition: opacity 0.3s ease-in;
