@@ -161,7 +161,8 @@
             <div class="clearfix"></div>
             <div class="col-xs-12">
                 <div class="wrap">
-                    <button class="button" ng-click="vm.saveSettings()" type="button" class="btn btn-primary">Save Changes</button>
+                    <a ng-click="vm.saveManualy()" ng-href="{{ vm.url }}" class="button">Download Manualy</a>
+                    <button class="button" ng-click="vm.saveSettings()" type="button">Save Changes</button>
                 </div>
             </div>
         </form>

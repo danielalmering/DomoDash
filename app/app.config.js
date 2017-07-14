@@ -26,8 +26,10 @@ function bootstrapApplication() {
 }
 
 
-app.config(function($sceProvider, $locationProvider) {
+app.config(function($sceProvider, $locationProvider, $compileProvider, $animateProvider) {
+    $animateProvider.classNameFilter(/angular-animate/);
     $sceProvider.enabled(false);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(|blob|):/);
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
