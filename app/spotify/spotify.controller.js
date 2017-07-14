@@ -16,9 +16,10 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
         if(CONFIG.spotify_access_token === undefined){
             makeToken();
         } else {
+            console.log('gebruik bestaande token');
             getPlaylist(CONFIG.spotify_access_token);
             getCurrent(CONFIG.spotify_access_token);
-            $location.url('/');
+            window.history.pushState("", "", "/");
         }
 
     }
@@ -46,7 +47,7 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
             $http.post('app/settings/settings.save.php', vm.settings).then(function(res) {
                 getPlaylist(res.spotify_access_token);
                 getCurrent(res.spotify_access_token);
-                $location.url('/');
+                window.history.pushState("", "", "/");
             });
 
         }
