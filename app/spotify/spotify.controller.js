@@ -16,7 +16,6 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
         if(CONFIG.spotify_access_token === undefined){
             makeToken();
         } else {
-            console.log('gebruik bestaande token');
             getPlaylist(CONFIG.spotify_access_token);
             getCurrent(CONFIG.spotify_access_token);
             window.history.pushState("", "", "/");
