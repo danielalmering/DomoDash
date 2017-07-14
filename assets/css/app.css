@@ -76,6 +76,39 @@ body {
 }
 
 /***************************
+*** Bg
+***************************/
+.background {
+  position: absolute;
+  z-index: 0;
+  width: auto;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background__image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  transition: 1.5s opacity;
+}
+
+@media screen and (max-width: 1024px) {
+  .background {
+    /* Specific to this particular image */
+  }
+  .background__image {
+    left: 50%;
+    margin-left: -512px;
+    /* 50% */
+  }
+}
+
+/***************************
 *** Settings
 ***************************/
 .settings {

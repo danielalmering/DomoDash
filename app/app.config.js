@@ -1,4 +1,4 @@
-var app = angular.module("main", ['rzModule', 'angular-carousel']);
+var app = angular.module("main", ['ngAnimate', 'rzModule', 'angular-carousel']);
 
 fetchData().then(bootstrapApplication);
 
