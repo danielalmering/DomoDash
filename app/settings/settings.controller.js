@@ -13,6 +13,7 @@ function SettingsController($scope, $rootScope, $http) {
     vm.editBlocks         = editBlocks;
     vm.editTabs           = editTabs;
     vm.toggle             = toggle;
+    vm.saveManualy        = saveManualy;
 
     activate();
 
@@ -66,6 +67,16 @@ function SettingsController($scope, $rootScope, $http) {
         $http.post('app/settings/settings.save.php', vm.settings).then(function(res) {
             getSettings(true);
         });
+    }
+
+    function saveManualy(){
+        vm.toJSON = '';
+		vm.toJSON = angular.toJson(vm.settings);
+		var blob = new Blob([vm.toJSON], { type:"application/json;charset=utf-8;" });
+		var downloadLink = angular.element('<a></a>');
+        downloadLink.attr('href',window.URL.createObjectURL(blob));
+        downloadLink.attr('download', 'config.json');
+		downloadLink[0].click();
     }
 
     function editNews(news, type){
