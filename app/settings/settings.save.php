@@ -10,5 +10,10 @@
     $file = fopen('../../config.json','w+');
 
     fwrite($file, $json);
+
+    $response_array['status'] = 'success';
+
+    echo json_encode($response_array);
+
     fclose($file);
 ?>
