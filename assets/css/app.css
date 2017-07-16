@@ -75,6 +75,36 @@ body {
   padding-right: 5px;
 }
 
+/** Util **/
+.tooltip-wrap {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip-wrap .tooltip-text {
+  font-family: "Asap",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 160%;
+  text-align: center;
+  white-space: pre-wrap;
+  display: none;
+  background: #7e8fa5;
+  border-radius: 3px;
+  width: 150px !important;
+  font-weight: 500;
+  color: #fff;
+  padding: 5px;
+  position: absolute;
+  z-index: 10;
+  width: auto;
+  left: -50%;
+}
+
+.tooltip-wrap.active .tooltip-text {
+  display: block;
+}
+
+/** Imports **/
 /***************************
 *** Bg
 ***************************/
@@ -237,22 +267,32 @@ body {
   background: linear-gradient(to bottom, #fff 0%, #f5f6f9 100%);
 }
 
-.settings__form table th i {
-  color: #00a8ff;
-}
-
 .settings__form table th:first-child {
   width: 5px;
 }
 
+.settings__form i {
+  color: #00a8ff;
+}
+
+.settings__form .message {
+  display: block;
+  float: right;
+  border: 1px solid #7e8fa5;
+  color: #7e8fa5;
+  padding: 8px 10px;
+  margin: 10px 5px;
+  border-radius: 5px;
+}
+
 .settings__form .button {
-  display: inline-block;
+  display: block;
   border: none;
   background: #7e8fa5;
   color: #fff;
   padding: 8px 10px;
   border-radius: 5px;
-  margin: 10px 0px;
+  margin: 10px 5px;
   text-transform: capitalize;
   cursor: pointer;
   float: right;
