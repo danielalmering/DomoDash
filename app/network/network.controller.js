@@ -24,6 +24,7 @@ function NetworkController($scope, $rootScope, $http, CONFIG) {
     //// Update
 
     $rootScope.$on('$reload', function (event, data) {
+        networkDevices();
     });
 
 }

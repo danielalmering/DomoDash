@@ -8,23 +8,23 @@
                 <div class="wrap">
                     <h3>Global settings <span>(domoticz)</span></h3>
                     <div class="settings__form-input">
-                        <label>hostname</label>
-                        <input name="hostname" placeholder="127.0.0.1:8084" ng-model="vm.settings.hostname" type="text" required="">
+                        <label>Hostname <i class="fa fa-question-circle" aria-hidden="true" title="Enter hostname of Domoticz (http://0.0.0.0:8084)" tooltip></i></label>
+                        <input name="hostname" placeholder="http://0.0.0.0:8084" ng-model="vm.settings.hostname" type="text" required="">
                     </div>
                     <div class="settings__form-input">
-                        <label>username</label>
+                        <label>Username <i class="fa fa-question-circle" aria-hidden="true" title="Enter username of Domoticz" tooltip></i></label>
                         <input name="username" placeholder="username" autocomplete="off" ng-model="vm.settings.username" type="text" required="">
                     </div>
                     <div class="settings__form-input">
-                        <label>password</label>
+                        <label>Password <i class="fa fa-question-circle" aria-hidden="true" title="Enter password of Domoticz" tooltip></i></label>
                         <input name="password" placeholder="*******" autocomplete="off" ng-model="vm.settings.password" type="text" required="">
                     </div>
                     <div class="settings__form-input">
-                        <label>Refresh Timeout</label>
+                        <label>Refresh Timeout <i class="fa fa-question-circle" aria-hidden="true" title="Refresh seconds to reload the data" tooltip></i></label>
                         <input name="refresh" placeholder="9000" ng-model="vm.settings.refresh" type="number" required="">
                     </div>
                     <div class="settings__form-input">
-                        <label>Quantity bgimages</label>
+                        <label>Quantity bgimages <i class="fa fa-question-circle" aria-hidden="true" title="Number of images located in assets/img/bg folder" tooltip></i></label>
                         <input name="bgimages" placeholder="3" ng-model="vm.settings.bgimages" type="number" required="">
                     </div>
                 </div>
@@ -36,8 +36,8 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>Colum number <i class="fa fa-question-circle" aria-hidden="true" title="1, 2, 3"></th>
-                                    <th>Colum class <i class="fa fa-question-circle" aria-hidden="true" title="class based on bootstrap"></i></th>
+                                    <th>Colum number <i class="fa fa-question-circle" aria-hidden="true" title="1<br>2<br>3<br>*" tooltip></th>
+                                    <th>Colum class <i class="fa fa-question-circle" aria-hidden="true" title="Class based on bootstrap<br>( col-xs-12, col-sm-6 )" tooltip></i></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,10 +60,10 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>Block type <i class="fa fa-question-circle" aria-hidden="true" title="Heading, News, Switches, Weather"></i></th>
-                                    <th>Block class <i class="fa fa-question-circle" aria-hidden="true" title="class based on bootstrap"></i></th>
-                                    <th>Block colum <i class="fa fa-question-circle" aria-hidden="true" title="colum1, colum2, colum3"></th>
-                                    <th>Block title <i class="fa fa-question-circle" aria-hidden="true" title="If type heading then title"></th>
+                                    <th>Block type <i class="fa fa-question-circle" aria-hidden="true" title="Device=IDX<br>Heading<br>News<br>Weather<br>Spotify<br>Calendar" tooltip></i></th>
+                                    <th>Block class <i class="fa fa-question-circle" aria-hidden="true" title="Class based on bootstrap<br>( col-xs-12, col-sm-6 )" tooltip></i></th>
+                                    <th>Block colum <i class="fa fa-question-circle" aria-hidden="true" title="colum1<br>colum2<br>colum3<br>colum*" tooltip></th>
+                                    <th>Block title <i class="fa fa-question-circle" aria-hidden="true" title="Your custom title for this block" tooltip></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -91,8 +91,8 @@
                           <thead>
                               <tr>
                                   <th></th>
-                                  <th>News location <i class="fa fa-question-circle" aria-hidden="true" title="rss feed url"></th>
-                                  <th>News quantity <i class="fa fa-question-circle" aria-hidden="true" title="1"></th>
+                                  <th>News location <i class="fa fa-question-circle" aria-hidden="true" title="RSS feed url" tooltip></i></th>
+                                  <th>News quantity <i class="fa fa-question-circle" aria-hidden="true" title="RSS item display quantity" tooltip></i></th>
                               </tr>
                           </thead>
                           <tbody>
@@ -190,6 +190,7 @@
                 <div class="wrap">
                     <a ng-click="vm.saveManualy()" ng-href="{{ vm.url }}" class="button">Download Manualy</a>
                     <button class="button" ng-click="vm.saveSettings()" type="button">Save Changes</button>
+                    <div class="message" ng-if="vm.message">Settings saved successfully!</div>
                 </div>
             </div>
         </form>

@@ -1,0 +1,11 @@
+<div class="network" ng-if="vm.devices.length > 0">
+    <div class="networkwrap" ng-repeat="dev in vm.devices">
+        <div class="network__item">
+            <div class="network__item-icon">
+                <i class="fa {{ dev.icon }}" aria-hidden="true"></i>
+            </div>
+            <div class="network__item-desc">{{ dev.name }}</div>
+            <div class="network__item-status"><span class="{{ dev.status }}"></span></div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-function SettingsController($scope, $rootScope, $http) {
+function SettingsController($scope, $rootScope, $http, $timeout) {
 
     var vm                = this;
     vm.settings           = {};
@@ -7,6 +7,7 @@ function SettingsController($scope, $rootScope, $http) {
     vm.username           = '';
     vm.password           = '';
     vm.isActive           = false;
+    vm.message            = false;
     vm.saveSettings       = saveSettings;
     vm.editNews           = editNews;
     vm.editColums         = editColums;
@@ -65,18 +66,23 @@ function SettingsController($scope, $rootScope, $http) {
         }
 
         $http.post('app/settings/settings.save.php', vm.settings).then(function(res) {
+
+            if(res.data.status === 'success'){
+                vm.message = true;
+                $timeout(function(){ vm.message = false }, 2000);
+            }
             getSettings(true);
         });
     }
 
     function saveManualy(){
         vm.toJSON = '';
-		vm.toJSON = angular.toJson(vm.settings);
-		var blob = new Blob([vm.toJSON], { type:"application/json;charset=utf-8;" });
-		var downloadLink = angular.element('<a></a>');
+        vm.toJSON = angular.toJson(vm.settings);
+        var blob = new Blob([vm.toJSON], { type:"application/json;charset=utf-8;" });
+        var downloadLink = angular.element('<a></a>');
         downloadLink.attr('href',window.URL.createObjectURL(blob));
         downloadLink.attr('download', 'config.json');
-		downloadLink[0].click();
+        downloadLink[0].click();
     }
 
     function editNews(news, type){

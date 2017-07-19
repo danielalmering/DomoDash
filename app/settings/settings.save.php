@@ -12,5 +12,10 @@
     $json = json_encode(json_decode($json), JSON_PRETTY_PRINT);
 
     fwrite($file, $json);
+
+    $response_array['status'] = 'success';
+
+    echo json_encode($response_array);
+
     fclose($file);
 ?>

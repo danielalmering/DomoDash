@@ -117,7 +117,6 @@
                 padding: 10px;
                 text-align: left;
                 background: linear-gradient(to bottom, #fff 0%,#f5f6f9 100%);
-                i { color: #00a8ff; }
 
                 &:first-child {
                     width: 5px;
@@ -125,14 +124,26 @@
             }
         }
 
+        i { color: #00a8ff; }
+
+        .message {
+            display: block;
+            float: right;
+            border: 1px solid #7e8fa5;
+            color: #7e8fa5;
+            padding: 8px 10px;
+            margin: 10px 5px;
+            border-radius: 5px;
+        }
+
         .button {
-            display: inline-block;
+            display: block;
             border: none;
             background: #7e8fa5;
             color: #fff;
             padding: 8px 10px;
             border-radius: 5px;
-            margin: 10px 0px;
+            margin: 10px 5px;
             text-transform: capitalize;
             cursor: pointer;
             float: right;
