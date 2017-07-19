@@ -9,6 +9,8 @@
 
     $file = fopen('../../config.json','w+');
 
+    $json = json_encode(json_decode($json), JSON_PRETTY_PRINT);
+
     fwrite($file, $json);
     fclose($file);
 ?>

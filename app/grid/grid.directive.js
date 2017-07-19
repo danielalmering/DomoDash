@@ -60,6 +60,9 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
                     case 'Calendar':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><calendar></calendar></block>');
                         break;
+                    case 'Network':
+                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><network></network></block>');
+                        break;
                     default:
                 }
             }
