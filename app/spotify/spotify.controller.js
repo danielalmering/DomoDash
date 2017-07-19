@@ -35,7 +35,7 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
     }
 
     function makeToken(){
-        var url = encodeURIComponent('http://' + window.location.host + '//#');
+        var url = encodeURIComponent(window.location.href + '#');
 
         if(!$location.hash()){
             window.location = 'https://accounts.spotify.com/authorize/?client_id=' + CONFIG.spotify_clientid + '&redirect_uri=' + url + '&scope=playlist-read-private%20user-read-private%20user-read-email%20user-read-currently-playing%20user-read-playback-state%20user-read-recently-played&response_type=token';
