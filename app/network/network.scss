@@ -37,11 +37,19 @@
 
         &-desc {
             display: table-cell;
-            width: calc(100% - 60px);
+            width: calc(100% - 100px);
             vertical-align: middle;
             padding: 3px 10px;
             font-size: 13px;
             margin: 0px 0px 3px 0px;
+        }
+
+        &-ms {
+            display: table-cell;
+            width: 40px;
+            text-align: center;
+            font-size: 11px;
+            vertical-align: middle;
         }
 
         &-status {

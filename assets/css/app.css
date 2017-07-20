@@ -342,11 +342,19 @@ body {
 
 .network__item-desc {
   display: table-cell;
-  width: calc(100% - 60px);
+  width: calc(100% - 100px);
   vertical-align: middle;
   padding: 3px 10px;
   font-size: 13px;
   margin: 0px 0px 3px 0px;
+}
+
+.network__item-ms {
+  display: table-cell;
+  width: 40px;
+  text-align: center;
+  font-size: 11px;
+  vertical-align: middle;
 }
 
 .network__item-status {
@@ -786,6 +794,7 @@ body {
   box-shadow: inset 0px 1px 0px 0px #464a56;
   border-radius: 7px;
   color: #ebeef2;
+  overflow: hidden;
 }
 
 .spotify__playlist {
