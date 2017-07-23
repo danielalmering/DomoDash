@@ -8,8 +8,12 @@
                 <div class="wrap">
                     <h3>Global settings <span>(domoticz)</span></h3>
                     <div class="settings__form-input">
-                        <label>Hostname <i class="fa fa-question-circle" aria-hidden="true" title="Enter hostname of Domoticz (http://0.0.0.0:8084)" tooltip></i></label>
+                        <label>Hostname (External IP) <i class="fa fa-question-circle" aria-hidden="true" title="Enter hostname of Domoticz (http://0.0.0.0:8084)" tooltip></i></label>
                         <input name="hostname" placeholder="http://0.0.0.0:8084" ng-model="vm.settings.hostname" type="text" required="">
+                    </div>
+                    <div class="settings__form-input">
+                        <label>Hostname (Internal IP) <i class="fa fa-question-circle" aria-hidden="true" title="Enter hostname of Domoticz (http://192.168.192.0:8084)" tooltip></i></label>
+                        <input name="hostname" placeholder="http://192.168.192.0:8084" ng-model="vm.settings.internalhostname" type="text" required="">
                     </div>
                     <div class="settings__form-input">
                         <label>Username <i class="fa fa-question-circle" aria-hidden="true" title="Enter username of Domoticz" tooltip></i></label>
