@@ -114,33 +114,6 @@
                   </div>
               </div>
               <div class="wrap">
-                  <h3>Network Devices <span>(Detection)</span></h3><br />
-                  <div class="settings__form-input">
-                      <table>
-                          <thead>
-                              <tr>
-                                  <th></th>
-                                  <th>Device ip</th>
-                                  <th>Device name</th>
-                                  <th>Device icon</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr ng-repeat="device in vm.settings.network">
-                                  <td><input type="checkbox" ng-model="device.selected"/></td>
-                                  <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="device.ip" required/></div></td>
-                                  <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="device.name" required/></div></td>
-                                  <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="device.icon" required/></div></td>
-                              </tr>
-                          </tbody>
-                      </table>
-                      <div class="form-group">
-                          <a class="button" ng-hide="!vm.settings.network.length" ng-click="vm.Networkdevices('', 'remove')">remove</a>
-                          <a class="button" ng-click="vm.editNetworkdevices(vm.settings.network, 'add')">add</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="wrap">
                   <h3>Weather settings <span>(wunderground)</span></h3>
                   <div class="settings__form-input">
                       <label>API KEY</label>

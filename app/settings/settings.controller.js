@@ -12,7 +12,6 @@ function SettingsController($scope, $rootScope, $http, $timeout) {
     vm.editNews           = editNews;
     vm.editColums         = editColums;
     vm.editBlocks         = editBlocks;
-    vm.editNetworkdevices = editNetworkdevices;
     vm.toggle             = toggle;
     vm.saveManualy        = saveManualy;
 
@@ -118,18 +117,6 @@ function SettingsController($scope, $rootScope, $http, $timeout) {
                 if(!selected.selected){ newList.push(selected); }
             });
             vm.settings.blocks = newList;
-        }
-    };
-
-    function editNetworkdevices(network, type){
-        if(type === 'add'){
-            vm.settings.network.push({ ip: "", name: "", icon: ""});
-        } else {
-            var newList = [];
-            angular.forEach(vm.settings.network, function(selected){
-                if(!selected.selected){ newList.push(selected); }
-            });
-            vm.settings.network = newList;
         }
     };
 
