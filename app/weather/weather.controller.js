@@ -73,8 +73,8 @@ function WeatherController($scope, $rootScope, $http, $interval, $timeout, $filt
     //// Update
 
     var polling = $interval(function() {
-        getWeather();
-        getForecast();
+        //getWeather();
+        //getForecast();
     }, CONFIG.weather_refresh);
 
     var timepolling = $interval(function() {
