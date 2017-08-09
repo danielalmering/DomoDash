@@ -35,7 +35,7 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
     }
 
     function makeToken(){
-        var url = encodeURIComponent('http://' + window.location.host + '//#');
+        var url = encodeURIComponent(window.location.href + '#');
 
         if(!$location.hash()){
             window.location = 'https://accounts.spotify.com/authorize/?client_id=' + CONFIG.spotify_clientid + '&redirect_uri=' + url + '&scope=playlist-read-private%20user-read-private%20user-read-email%20user-read-currently-playing%20user-read-playback-state%20user-read-recently-played&response_type=token';
@@ -62,7 +62,11 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
 
     function getCurrent(token){
         $http.get('https://api.spotify.com/v1/me/player/currently-playing', { headers: {'Authorization': 'Bearer ' + token}}).then(function(res) {
-            vm.defaultplaylist = 'http://embed.spotify.com?uri=' + res.data.context.uri + '&theme=black&view=coverart';
+            if(res.data.context === null){
+                playPlaylist(vm.playlist[0].uri);
+            } else {
+                vm.defaultplaylist = 'http://embed.spotify.com?uri=' + res.data.context.uri + '&theme=black&view=coverart';
+            }
         });
     }
 

@@ -12,7 +12,6 @@ function SettingsController($scope, $rootScope, $http, $timeout) {
     vm.editNews           = editNews;
     vm.editColums         = editColums;
     vm.editBlocks         = editBlocks;
-    vm.editTabs           = editTabs;
     vm.toggle             = toggle;
     vm.saveManualy        = saveManualy;
 
@@ -118,18 +117,6 @@ function SettingsController($scope, $rootScope, $http, $timeout) {
                 if(!selected.selected){ newList.push(selected); }
             });
             vm.settings.blocks = newList;
-        }
-    };
-
-    function editTabs(tab, type){
-        if(type === 'add'){
-            vm.settings.tabs.push({ tab: "", type: "", class: "", title: ""});
-        } else {
-            var newList = [];
-            angular.forEach(vm.settings.tabs, function(selected){
-                if(!selected.selected){ newList.push(selected); }
-            });
-            vm.settings.tabs = newList;
         }
     };
 

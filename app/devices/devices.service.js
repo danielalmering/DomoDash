@@ -6,6 +6,7 @@
     function devicesService($http, $filter, $timeout, CONFIG, HOSTLOGIN){
 
         var devices   = {};
+        var hostname  = CONFIG.hostname;
         var instance  = {
             get: get
         };
@@ -13,6 +14,8 @@
         return instance;
 
         function get(id, update){
+            getHost();
+
             if(devices.length && update === false){
                 return selectDevice(devices, id);
             } else {
@@ -21,7 +24,7 @@
         }
 
         function getDevices(devices, id){
-            return $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=devices&filter=light&used=true&order=Name').then(function(res) {
+            return $http.get(hostname + '/json.htm?' + HOSTLOGIN + 'type=devices&filter=light&used=true&order=Name').then(function(res) {
                 devices = res.data.result;
                 return selectDevice(devices, id);
             });
@@ -33,6 +36,16 @@
             });
 
             return selecteddevice;
+        }
+
+        function getHost(){
+            if(CONFIG.hostname.indexOf(location.hostname) != -1) {
+                hostname = CONFIG.hostname;
+            } else {
+                hostname = CONFIG.internalhostname;
+            }
+
+            return hostname;
         }
 
 	}

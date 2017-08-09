@@ -1,0 +1,23 @@
+<div class="tvguide">
+    <div class="tvguide__cat">
+        <select ng-options="key as key for (key , value) in vm.sortedChannels" ng-change="vm.sort()" ng-model="vm.selectedCategory">
+        </select>
+    </div>
+    <div class="tvguide__channels">
+        <div ng-click="vm.sort('prev')" ng-if="vm.offset > 0" class="tvguide__channels-next"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+        <div class="tvguide__channels-list">
+            <div ng-repeat="value in vm.channels[vm.selectedCategory] | limitTo: 2:vm.offset">
+                <img ng-if="value.id" src="http://tvgidsassets.nl/img/channels/32x16/{{ value.id }}.png" alt="">
+                {{ value.name }}
+            </div>
+        </div>
+        <div ng-click="vm.sort('next')" ng-if="vm.offset < vm.channels[vm.selectedCategory].length - 2"class="tvguide__channels-prev"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="tvguide__programma">
+        <div class="tvguide__programma-list" ng-repeat="value in vm.programs">
+            <div ng-repeat="program in value">
+                <strong>{{ program.datum_start.split(' ')[1].slice(0, -3); }}</strong> {{ program.titel }}
+            </div>
+        </div>
+    </div>
+</div>

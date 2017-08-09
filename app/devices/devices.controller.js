@@ -5,6 +5,7 @@ function DevicesController($scope, $rootScope, $http, devicesService, $timeout, 
     vm.blocktitle         = $scope.name;
     vm.device             = {};
 
+    vm.devicesService     = devicesService;
     vm.switchDevice       = switchDevice;
     vm.dimDevice          = dimDevice;
     vm.getIcon            = getIcon;
@@ -33,13 +34,13 @@ function DevicesController($scope, $rootScope, $http, devicesService, $timeout, 
             var status = 'Off';
         }
 
-        $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + device.idx + '&switchcmd=' + status).then(function() {
+        $http.get(devicesService.getHost() + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + device.idx + '&switchcmd=' + status).then(function() {
             getDevice(true);
         });
     }
 
     function dimDevice(id, level){
-        $http.get(CONFIG.hostname + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + id + '&switchcmd=Set%20Level&level=' + level).then(function() {
+        $http.get(devicesService.getHost() + '/json.htm?' + HOSTLOGIN + 'type=command&param=switchlight&idx=' + id + '&switchcmd=Set%20Level&level=' + level).then(function() {
             getDevice(true);
         });
     }
