@@ -71,11 +71,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="block in vm.settings.blocks">
+                                <tr ng-repeat="block in vm.settings.blocks | orderBy:'colum'">
                                     <td><input type="checkbox" ng-model="block.selected"/></td>
                                     <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.type" required/></div></td>
                                     <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.class" required/></div></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.colum" required/></div></td>
+                                    <td><div class="settings__form-input">
+                                            <select class="form-control" ng-model="block.colum" required/>
+                                                <option ng-repeat="colum in vm.settings.colums" value="colum{{colum.colum}}">colum{{colum.colum}}</option>
+                                            </select>
+                                        </div>
+                                    </td>
                                     <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
                                 </tr>
                             </tbody>

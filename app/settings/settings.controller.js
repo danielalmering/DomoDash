@@ -110,7 +110,7 @@ function SettingsController($scope, $rootScope, $http, $timeout) {
 
     function editBlocks(block, type){
         if(type === 'add'){
-            vm.settings.blocks.push({ type: "", class: "", colum: "", title: ""});
+            vm.settings.blocks.push({ type: "", class: "", colum: "colum" + vm.settings.colums[0].colum, title: ""});
         } else {
             var newList = [];
             angular.forEach(vm.settings.blocks, function(selected){
