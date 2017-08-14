@@ -64,7 +64,8 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>Block type <i class="fa fa-question-circle" aria-hidden="true" title="Device=IDX<br>Heading<br>News<br>Weather<br>Spotify<br>Calendar" tooltip></i></th>
+                                    <th>Block type <i class="fa fa-question-circle" aria-hidden="true" title="Device<br>Heading<br>News<br>Weather<br>Spotify<br>Calendar<br>Tvguide" tooltip></i></th>
+                                    <th width="15">IDX</th>
                                     <th>Block class <i class="fa fa-question-circle" aria-hidden="true" title="Class based on bootstrap<br>( col-xs-12, col-sm-6 )" tooltip></i></th>
                                     <th>Block colum <i class="fa fa-question-circle" aria-hidden="true" title="colum1<br>colum2<br>colum3<br>colum*" tooltip></th>
                                     <th>Block title <i class="fa fa-question-circle" aria-hidden="true" title="Your custom title for this block" tooltip></th>
@@ -73,7 +74,11 @@
                             <tbody>
                                 <tr ng-repeat="block in vm.settings.blocks | orderBy:'colum'">
                                     <td><input type="checkbox" ng-model="block.selected"/></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.type" required/></div></td>
+                                    <td><div class="settings__form-input">
+                                        <select class="form-control" ng-model="block.type" required/>
+                                            <option ng-repeat="(key, val) in vm.availableblocks" value="{{val}}">{{val}}</option>
+                                        </select>
+                                    <td><div class="settings__form-input" ng-if="block.type === 'Device'"><input type="text" class="form-control" ng-model="block.idx" required/></div></td>
                                     <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.class" required/></div></td>
                                     <td><div class="settings__form-input">
                                             <select class="form-control" ng-model="block.colum" required/>
@@ -81,7 +86,7 @@
                                             </select>
                                         </div>
                                     </td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
+                                    <td><div class="settings__form-input" ng-if="block.type === 'Device' || block.type === 'Heading'"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
                                 </tr>
                             </tbody>
                         </table>

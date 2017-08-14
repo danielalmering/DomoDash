@@ -9,12 +9,7 @@ angular.module("main").run(function($interval, $rootScope, devicesService, CONFI
     }
 
 
-    if(CONFIG != undefined
-        && CONFIG.hostname
-        && HOSTLOGIN != undefined
-        && CONFIG.refresh != undefined
-        && CONFIG.password
-        && CONFIG.username){
+    if(CONFIG != undefined && CONFIG.hostname){
         $rootScope.load = true;
 
         var polling = $interval(function() {

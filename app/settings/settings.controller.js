@@ -1,7 +1,7 @@
-function SettingsController($scope, $rootScope, $http, $timeout) {
+function SettingsController($scope, $rootScope, $http, $timeout, CONFIG) {
 
     var vm                = this;
-    vm.settings           = {};
+    vm.settings           = CONFIG;
     vm.load               = $rootScope.load;
 
     vm.username           = '';
@@ -14,6 +14,8 @@ function SettingsController($scope, $rootScope, $http, $timeout) {
     vm.editBlocks         = editBlocks;
     vm.toggle             = toggle;
     vm.saveManualy        = saveManualy;
+
+    vm.availableblocks    = ['Heading', 'Device', 'News', 'Weather', 'Traffic', 'Calendar', 'Spotify']
 
     activate();
 
@@ -30,7 +32,7 @@ function SettingsController($scope, $rootScope, $http, $timeout) {
     }
 
     function getSettings(render){
-        $http.get('././config.json').then(function(res) {
+        $http.get('././config.json' + '?nocache=' + (new Date()).getTime()).then(function(res) {
             vm.settings          = res.data;
 
             if(res.data.username && res.data.password){
@@ -52,7 +54,7 @@ function SettingsController($scope, $rootScope, $http, $timeout) {
             }
 
             if(render === true){
-                $rootScope.$broadcast('$render', vm.settings);
+                $rootScope.$broadcast('$render', res.data);
             }
         });
     }
@@ -69,8 +71,8 @@ function SettingsController($scope, $rootScope, $http, $timeout) {
             if(res.data.status === 'success'){
                 vm.message = true;
                 $timeout(function(){ vm.message = false }, 2000);
+                getSettings(true);
             }
-            getSettings(true);
         });
     }
 
