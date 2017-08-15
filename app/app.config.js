@@ -11,7 +11,7 @@ function fetchData() {
         if(res.data.username && res.data.password){
             app.constant("HOSTLOGIN", 'username=' + res.data.username + '&password=' + res.data.password + '&');
         } else {
-            app.constant("HOSTLOGIN", undefined);
+            app.constant("HOSTLOGIN", '');
         }
     }, function(errorResponse) {
         app.constant("CONFIG", undefined);
