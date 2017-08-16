@@ -39,7 +39,7 @@
         }
 
         function getHost(){
-            if(CONFIG.hostname.indexOf(location.hostname) != -1 || window.location.hostname === 'localhost') {
+            if(CONFIG.hostname.indexOf(location.hostname) != -1 || location.hostname === 'localhost') {
                 hostname = CONFIG.hostname;
             } else {
                 hostname = CONFIG.internalhostname;

@@ -1,0 +1,79 @@
+.sabnzb {
+    display: block;
+    width: 100%;
+    opacity: 1;
+    border-radius: 7px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    overflow: hidden;
+
+    &__heading {
+        display: table;
+        width: 100.1%;
+        box-shadow: inset 0px 1px 0px 0px rgba(136, 146, 166, 0.9);
+        background: rgba(68, 73, 83, 0.8);
+        padding: 12px 10px 8px 10px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        p {
+            float: left;
+            margin: 0;
+            padding: 2px 5px;
+            font-size: 14px;
+        }
+
+        &-finish, &-speed {
+            float: right;
+            padding: 5px;
+            background: rgba(35, 37, 43, 0.5);
+            box-shadow: inset 0px 1px 0px 0px rgba(0,0,0,0.4);
+            border-radius: 7px;
+            margin-right: 10px;
+        }
+    }
+
+    &__history, &__downloads {
+        display: table;
+        background: rgba(35,37,43,0.9);
+        box-shadow: inset 0px 1px 0px 0px rgba(70,74,86,1);
+        padding: 5px;
+        height: 100%;
+        width: 100.1%;
+        overflow: auto;
+        overflow-x: hidden;
+
+        &-item {
+            display: table;
+            background: rgba(0, 0, 0, 0.2);
+            font-weight: 400;
+            padding: 5px 10px;
+            box-shadow: inset 0px -1px 0px 0px #464a56;
+            font-size: 12px;
+            width: 100%;
+
+            .col0 { display: table-cell; width: 5% }
+            .col1 { display: table-cell; width: 45% }
+            .col2 { display: table-cell; width: 25% }
+            .col3 { display: table-cell; width: 25% }
+
+            .toggle { cursor: pointer; }
+        }
+
+        .status {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 3px;
+            &__fill {
+                display: block;
+                height: 5px;
+                background-color: #659cef;
+                border-radius: 3px;
+                transition: width 500ms ease-in-out;
+            }
+        }
+    }
+}

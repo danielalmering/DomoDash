@@ -86,7 +86,7 @@
                                             </select>
                                         </div>
                                     </td>
-                                    <td><div class="settings__form-input" ng-if="block.type === 'Device' || block.type === 'Heading'"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
+                                    <td><div class="settings__form-input" ng-if="block.type === 'Device' || block.type === 'Heading' || block.type === 'Sabnzb'"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -121,6 +121,21 @@
                           <a class="button" ng-hide="!vm.settings.news.length" ng-click="vm.editNews('', 'remove')">remove</a>
                           <a class="button" ng-click="vm.editNews(vm.settings.news, 'add')">add</a>
                       </div>
+                  </div>
+              </div>
+              <div class="wrap">
+                  <h3>Sabnzb settings <span></span></h3>
+                  <div class="settings__form-input">
+                      <label>API KEY</label>
+                      <input name="hostname" placeholder="a342afafkj234" ng-model="vm.settings.sabnzb_api" type="text" required="">
+                  </div>
+                  <div class="settings__form-input">
+                      <label>Hostname (External IP)</label>
+                      <input name="hostname" placeholder="http://0.0.0.0:8080/sabnzbd/api" ng-model="vm.settings.sabnzb_hostname" type="text" required="">
+                  </div>
+                  <div class="settings__form-input">
+                      <label>Hostname (Internal IP)</label>
+                      <input name="hostname" placeholder="http://192.168.192.0:8080/sabnzbd/api" ng-model="vm.settings.sabnzb_internalhostname" type="text" required="">
                   </div>
               </div>
               <div class="wrap">

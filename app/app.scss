@@ -13,6 +13,8 @@ body {
 
     font-family: "Asap",Helvetica,Arial,sans-serif;
     color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     background-color: #000;
     background-position:center;
@@ -126,3 +128,4 @@ body {
 @import "spotify/spotify.scss";
 @import "calendar/calendar.scss";
 @import "tvguide/tvguide.scss";
+@import "sabnzb/sabnzb.scss";

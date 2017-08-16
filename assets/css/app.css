@@ -11,6 +11,8 @@ body {
   display: table-cell;
   font-family: "Asap",Helvetica,Arial,sans-serif;
   color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: #000;
   background-position: center;
   background-repeat: no-repeat;
@@ -960,4 +962,102 @@ ul[rn-carousel] > li {
 .tvguide__programma-list div {
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   padding: 5px;
+}
+
+.sabnzb {
+  display: block;
+  width: 100%;
+  opacity: 1;
+  border-radius: 7px;
+  border: 1px solid #000;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.sabnzb__heading {
+  display: table;
+  width: 100.1%;
+  box-shadow: inset 0px 1px 0px 0px rgba(136, 146, 166, 0.9);
+  background: rgba(68, 73, 83, 0.8);
+  padding: 12px 10px 8px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sabnzb__heading p {
+  float: left;
+  margin: 0;
+  padding: 2px 5px;
+  font-size: 14px;
+}
+
+.sabnzb__heading-finish, .sabnzb__heading-speed {
+  float: right;
+  padding: 5px;
+  background: rgba(35, 37, 43, 0.5);
+  box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 7px;
+  margin-right: 10px;
+}
+
+.sabnzb__history, .sabnzb__downloads {
+  display: table;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  padding: 5px;
+  height: 100%;
+  width: 100.1%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.sabnzb__history-item, .sabnzb__downloads-item {
+  display: table;
+  background: rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+  padding: 5px 10px;
+  box-shadow: inset 0px -1px 0px 0px #464a56;
+  font-size: 12px;
+  width: 100%;
+}
+
+.sabnzb__history-item .col0, .sabnzb__downloads-item .col0 {
+  display: table-cell;
+  width: 5%;
+}
+
+.sabnzb__history-item .col1, .sabnzb__downloads-item .col1 {
+  display: table-cell;
+  width: 45%;
+}
+
+.sabnzb__history-item .col2, .sabnzb__downloads-item .col2 {
+  display: table-cell;
+  width: 25%;
+}
+
+.sabnzb__history-item .col3, .sabnzb__downloads-item .col3 {
+  display: table-cell;
+  width: 25%;
+}
+
+.sabnzb__history-item .toggle, .sabnzb__downloads-item .toggle {
+  cursor: pointer;
+}
+
+.sabnzb__history .status, .sabnzb__downloads .status {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+
+.sabnzb__history .status__fill, .sabnzb__downloads .status__fill {
+  display: block;
+  height: 5px;
+  background-color: #659cef;
+  border-radius: 3px;
+  transition: width 500ms ease-in-out;
 }

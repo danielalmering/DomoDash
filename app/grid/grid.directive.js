@@ -58,6 +58,9 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
                     case 'Tvguide':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><tvguide></tvguide></block>');
                         break;
+                    case 'Sabnzb':
+                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><sabnzb name="' + res.title +'"></sabnzb></block>');
+                        break;
                     default:
                 }
             }

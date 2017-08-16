@@ -15,7 +15,7 @@ function SettingsController($scope, $rootScope, $http, $timeout, CONFIG) {
     vm.toggle             = toggle;
     vm.saveManualy        = saveManualy;
 
-    vm.availableblocks    = ['Heading', 'Device', 'News', 'Weather', 'Traffic', 'Calendar', 'Spotify', 'Tvguide']
+    vm.availableblocks    = ['Heading', 'Device', 'News', 'Weather', 'Traffic', 'Calendar', 'Spotify', 'Tvguide', 'Sabnzb']
 
     activate();
 

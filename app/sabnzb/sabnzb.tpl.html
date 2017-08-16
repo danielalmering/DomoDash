@@ -1,0 +1,24 @@
+<div class="sabnzb">
+    <div class="sabnzb__heading">
+        <p>{{ vm.title }}</p>
+        <div class="sabnzb__heading-finish"> <i class="fa fa-clock-o"></i> {{ vm.downloads.timeleft }}</div>
+        <div class="sabnzb__heading-speed"> <i class="fa fa-exchange"></i> {{ vm.downloads.speed }}</div>
+    </div>
+    <div class="sabnzb__downloads">
+        <div ng-repeat="download in vm.downloads.slots" class="sabnzb__downloads-item">
+            <div class="col0">
+                <div class="toggle" ng-click="vm.toggleDownload(download.status, download.nzo_id);"><i class="fa" ng-class="{ 'fa-pause': vm.job === 'pause', 'fa-play': vm.job === 'resume' }"></i></div>
+            </div>
+            <div class="col1">{{ download.filename }}</div>
+            <div class="col2">{{ download.status }}</div>
+            <div class="col3">
+                <div class="status"><div class="status__fill" style="width: {{ download.percentage }}%;"></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="sabnzb__history">
+        <div ng-repeat="history in vm.history.slots" class="sabnzb__history-item">
+            {{ history.name }}
+        </div>
+    </div>
+</div>
