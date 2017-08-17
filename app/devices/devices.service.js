@@ -8,7 +8,8 @@
         var devices   = {};
         var hostname  = CONFIG.hostname;
         var instance  = {
-            get: get
+            get: get,
+            getHost: getHost
         };
 
         return instance;
@@ -24,7 +25,7 @@
         }
 
         function getDevices(devices, id){
-            return $http.get(hostname + '/json.htm?' + HOSTLOGIN + 'type=devices&filter=light&used=true&order=Name').then(function(res) {
+            return $http.get(getHost() + '/json.htm?' + HOSTLOGIN + 'type=devices&filter=light&used=true&order=Name').then(function(res) {
                 devices = res.data.result;
                 return selectDevice(devices, id);
             });
@@ -39,7 +40,7 @@
         }
 
         function getHost(){
-            if(CONFIG.hostname.indexOf(location.hostname) != -1) {
+            if(CONFIG.hostname.indexOf(location.hostname) != -1 || location.hostname === 'localhost') {
                 hostname = CONFIG.hostname;
             } else {
                 hostname = CONFIG.internalhostname;

@@ -30,17 +30,12 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
 
             function getCorrectBlock (res){
 
-                if(res.type.indexOf('Device') >= 0){
-                    var deviceid = res.type.substr(res.type.indexOf("=") + 1);
-                    res.type = 'Device';
-                }
-
                 switch (res.type) {
                     case 'Heading':
                         angular.element(document.getElementById(res.colum)).append('<div class="heading ' + res.class +'">' + res.title +'</div>');
                         break;
                     case 'Device':
-                        angular.element(document.getElementById(res.colum)).append('<block class="block dev ' + res.class +'"><device class="device" name="' + res.title +'" id="' + deviceid + '"></device></block>');
+                        angular.element(document.getElementById(res.colum)).append('<block class="block dev ' + res.class +'"><device class="device" name="' + res.title +'" id="' + res.idx + '"></device></block>');
                         break;
                     case 'News':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><news></news></block>');
@@ -63,6 +58,9 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
                     case 'Tvguide':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><tvguide></tvguide></block>');
                         break;
+                    case 'Sabnzb':
+                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><sabnzb name="' + res.title +'"></sabnzb></block>');
+                        break;
                     default:
                 }
             }
@@ -76,6 +74,7 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
                 myEl.empty();
                 setColums();
                 setBlocks();
+
             });
 
 

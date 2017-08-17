@@ -64,19 +64,29 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>Block type <i class="fa fa-question-circle" aria-hidden="true" title="Device=IDX<br>Heading<br>News<br>Weather<br>Spotify<br>Calendar" tooltip></i></th>
+                                    <th>Block type <i class="fa fa-question-circle" aria-hidden="true" title="Device<br>Heading<br>News<br>Weather<br>Spotify<br>Calendar<br>Tvguide" tooltip></i></th>
+                                    <th width="15">IDX</th>
                                     <th>Block class <i class="fa fa-question-circle" aria-hidden="true" title="Class based on bootstrap<br>( col-xs-12, col-sm-6 )" tooltip></i></th>
                                     <th>Block colum <i class="fa fa-question-circle" aria-hidden="true" title="colum1<br>colum2<br>colum3<br>colum*" tooltip></th>
                                     <th>Block title <i class="fa fa-question-circle" aria-hidden="true" title="Your custom title for this block" tooltip></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="block in vm.settings.blocks">
+                                <tr ng-repeat="block in vm.settings.blocks | orderBy:'colum'">
                                     <td><input type="checkbox" ng-model="block.selected"/></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.type" required/></div></td>
+                                    <td><div class="settings__form-input">
+                                        <select class="form-control" ng-model="block.type" required/>
+                                            <option ng-repeat="(key, val) in vm.availableblocks" value="{{val}}">{{val}}</option>
+                                        </select>
+                                    <td><div class="settings__form-input" ng-if="block.type === 'Device'"><input type="text" class="form-control" ng-model="block.idx" required/></div></td>
                                     <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.class" required/></div></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.colum" required/></div></td>
-                                    <td><div class="settings__form-input"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
+                                    <td><div class="settings__form-input">
+                                            <select class="form-control" ng-model="block.colum" required/>
+                                                <option ng-repeat="colum in vm.settings.colums" value="colum{{colum.colum}}">colum{{colum.colum}}</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td><div class="settings__form-input" ng-if="block.type === 'Device' || block.type === 'Heading' || block.type === 'Sabnzb'"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -111,6 +121,17 @@
                           <a class="button" ng-hide="!vm.settings.news.length" ng-click="vm.editNews('', 'remove')">remove</a>
                           <a class="button" ng-click="vm.editNews(vm.settings.news, 'add')">add</a>
                       </div>
+                  </div>
+              </div>
+              <div class="wrap">
+                  <h3>Sabnzb settings <span></span></h3>
+                  <div class="settings__form-input">
+                      <label>API KEY</label>
+                      <input name="hostname" placeholder="a342afafkj234" ng-model="vm.settings.sabnzb_api" type="text" required="">
+                  </div>
+                  <div class="settings__form-input">
+                      <label>Hostname</label>
+                      <input name="hostname" placeholder="http://0.0.0.0:8080/sabnzbd/api" ng-model="vm.settings.sabnzb_hostname" type="text" required="">
                   </div>
               </div>
               <div class="wrap">
