@@ -8,7 +8,8 @@
         var devices   = {};
         var hostname  = CONFIG.hostname;
         var instance  = {
-            get: get
+            get: get,
+            getHost: getHost
         };
 
         return instance;

@@ -44,14 +44,9 @@ function SabnzbController($scope, $rootScope, $http, CONFIG, $interval) {
 
     //// Update
 
-    var timepolling = $interval(function() {
-        if(CONFIG.sabnzb_hostname && CONFIG.sabnzb_api){
-            getDownloads();
-        }
-    }, 5000);
-
     $rootScope.$on('$reload', function (event, data) {
         if(CONFIG.sabnzb_hostname && CONFIG.sabnzb_api){
+            getDownloads();
             getHistory();
         }
     });

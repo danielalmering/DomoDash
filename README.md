@@ -15,6 +15,7 @@ Alternative dashboard for Domoticz based on Dashticz v2 but fully build in Angul
 * Google Calendar
 * Device Mapper
 * TV gids (tvgids.nl)
+* Sabnzb 
 
 # Installation
 
