@@ -1,0 +1,8 @@
+<div class="garbage">
+    <div class="garbage__month" ng-repeat="month in vm.garbagedata | limitTo : 1">
+        {{ month.title }}
+        <div class="garbage__month-occ" ng-repeat="occ in month.occurrences">
+            {{ occ.title }} {{ occ.schema }}
+        </div>
+    </div>
+</div>
