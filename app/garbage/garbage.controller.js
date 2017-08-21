@@ -1,11 +1,12 @@
 function GarbageController($scope, $rootScope, $http, CONFIG, $timeout) {
 
     var vm                = this;
-    vm.homenummer         = CONFIG.garbage_homenr;
+    vm.homenr             = CONFIG.garbage_homenr;
     vm.zipcode            = CONFIG.garbage_zipcode;
+    vm.app                = CONFIG.garbage_app
+    vm.title              = $scope.name;
     vm.garbagedata        = {};
-
-    vm.garbageapp         = ['recyclemanager'];
+    vm.currentyear        = new Date().getFullYear();
 
     if(CONFIG.garbage_homenr && CONFIG.garbage_zipcode){
         getGarbage();
@@ -15,14 +16,21 @@ function GarbageController($scope, $rootScope, $http, CONFIG, $timeout) {
 
     function getGarbage(){
 
-        recyclemanager();
-        
+        if(vm.app === 'recyclemanager'){ recyclemanager(); }
+        if(vm.app === 'mijnafvalwijzer'){ mijnafvalwijzer(); }
+
     }
 
     function recyclemanager(){
-        $http.get('https://vpn-wec-api.recyclemanager.nl/v2/calendars?postalcode=' + vm.zipcode + '&number=' + vm.homenummer + '&mode=queue').then(function(res) {
-            console.log(res.data.data);
+        $http.get('https://vpn-wec-api.recyclemanager.nl/v2/calendars?postalcode=' + vm.zipcode + '&number=' + vm.homenr + '&mode=queue').then(function(res) {
             vm.garbagedata = res.data.data;
+        });
+    }
+
+    function mijnafvalwijzer(){
+        $http.get('https://cors-anywhere.herokuapp.com/http://json.mijnafvalwijzer.nl/?method=postcodecheck&postcode=' + vm.zipcode + '&street=&huisnummer=' + vm.homenr + '&toevoeging=').then(function(res) {
+            vm.garbagedata = res;
+            console.log(res);
         });
     }
 
@@ -30,7 +38,9 @@ function GarbageController($scope, $rootScope, $http, CONFIG, $timeout) {
     //// Update
 
     $rootScope.$on('$reload', function (event, data) {
-
+        if(CONFIG.garbage_homenr && CONFIG.garbage_zipcode){
+            getGarbage();
+        }
     });
 
 }

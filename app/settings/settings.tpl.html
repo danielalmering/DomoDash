@@ -86,7 +86,7 @@
                                             </select>
                                         </div>
                                     </td>
-                                    <td><div class="settings__form-input" ng-if="block.type === 'Device' || block.type === 'Heading' || block.type === 'Sabnzb'"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
+                                    <td><div class="settings__form-input" ng-if="block.type === 'Device' || block.type === 'Heading' || block.type === 'Sabnzb' || block.type === 'Garbage'"><input type="text" class="form-control" ng-model="block.title" required/></div></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -143,6 +143,12 @@
                   <div class="settings__form-input">
                     <label>Home nummer</label>
                     <input name="homenr" placeholder="99" ng-model="vm.settings.garbage_homenr" type="text" required="">
+                  </div>
+                  <div class="settings__form-input">
+                    <label>App</label>
+                    <select class="form-control" ng-model="vm.settings.garbage_app" required/>
+                        <option ng-repeat="app in vm.garbageapp" value="{{ app }}">{{ app }}</option>
+                    </select>
                   </div>
               </div>
               <div class="wrap">

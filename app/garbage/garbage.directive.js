@@ -1,6 +1,8 @@
 angular.module('main').directive('garbage', function() {
     return {
-        scope: {},
+        scope: {
+            name: '@'
+        },
         controller: 'GarbageController',
         controllerAs: 'vm',
         templateUrl: 'app/garbage/garbage.tpl.html'

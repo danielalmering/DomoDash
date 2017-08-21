@@ -1,0 +1,68 @@
+.garbage{
+    display: block;
+    width: 100%;
+    opacity: 1;
+    border-radius: 7px;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 1px solid #000;
+    margin: 10px 0px ;
+    max-height: 245px;
+
+    &__heading {
+        display: table;
+        width: 100.1%;
+        box-shadow: inset 0px 1px 0px 0px rgba(136, 146, 166, 0.9);
+        background: rgba(68, 73, 83, 0.8);
+        padding: 13px 15px 12px 15px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        span { float: right; }
+    }
+
+    &__occ {
+        display: table;
+        background: rgba(35,37,43,0.9);
+        box-shadow: inset 0px 1px 0px 0px rgba(70,74,86,1);
+        width: 100.1%;
+        padding: 5px;
+
+        &-date {
+            display: table-cell;
+            width: 10%;
+            padding: 0px 5px;
+            font-size: 11px;
+            text-align: center;
+            line-height: 160%;
+            span { display: block; width: 100%; font-size: 25px; font-weight: 700;}
+        }
+
+        &-img {
+            display: table-cell;
+            width: 5%;
+            vertical-align: middle;
+            line-height: 270%;
+            img { width: 100%; }
+        }
+
+        &-title {
+            display: table-cell;
+            width: 70%;
+            padding: 5px 15px;
+            font-weight: 700;
+            font-size: 17px;
+            vertical-align: middle;
+        }
+
+        &-time {
+            display: table-cell;
+            width: 70%;
+            padding: 5px 15px;
+            font-weight: 400;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+    }
+}

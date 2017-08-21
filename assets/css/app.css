@@ -971,6 +971,7 @@ ul[rn-carousel] > li {
   border-radius: 7px;
   border: 1px solid #000;
   overflow: hidden;
+  margin: 10px 0px;
 }
 
 .sabnzb__heading {
@@ -1059,4 +1060,85 @@ ul[rn-carousel] > li {
   background-color: #659cef;
   border-radius: 3px;
   transition: width 500ms ease-in-out;
+}
+
+.garbage {
+  display: block;
+  width: 100%;
+  opacity: 1;
+  border-radius: 7px;
+  overflow: auto;
+  overflow-x: hidden;
+  border: 1px solid #000;
+  margin: 10px 0px;
+  max-height: 245px;
+}
+
+.garbage__heading {
+  display: table;
+  width: 100.1%;
+  box-shadow: inset 0px 1px 0px 0px rgba(136, 146, 166, 0.9);
+  background: rgba(68, 73, 83, 0.8);
+  padding: 13px 15px 12px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.garbage__heading span {
+  float: right;
+}
+
+.garbage__occ {
+  display: table;
+  background: rgba(35, 37, 43, 0.9);
+  box-shadow: inset 0px 1px 0px 0px #464a56;
+  width: 100.1%;
+  padding: 5px;
+}
+
+.garbage__occ-date {
+  display: table-cell;
+  width: 10%;
+  padding: 0px 5px;
+  font-size: 11px;
+  text-align: center;
+  line-height: 160%;
+}
+
+.garbage__occ-date span {
+  display: block;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.garbage__occ-img {
+  display: table-cell;
+  width: 5%;
+  vertical-align: middle;
+  line-height: 270%;
+}
+
+.garbage__occ-img img {
+  width: 100%;
+}
+
+.garbage__occ-title {
+  display: table-cell;
+  width: 70%;
+  padding: 5px 15px;
+  font-weight: 700;
+  font-size: 17px;
+  vertical-align: middle;
+}
+
+.garbage__occ-time {
+  display: table-cell;
+  width: 70%;
+  padding: 5px 15px;
+  font-weight: 400;
+  font-size: 15px;
+  vertical-align: middle;
 }
