@@ -35,18 +35,26 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
     }
 
     function makeToken(){
-        var url = encodeURIComponent(window.location.href + '#');
+        var url = encodeURIComponent(window.location.href);
 
-        if(!$location.hash()){
+        if(window.location.href.split('/')[3]){
+            var paramsString = window.location.href.split('/')[3];
+            var searchParams = new URLSearchParams(paramsString);
+
+            if(searchParams.get('access_token')){
+                vm.settings.spotify_access_token = searchParams.get('access_token');
+
+                $http.post('app/settings/settings.save.php', vm.settings).then(function(res) {
+                    getPlaylist(res.spotify_access_token);
+                    getCurrent(res.spotify_access_token);
+
+                    $location.path('/');
+                });
+            }
+        }
+
+        if(!vm.settings.spotify_access_token){
             window.location = 'https://accounts.spotify.com/authorize/?client_id=' + CONFIG.spotify_clientid + '&redirect_uri=' + url + '&scope=playlist-read-private%20user-read-private%20user-read-email%20user-read-currently-playing%20user-read-playback-state%20user-read-recently-played&response_type=token';
-        } else {
-            vm.settings.spotify_access_token = getHashParams()['access_token'];
-
-            $http.post('app/settings/settings.save.php', vm.settings).then(function(res) {
-                getPlaylist(res.spotify_access_token);
-                getCurrent(res.spotify_access_token);
-            });
-
         }
     }
 
