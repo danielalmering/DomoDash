@@ -8,7 +8,7 @@ function GarbageController($scope, $rootScope, $http, CONFIG, $timeout) {
     vm.garbagedata        = {};
     vm.currentyear        = new Date().getFullYear();
 
-    if(CONFIG.garbage_homenr && CONFIG.garbage_zipcode){
+    if(vm.homenr && vm.zipcode && vm.app){
         getGarbage();
     }
 
@@ -38,7 +38,7 @@ function GarbageController($scope, $rootScope, $http, CONFIG, $timeout) {
     //// Update
 
     $rootScope.$on('$reload', function (event, data) {
-        if(CONFIG.garbage_homenr && CONFIG.garbage_zipcode){
+        if(vm.homenr && vm.zipcode && vm.app){
             getGarbage();
         }
     });
