@@ -1,12 +1,13 @@
-<div class="garbage" ng-repeat="month in vm.garbagedata | limitTo : 1">
-    <div class="garbage__heading">{{ vm.title }}<span>{{ month.title }}</span></div>
-    <div class="garbage__occ" ng-repeat="occ in month.occurrences">
-        <div class="garbage__occ-date">
-            {{ occ.from.date | date :  "EEEE" }}
-            <span>{{ occ.from.day }}<span>
+<div class="garbage">
+    <div class="garbage__heading">{{ vm.title }}<span>{{ vm.currentDate | date:"LLLL"  }}</span></div>
+    <div class="garbage__content">
+        <div class="garbage__content-occ occ" ng-repeat="garbage in vm.garbagedata">
+            <div class="occ__date">
+                {{ garbage.date | date:"EEEE" }}
+                <span>{{ garbage.date | date:"dd" }}</span>
+            </div>
+            <div class="occ__img"><span class="icons {{ garbage.type }}" /></span></div>
+            <div class="occ__title">{{ garbage.title }}</div>
         </div>
-        <div class="garbage__occ-img"><img ng-src="{{ occ.icon }}"></div>
-        <div class="garbage__occ-title">{{ occ.title }}</div>
-        <div class="garbage__occ-time">{{ occ.from.hours }}:{{ occ.from.minutes }}</div>
     </div>
 </div>

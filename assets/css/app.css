@@ -1067,16 +1067,14 @@ ul[rn-carousel] > li {
   width: 100%;
   opacity: 1;
   border-radius: 7px;
-  overflow: auto;
   overflow-x: hidden;
   border: 1px solid #000;
   margin: 10px 0px;
-  max-height: 245px;
 }
 
 .garbage__heading {
   display: table;
-  width: 100.1%;
+  width: 100.2%;
   box-shadow: inset 0px 1px 0px 0px rgba(136, 146, 166, 0.9);
   background: rgba(68, 73, 83, 0.8);
   padding: 13px 15px 12px 15px;
@@ -1090,7 +1088,13 @@ ul[rn-carousel] > li {
   float: right;
 }
 
-.garbage__occ {
+.garbage__content {
+  width: 100.1%;
+  max-height: 245px;
+  overflow: auto;
+}
+
+.garbage__content-occ {
   display: table;
   background: rgba(35, 37, 43, 0.9);
   box-shadow: inset 0px 1px 0px 0px #464a56;
@@ -1098,47 +1102,64 @@ ul[rn-carousel] > li {
   padding: 5px;
 }
 
-.garbage__occ-date {
+.garbage__content-occ .occ__date {
   display: table-cell;
-  width: 10%;
+  width: 12%;
   padding: 0px 5px;
   font-size: 11px;
   text-align: center;
   line-height: 160%;
 }
 
-.garbage__occ-date span {
+.garbage__content-occ .occ__date span {
   display: block;
   width: 100%;
   font-size: 25px;
   font-weight: 700;
 }
 
-.garbage__occ-img {
+.garbage__content-occ .occ__img {
   display: table-cell;
   width: 5%;
   vertical-align: middle;
   line-height: 270%;
 }
 
-.garbage__occ-img img {
+.garbage__content-occ .occ__img img {
   width: 100%;
+  border-radius: 3px;
 }
 
-.garbage__occ-title {
+.garbage__content-occ .occ__title {
   display: table-cell;
   width: 70%;
   padding: 5px 15px;
   font-weight: 700;
   font-size: 17px;
+  text-transform: capitalize;
   vertical-align: middle;
 }
 
-.garbage__occ-time {
-  display: table-cell;
-  width: 70%;
-  padding: 5px 15px;
-  font-weight: 400;
-  font-size: 15px;
-  vertical-align: middle;
+.garbage .icons {
+  display: block;
+  margin: 0 auto;
+  width: 32px;
+  height: 32px;
+  background: transparent url("../../assets/img/garbageicons.png") no-repeat 0px 0px;
+}
+
+.garbage .icons.papier {
+  background-position: 0px 0px;
+}
+
+.garbage .icons.restafval {
+  background-position: -32px 0px;
+}
+
+.garbage .icons.gft {
+  background-position: -64px 0px;
+}
+
+.garbage .icons.dhm {
+  background-position: -96px 0px;
 }
