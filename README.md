@@ -15,7 +15,9 @@ Alternative dashboard for Domoticz based on Dashticz v2 but fully build in Angul
 * Google Calendar
 * Device Mapper
 * TV gids (tvgids.nl)
-* Sabnzb 
+* Sabnzb
+* Garbage collector (recyclemanager, mijnafvalwijzer)
+* Cors PHP proxy
 
 # Installation
 
@@ -25,3 +27,5 @@ Configure your config.json by opening the application and filling in your settin
 ## Settings ( Example )
 
 ![alt text](https://raw.githubusercontent.com/danielalmering/DomoDash/accept/assets/img/screenshot-settings.png)
+
+If having CORS issues use cors.php?url=******

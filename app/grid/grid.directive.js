@@ -61,6 +61,9 @@ angular.module('main').directive('grid', function($rootScope, $compile, $http, d
                     case 'Sabnzb':
                         angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><sabnzb name="' + res.title +'"></sabnzb></block>');
                         break;
+                    case 'Garbage':
+                        angular.element(document.getElementById(res.colum)).append('<block class="block ' + res.class +'"><garbage name="' + res.title +'"></garbage></block>');
+                        break;
                     default:
                 }
             }

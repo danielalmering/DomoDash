@@ -12,20 +12,24 @@ function CalendarController($scope, $rootScope, $http, CONFIG) {
     ///////////////////////////////
 
     function activate(){
-        gapi.auth.authorize({client_id: vm.clientid, scope: vm.url, immediate: false}, Authenticate);
-        return false;
+        if(!vm.clientid){
+            return;
+        }
+
+        authorize(true);
+    }
+
+    function authorize(immediate){
+        gapi.auth.authorize({client_id: vm.clientid, scope: vm.url, immediate: immediate}, Authenticate);
     }
 
     //// Public interface
 
     function Authenticate(authResult) {
-        var authorizeButton = document.getElementById('authorize-button');
         if (authResult && !authResult.error) {
-           // authorizeButton.style.visibility = 'hidden';
             getCalendar();
         } else {
-            authorizeButton.style.visibility = '';
-            authorizeButton.onclick = handleAuthClick;
+            authorize(false);
         }
     }
 
@@ -38,17 +42,17 @@ function CalendarController($scope, $rootScope, $http, CONFIG) {
              });
 
             request.execute(function(res){
-                vm.calendarlist = res.items;
-                vm.calandar = res;
+                $scope.$apply(function(){
+                    vm.calendarlist = res.items;
+                    vm.calandar = res;
+                });
             });
         });
     }
 
     //// Update
 
-    $rootScope.$on('$reload', function (event, data) {
-    });
-
+    $rootScope.$on('$reload', activate);
 }
 
 angular.module('main').controller('CalendarController', CalendarController);
