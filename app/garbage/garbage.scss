@@ -70,9 +70,15 @@
         width: 32px;
         height: 32px;
         background:transparent url("../../assets/img/garbageicons.png") no-repeat 0px 0px;
+        border-radius: 5px;
+        overflow: hidden;
         &.papier    { background-position: 0px 0px; }
         &.restafval { background-position: -32px 0px; }
         &.gft       { background-position: -64px 0px; }
         &.dhm       { background-position: -96px 0px; }
+        &.dhm       { background-position: -96px 0px; }
+        &.plastic   { background-position: -128px 0px; }
+        &.textiel   { background-position: -160px 0px; }
+        &.takken   { background-position: -192px 0px; }
     }
 }

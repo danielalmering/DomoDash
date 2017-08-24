@@ -1146,6 +1146,8 @@ ul[rn-carousel] > li {
   width: 32px;
   height: 32px;
   background: transparent url("../../assets/img/garbageicons.png") no-repeat 0px 0px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .garbage .icons.papier {
@@ -1162,4 +1164,20 @@ ul[rn-carousel] > li {
 
 .garbage .icons.dhm {
   background-position: -96px 0px;
+}
+
+.garbage .icons.dhm {
+  background-position: -96px 0px;
+}
+
+.garbage .icons.plastic {
+  background-position: -128px 0px;
+}
+
+.garbage .icons.textiel {
+  background-position: -160px 0px;
+}
+
+.garbage .icons.takken {
+  background-position: -192px 0px;
 }
