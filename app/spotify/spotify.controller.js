@@ -63,6 +63,8 @@ function SpotifyController($scope, $rootScope, $http, $location, CONFIG, HOSTLOG
               vm.playlist = res.data.items;
           }, function error(res) {
               if(res.data.error.message === 'The access token expired'){
+                  delete vm.settings.spotify_access_token;
+                  
                   makeToken();
               }
         });
